@@ -1,0 +1,13 @@
+body {
+	font-family: 'Helvatica Neue', Helvetica, Arial;
+}
+
+.fa, .glyphicon {
+	margin-right: 7px;
+}
+
+section.content-header {
+	background: #fff !important;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #e0e0e0;
+}
