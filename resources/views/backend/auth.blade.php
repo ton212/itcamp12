@@ -26,6 +26,13 @@
         <b>ITCAMP</b>#12
       </div><!-- /.login-logo -->
       <div class="login-box-body">
+        @if (count($errors) > 0)
+          <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+              <p>{{ $error }}</p>
+            @endforeach
+          </div>
+        @endif
         <form method="post">
           <div class="form-group has-feedback">
             <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้" />
