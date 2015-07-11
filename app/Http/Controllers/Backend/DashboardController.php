@@ -14,7 +14,11 @@ class DashboardController extends Controller {
 	 */
 	public function index()
 	{
-		return view('backend.layout');
+		$data = [
+			'page_title'    => 'ภาพรวม',
+			'page_subtitle' => 'ภาพรวมของระบบ'
+		];
+		return view('backend.dashboard', $data);
 	}
 
 }
