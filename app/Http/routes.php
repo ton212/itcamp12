@@ -26,5 +26,5 @@ Route::controllers([
 
 Route::group(['middleware' => 'isAdmin'], function()
 {
-	Route::resource('backend', 'Backend\DashboardController');
+	Route::resource('backend', 'Backend\DashboardController', ['only' => ['index']]);
 });
