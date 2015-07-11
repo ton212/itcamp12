@@ -11,11 +11,20 @@
 |
 */
 
+// Frontend Routes
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+
+// Backend Routes
+
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+	'backend/auth' => 'Backend\AuthController',
 ]);
+
+Route::group(['middleware' => 'isAdmin'], function()
+{
+	Route::resource('backend', 'Backend\DashboardController');
+});
