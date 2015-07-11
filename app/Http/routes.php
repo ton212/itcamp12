@@ -27,4 +27,7 @@ Route::controllers([
 Route::group(['middleware' => 'isAdmin'], function()
 {
 	Route::resource('backend', 'Backend\DashboardController', ['only' => ['index']]);
+	Route::resource('backend/applicant', 'Backend\ApplicantController', ['except' => ['create', 'store']]);
+	Route::get('backend/applicant/{applicant}/quiz', ['uses' => 'Backend\QuizController@show', 'as' => 'backend.applicant.quiz']);
+	Route::get('backend/quiz', ['uses' => 'Backend\QuizController@index', 'as' => 'backend.quiz.index']);
 });

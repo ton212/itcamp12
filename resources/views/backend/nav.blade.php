@@ -12,9 +12,9 @@
 			@if(Auth::check())
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li @if(Request::is('/')) class="active bg-green-active" @endif><a href="{{ route('backend.index') }}"><i class="fa fa-dashboard"></i>ภาพรวม</a></li>
-					{{-- <li @if(Request::is('stock*')) class="active bg-green-active" @endif><a href="{{ route('stock.index') }}"></i><i class="fa fa-cubes"></i>คลังสินค้า</a></li>
-					<li @if(Request::is('log*')) class="active bg-green-active" @endif><a href="{{ route('log.index') }}"><i class="fa fa-book"></i>บันทึกการใช้งานระบบ</a></li> --}}
+					<li @if(Request::is('backend')) class="active bg-green-active" @endif><a href="{{ route('backend.index') }}"><i class="fa fa-dashboard"></i>ภาพรวม</a></li>
+					<li @if(Request::is('backend/applicant*')) class="active bg-green-active" @endif><a href="{{ route('backend.applicant.index') }}"></i><i class="fa fa-users"></i>จัดการใบสมัคร</a></li>
+					<li @if(Request::is('backend/quiz*')) class="active bg-green-active" @endif><a href="{{ route('backend.quiz.index') }}"><i class="fa fa-check-circle"></i>ตรวจคำตอบ (Quiz)</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
