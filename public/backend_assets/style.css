@@ -25,6 +25,25 @@ section.content-header {
 	vertical-align: middle;
 }
 
+.btn-app {
+	margin-left: 0;
+	padding: 10px 10px;
+	height: auto;
+}
+
+.btn-app > .fa, .glyphicon {
+	padding-bottom: 5px;
+}
+
+.table-responsive {
+	border: none;
+}
+
+.box-body > .table-responsive > table {
+	margin-bottom: 0;
+}
+
+
 /*Form Wizard*/
 .bs-wizard {margin: 10px 0; padding: 0 0 10px 0;}
 .bs-wizard > .bs-wizard-step {padding: 0; position: relative;}

@@ -15,7 +15,12 @@ class QuestionController extends Controller {
 	 */
 	public function index()
 	{
-		dd(QuizQuestion::all());
+		$data = [
+			'page_title'    => 'จัดการคำถาม',
+			'page_subtitle' => 'คำถามทั้งหมด',
+			'questions'     => QuizQuestion::all()
+		];
+		return view('backend.question.index', $data);
 	}
 
 	/**
