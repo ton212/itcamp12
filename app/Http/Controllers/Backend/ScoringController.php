@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class QuizController extends Controller {
+class ScoringController extends Controller {
 
 	public function index()
 	{
