@@ -14,7 +14,11 @@ class ApplicantController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$data = [
+			'page_title'    => 'จัดการใบสมัคร',
+			'page_subtitle' => 'ใบสมัครทั้งหมด'
+		];
+		return view('backend.applicant.list.all', $data);
 	}
 
 	/**
