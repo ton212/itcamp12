@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Applicant;
 
 class ApplicantController extends Controller {
 
@@ -29,7 +30,7 @@ class ApplicantController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		dd(Applicant::findOrFail($id));
 	}
 
 	/**
@@ -40,7 +41,7 @@ class ApplicantController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$applicant = Applicant::findOrFail($id);
 	}
 
 	/**

@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\QuizQuestion;
 
 class QuestionController extends Controller {
 
@@ -14,7 +15,7 @@ class QuestionController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		dd(QuizQuestion::all());
 	}
 
 	/**
@@ -45,7 +46,7 @@ class QuestionController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		dd(QuizQuestion::findOrFail($id));
 	}
 
 	/**
@@ -56,7 +57,7 @@ class QuestionController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$question = QuizQuestion::findOrFail($id);
 	}
 
 	/**

@@ -4,17 +4,19 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Applicant;
+use App\QuizScoreCard;
 
 class ScoringController extends Controller {
 
 	public function index()
 	{
-		# code...
+		dd(Applicant::with('score_cards')->get());
 	}
 
-	public function show()
+	public function scoring($applicant_id)
 	{
-		# code...
+		dd(Applicant::findOrFail($applicant_id)->quiz_answers);
 	}
 
 }
