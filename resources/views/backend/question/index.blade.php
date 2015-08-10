@@ -7,6 +7,7 @@
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title"><i class="fa fa-question-circle"></i>คำถามทั้งหมด</h3>
+				<div class="box-tools"><a class="btn btn-sm btn-primary" href="{{ route('backend.question.create') }}"><i class="fa fa-plus-circle"></i>เพิ่มคำถามใหม่</a></div>
 			</div>
 			<div class="box-body no-padding">
 				<div class="table-responsive">
@@ -49,17 +50,16 @@
 							<td class="text-center">{{ $question->attributes->weight }}</td>
 							<td class="text-center">
 								<form action="{{ route('backend.question.destroy', $question->id) }}" method="post">
-									<a href="{{ route('backend.question.edit', $question->id) }}" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i>แก้ไข</a>
 									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<input type="hidden" name="_method" value="delete">
-									<button class="btn btn-xs btn-default" onclick="return confirm('ยืนยันการลบคำถามข้อนี้หรือไม่?')"><i class="fa fa-trash"></i>ลบ</button>
+									<div class="btn-group">
+										<a href="{{ route('backend.question.edit', $question->id) }}" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i>แก้ไข</a>
+										<button class="btn btn-xs btn-default" onclick="return confirm('ยืนยันการลบคำถามข้อนี้หรือไม่?')"><i class="fa fa-trash"></i>ลบ</button>
+									</div>
 								</form>
 							</td>
 						</tr>
 						@endforeach
-						<tr>
-							<td colspan="5" class="text-center"><a href="{{ route('backend.question.create') }}"><i class="fa fa-plus-circle"></i>เพิ่มคำถามใหม่</a></td>
-						</tr>
 					</tbody>
 				</table>
 				</div>
