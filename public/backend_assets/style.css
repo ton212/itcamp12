@@ -43,6 +43,11 @@ section.content-header {
 	margin-bottom: 0;
 }
 
+label.required::after {
+	content: ' *';
+	color: #dd4b39;
+}
+
 
 /*Form Wizard*/
 .bs-wizard {margin: 10px 0; padding: 0 0 10px 0;}

@@ -16,10 +16,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
+    @yield('css')
+
     <link href="{{ asset('backend_assets/adminlte/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend_assets/adminlte/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
-
-    @yield('css')
 
     <link href="{{ asset('backend_assets/style.css') }}" rel="stylesheet" type="text/css" />
 
@@ -46,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @endif
 
         <section class="content">
+          @include('backend.alert')
           @yield('content')
         </section>
       </div>

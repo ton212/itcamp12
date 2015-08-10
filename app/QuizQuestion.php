@@ -5,8 +5,10 @@ use Illuminate\Database\Eloquent\Model;
 class QuizQuestion extends Model {
 
 	protected $casts = [
-		'attributes' => 'array'
+		'attributes' => 'object'
 	];
+
+    protected $fillable = ['title', 'description', 'help', 'attributes'];
 
 	public function answers()
 	{

@@ -2,11 +2,21 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use App\QuizQuestion;
 
 class QuestionController extends Controller {
+
+	use ValidatesRequests;
+
+	private $validator_msg = [
+		'title.required'  => 'โปรดกรอกหัวข้อคำถาม',
+		'judge.required'  => 'โปรดกำหนดผู้มีสิทธิ์ตรวจคำถามข้อนี้อย่างน้อยหนึ่งฝ่าย',
+		'weight.required' => 'โปรดกำหนดค่าน้ำหนัก',
+		'weight.numeric'  => 'ค่าน้ำหนักต้องเป็นตัวเลขเท่านั้น',
+		'weight.min'      => 'ค่าน้ำหนักต้องไม่น้อยกว่า 0'
+	];
 
 	/**
 	 * Display a listing of the resource.
@@ -30,7 +40,11 @@ class QuestionController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$data = [
+			'page_title'    => 'เพิ่มคำถามใหม่',
+			'page_subtitle' => 'จัดการคำถาม',
+		];
+		return view('backend.question.create', $data);
 	}
 
 	/**
@@ -38,9 +52,26 @@ class QuestionController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$this->validate($request, [
+			'title'  => 'required',
+			'judge'  => 'required',
+			'weight' => 'required|numeric|min:0'
+		], $this->validator_msg);
+
+		$data = [
+			'title'       => $request->title,
+			'description' => $request->description,
+			'attributes'  => [
+				'judge'  => $request->judge,
+				'weight' => $request->weight
+			],
+			'help'        => $request->help
+		];
+
+		QuizQuestion::create($data);
+		return redirect(route('backend.question.index'));
 	}
 
 	/**
@@ -62,7 +93,12 @@ class QuestionController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$question = QuizQuestion::findOrFail($id);
+		$data = [
+			'page_title'    => 'แก้ไขคำถาม',
+			'page_subtitle' => 'จัดการคำถาม',
+			'question'      => QuizQuestion::findOrFail($id)
+		];
+		return view('backend.question.edit', $data);
 	}
 
 	/**
@@ -71,9 +107,26 @@ class QuestionController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Request $request)
 	{
-		//
+		$this->validate($request, [
+			'title'  => 'required',
+			'judge'  => 'required',
+			'weight' => 'required|numeric|min:0'
+		], $this->validator_msg);
+
+		$data = [
+			'title'       => $request->title,
+			'description' => $request->description,
+			'attributes'  => [
+				'judge'  => $request->judge,
+				'weight' => $request->weight
+			],
+			'help'        => $request->help
+		];
+
+		QuizQuestion::findOrFail($id)->fill($data)->save();
+		return redirect(route('backend.question.index'));
 	}
 
 	/**
@@ -84,7 +137,16 @@ class QuestionController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		try {
+				QuizQuestion::findOrFail($id)->delete();
+		} catch (\Illuminate\Database\QueryException $e) {
+			if ($e->errorInfo[1] == 1451) {
+				return redirect(route('backend.question.index'))->with('alert_danger', 'ไม่สามารถลบคำถามได้ เนื่องจากมีผู้สมัครตอบคำถามข้อนี้แล้ว');
+			} else {
+				return redirect(route('backend.question.index'))->with('alert_danger', 'การลบคำถามล้มเหลว');
+			}
+		}
+		return redirect(route('backend.question.index'));
 	}
 
 }
