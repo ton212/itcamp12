@@ -22,7 +22,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($questions as $question)
+						@forelse($questions as $question)
 						<tr>
 							<td class="text-center">{{ $question->id }}</td>
 							<td>
@@ -59,7 +59,11 @@
 								</form>
 							</td>
 						</tr>
-						@endforeach
+						@empty
+						<tr>
+							<td colspan="5" class="text-center text-muted">ยังไม่มีคำถามในระบบ</td>
+						</tr>
+						@endforelse
 					</tbody>
 				</table>
 				</div>
@@ -89,14 +93,18 @@
 					</thead>
 					<tbody>
 						<?php $i=1; ?>
-						@foreach(array_sort($questions, function($question) { return $question->attributes->weight; }) as $question)
+						@forelse(array_sort($questions, function($question) { return $question->attributes->weight; }) as $question)
 						<tr>
 							<td class="text-center">{{ $i }}</td>
 							<td><strong><span class="text-muted">(#{{ $question->id }})</span> {{ $question->title }}</strong></td>
 							<td class="text-center">{{ $question->attributes->weight }}</td>
 						</tr>
 						<?php $i++; ?>
-						@endforeach
+						@empty
+						<tr>
+							<td colspan="3" class="text-center text-muted">ยังไม่มีคำถามในระบบ</td>
+						</tr>
+						@endforelse
 					</tbody>
 				</table>
 				</div>
