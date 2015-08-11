@@ -16,6 +16,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
+    @yield('css')
+
     <link href="{{ asset('backend_assets/adminlte/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend_assets/adminlte/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
 
@@ -44,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @endif
 
         <section class="content">
+          @include('backend.alert')
           @yield('content')
         </section>
       </div>
@@ -62,9 +65,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE App -->
     <script src="{{ asset('backend_assets/adminlte/js/app.min.js') }}" type="text/javascript"></script>
 
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-          Both of these plugins are recommended to enhance the
-          user experience. Slimscroll is required when using the
-          fixed layout. -->
+    @yield('js')
   </body>
 </html>

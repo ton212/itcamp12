@@ -32,4 +32,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return false;
 	}
 
+	public function score_cards()
+	{
+		return $this->hasMany('App\QuizScoreCard');
+	}
+
 }

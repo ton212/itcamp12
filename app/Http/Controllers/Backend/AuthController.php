@@ -63,7 +63,11 @@ class AuthController extends Controller {
 
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
-			return redirect()->intended($this->redirectPath());
+			if ($this->auth->user()->isAdmin()) {
+				return redirect()->intended($this->redirectPath());
+			}
+
+			$this->auth->logout();
 		}
 
 		return redirect($this->loginPath())
@@ -80,7 +84,7 @@ class AuthController extends Controller {
 	 */
 	protected function getFailedLoginMessage()
 	{
-		return 'These credentials do not match our records.';
+		return 'โปรดตรวจสอบชื่อผู้ใช้และรหัสผ่านอีกครั้ง';
 	}
 
 	/**
