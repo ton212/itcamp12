@@ -17,7 +17,8 @@ class ApplicantController extends Controller {
 	{
 		$data = [
 			'page_title'    => 'จัดการใบสมัคร',
-			'page_subtitle' => 'ใบสมัครทั้งหมด'
+			'page_subtitle' => 'ใบสมัครทั้งหมด',
+			'applicants'    => Applicant::paginate(10)
 		];
 		return view('backend.applicant.list.all', $data);
 	}
@@ -30,6 +31,13 @@ class ApplicantController extends Controller {
 	 */
 	public function show($id)
 	{
+		$applicant = Applicant::findOrFail($id);
+		$data = [
+			'page_title'    => 'รายละเอียดใบสมัคร',
+			'page_subtitle' => 'เลขที่ #'.str_pad($applicant->id, 4, 0, STR_PAD_LEFT),
+			'applicant'     => $applicant
+		];
+		return view('backend.applicant.show', $data);
 		dd(Applicant::findOrFail($id));
 	}
 

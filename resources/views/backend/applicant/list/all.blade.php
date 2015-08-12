@@ -14,44 +14,40 @@
 					<th>ชื่อ - สกุล</th>
 					<th class="text-center">ชื่อเล่น</th>
 					<th class="text-center">อีเมล</th>
-					<th class="text-center">ความสมบูรณ์</th>
+					<th class="text-center">ความสมบูรณ์ใบสมัคร</th>
 					<th class="text-center">ส่งใบสมัครเมื่อ</th>
 					<th class="text-center">การกระทำ</th>
 				</tr>
 			</thead>
 			<tbody>
+				@forelse($applicants as $applicant)
 				<tr>
-					<td class="text-center">001</td>
-					<td><a href="{{ route('backend.applicant.show', 1) }}">นายต้นสาย สิงห์กังวาน</a></td>
-					<td class="text-center">ต้น</td>
-					<td class="text-center">t@iton.in.th</td>
-					<td class="text-center text-green"><i class="fa fa-check-circle"></i></td>
-					<td class="text-center">12/07/2015 11:30 AM</td>
-					<td class="text-center"><a href="#" class="btn btn-xs btn-default"><i class="fa fa-eye"></i>เปิดดู</a></td>
+					<td class="text-center">{{ str_pad($applicant->id, 4, 0, STR_PAD_LEFT) }}</td>
+					<td><a href="{{ route('backend.applicant.show', $applicant->id) }}">{{ $applicant->prefix.$applicant->firstname.' '.$applicant->lastname }}</a></td>
+					<td class="text-center"> {{ $applicant->nickname }}</td>
+					<td class="text-center">{{ $applicant->email }}</td>
+					<td class="text-center">
+						@if($applicant->pre_check == 0)
+							<span class="label label-warning"><i class="fa fa-clock-o"></i>Wait</span>
+						@elseif($applicant->pre_check == 1)
+							<span class="label label-success"><i class="fa fa-check-circle"></i>Approved</span>
+						@else
+							<span class="label label-danger"><i class="fa fa-times-circle"></i>Cancelled</span>
+						@endif
+					</td>
+					<td class="text-center">{{ $applicant->created_at }}</td>
+					<td class="text-center"><a class="btn btn-xs btn-default" href="{{ route('backend.applicant.show', $applicant->id) }}"><i class="fa fa-eye"></i>เปิดดู</a></td>
 				</tr>
+				@empty
 				<tr>
-					<td class="text-center">002</td>
-					<td><a href="{{ route('backend.applicant.show', 2) }}">นายต้นสาย สิงห์กังวาน</a></td>
-					<td class="text-center">ต้น</td>
-					<td class="text-center">t@iton.in.th</td>
-					<td class="text-center text-danger"><i class="fa fa-times-circle"></i></td>
-					<td class="text-center">12/07/2015 11:30 AM</td>
-					<td class="text-center"><a href="#" class="btn btn-xs btn-default"><i class="fa fa-eye"></i>เปิดดู</a></td>
+					<td colspan="7" class="text-center">ไม่มีใบสมัครในระบบ</td>
 				</tr>
-				<tr>
-					<td class="text-center">003</td>
-					<td><a href="{{ route('backend.applicant.show', 3) }}">นายต้นสาย สิงห์กังวาน</a></td>
-					<td class="text-center">ต้น</td>
-					<td class="text-center">t@iton.in.th</td>
-					<td class="text-center text-muted"><i class="fa fa-clock-o"></i></td>
-					<td class="text-center">12/07/2015 11:30 AM</td>
-					<td class="text-center"><a href="#" class="btn btn-xs btn-default"><i class="fa fa-eye"></i>เปิดดู</a></td>
-				</tr>
+				@endforelse
 			</tbody>
 		</table>
 	</div>
 	<div class="box-footer text-right">
-		Pagination
+		{{ $applicants->render() }}
 	</div>
 </div>
 
