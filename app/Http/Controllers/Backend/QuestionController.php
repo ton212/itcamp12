@@ -55,19 +55,21 @@ class QuestionController extends Controller {
 	public function store(Request $request)
 	{
 		$this->validate($request, [
-			'title'  => 'required',
-			'judge'  => 'required',
-			'weight' => 'required|numeric|min:0'
+			'title'       => 'required',
+			'judge'       => 'required',
+			'weight'      => 'required|numeric|min:0',
+			'score_scale' => 'required'
 		], $this->validator_msg);
 
 		$data = [
 			'title'       => $request->title,
 			'description' => $request->description,
+			'help'        => $request->help,
 			'attributes'  => [
 				'judge'  => $request->judge,
 				'weight' => $request->weight
 			],
-			'help'        => $request->help
+			'score_scale' => explode(', ', $request->score_scale)
 		];
 
 		QuizQuestion::create($data);
@@ -110,19 +112,21 @@ class QuestionController extends Controller {
 	public function update($id, Request $request)
 	{
 		$this->validate($request, [
-			'title'  => 'required',
-			'judge'  => 'required',
-			'weight' => 'required|numeric|min:0'
+			'title'       => 'required',
+			'judge'       => 'required',
+			'weight'      => 'required|numeric|min:0',
+			'score_scale' => 'required'
 		], $this->validator_msg);
 
 		$data = [
 			'title'       => $request->title,
 			'description' => $request->description,
+			'help'        => $request->help,
 			'attributes'  => [
 				'judge'  => $request->judge,
 				'weight' => $request->weight
 			],
-			'help'        => $request->help
+			'score_scale' => explode(', ', $request->score_scale)
 		];
 
 		QuizQuestion::findOrFail($id)->fill($data)->save();
