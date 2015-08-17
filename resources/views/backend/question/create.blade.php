@@ -31,6 +31,18 @@
 							<label>ข้อความช่วยเหลือ</label>
 							<input type="text" name="help" class="form-control" value="{{ Input::old('help') }}">
 						</div>
+						<div class="form-group">
+							<label class="required">เกณฑ์การให้คะแนน</label>
+							<select name="score_scale" class="form-control" data-placeholder="เลือกเกณฑ์การให้คะแนน">
+								<option></option>
+								<option @if(Input::old('score_scale') == "-1, 0, 1") selected @endif>-1, 0, 1</option>
+								<option @if(Input::old('score_scale') == "-2, -1, 0, 1, 2") selected @endif>-2, -1, 0, 1, 2</option>
+								<option @if(Input::old('score_scale') == "0, 1") selected @endif>0, 1</option>
+								<option @if(Input::old('score_scale') == "0, 1, 2, 3") selected @endif>0, 1, 2, 3</option>
+								<option @if(Input::old('score_scale') == "0, 1, 2, 3, 4") selected @endif>0, 1, 2, 3, 4</option>
+								<option @if(Input::old('score_scale') == "0, 1, 2, 3, 4, 5") selected @endif>0, 1, 2, 3, 4, 5</option>
+							</select>
+						</div>
 						<div class="row">
 							<div class="col-md-10">
 								<div class="form-group">
