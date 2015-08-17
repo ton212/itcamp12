@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-md-7 col-md-offset-1">
+		<div class="col-xs-9">
 			<div class="box box-primary">
 				<div class="box-header with-border">
 					<h3 class="box-title"><i class="fa fa-user"></i>ข้อมูลใบสมัคร</h3>
@@ -149,20 +149,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-xs-3">
 			<div class="box">
 				<div class="box-header with-border">
 					<h3 class="box-title"><i class="fa fa-search"></i>ตรวจใบสมัคร</h3>
 				</div>
 				<div class="box-body text-center">
-					<p><strong>สถานะใบสมัคร:</strong> รอการตรวจใบสมัคร (Pre-check)</p>
-					<p>
-						<a href="#" class="btn btn-sm btn-success"><i class="fa fa-check-circle"></i>ใบสมัครสมบูรณ์</a>
-						<a href="#" class="btn btn-sm btn-danger"><i class="fa fa-times-circle"></i>ใบสมัครไม่สมบูรณ์</a>
+					<strong>สถานะใบสมัคร:</strong> {{ $applicant->getStatus() }}
+					@if(!$applicant->pre_check)
+					<p style="margin-top: 10px;">
+						<a href="{{ route('backend.applicant.show', $applicant->id).'/pre-check/1' }}" class="btn btn-sm btn-success"><i class="fa fa-check-circle"></i>ใบสมัครสมบูรณ์</a>
+						<a href="{{ route('backend.applicant.show', $applicant->id).'/pre-check/2' }}" class="btn btn-sm btn-danger"><i class="fa fa-times-circle"></i>ใบสมัครไม่สมบูรณ์</a>
 					</p>
-					<p>
-						<a href="{{ route('backend.applicant.scoring', $applicant->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-question-circle"></i>ตรวจคำตอบ</a>
-					</p>
+					@endif
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-header with-border">
+					<h3 class="box-title"><i class="fa fa-search"></i>ตรวจการตอบคำถาม</h3>
+				</div>
+				<div class="box-body text-center">
+					<p><strong>สถานะการตรวจคำตอบ:</strong> ยังไม่สมบูรณ์</p>
+					<a href="{{ route('backend.applicant.scoring', $applicant->id) }}" class="btn btn-sm btn-primary btn-block @if(!$applicant->pre_check) disabled @endif"><i class="fa fa-question-circle"></i>เข้าระบบตรวจคำตอบ</a>
 				</div>
 			</div>
 		</div>

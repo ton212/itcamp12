@@ -74,4 +74,13 @@ class ApplicantController extends Controller {
 		//
 	}
 
+	public function getPreCheck($id, $result)
+	{
+		if ($result > 0 && $result < 3) {
+			Applicant::findOrFail($id)->setPreCheck($result);
+			return redirect(route('backend.applicant.show', $id))->with('alert_success', 'การตรวจใบสมัครเบื้องต้นสมบูรณ์');
+		}
+		return redirect(route('backend.applicant.show', $id))->with('alert_danger', 'SYSTEM ERROR (INVALID INPUT)');
+	}
+
 }

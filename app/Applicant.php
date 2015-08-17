@@ -28,4 +28,20 @@ class Applicant extends Model {
         }
     }
 
+    public function getStatus()
+    {
+        $statuses = [
+            0 => 'รอการตรวจเบื้องต้น (Pre-check)',
+            1 => 'ใบสมัครสมบูรณ์',
+            2 => 'ใบสมัครไม่สมบูรณ์'
+        ];
+        return $statuses[$this->pre_check];
+    }
+
+    public function setPreCheck($result)
+    {
+        $this->pre_check = $result;
+        $this->save();
+    }
+
 }

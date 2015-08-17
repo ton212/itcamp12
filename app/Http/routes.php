@@ -27,6 +27,7 @@ Route::controllers([
 Route::group(['middleware' => 'isAdmin'], function()
 {
 	Route::resource('backend', 'Backend\DashboardController', ['only' => ['index']]);
+    Route::controller('backend/applicant/{applicant}', 'Backend\ApplicantController');
 	Route::resource('backend/applicant', 'Backend\ApplicantController', ['except' => ['create', 'store']]);
 	Route::get('backend/scoring', ['uses' => 'Backend\ScoringController@index', 'as' => 'backend.scoring.index']);
 	Route::get('backend/scoring/{applicant}', ['uses' => 'Backend\ScoringController@scoring', 'as' => 'backend.applicant.scoring']);
