@@ -51,8 +51,8 @@ label.required::after {
 .field {
 	width: 100%;
 	background: #ededed;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 	margin-bottom: 10px;
 }
 
@@ -62,7 +62,7 @@ label.required::after {
 
 .field > .title {
 	background: #fff;
-	padding: 6px;
+	padding: 8px;
 	font-weight: bold;
 }
 

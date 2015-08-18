@@ -13,12 +13,35 @@ class ApplicantController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
+		$filters = [
+			'show'  => $request->get('show', -1),
+			'limit' => $request->get('limit', 10)
+		];
+
+		switch ($filters['show']) {
+			case 0:
+				$applicants = Applicant::waitForPreCheck()->paginate($filters['limit']);
+				break;
+
+			case 1:
+				$applicants = Applicant::approved()->paginate($filters['limit']);
+				break;
+
+			case 2:
+				$applicants = Applicant::unapproved()->paginate($filters['limit']);
+				break;
+
+			default:
+				$applicants = Applicant::paginate($filters['limit']);
+				break;
+		}
+
 		$data = [
 			'page_title'    => 'จัดการใบสมัคร',
 			'page_subtitle' => 'ใบสมัครทั้งหมด',
-			'applicants'    => Applicant::paginate(10)
+			'applicants'    => $applicants
 		];
 		return view('backend.applicant.list.all', $data);
 	}

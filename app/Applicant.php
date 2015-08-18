@@ -44,4 +44,19 @@ class Applicant extends Model {
         $this->save();
     }
 
+    public function scopeApproved($query)
+    {
+        return $query->where('pre_check', 1);
+    }
+
+    public function scopeUnapproved($query)
+    {
+        return $query->where('pre_check', 2);
+    }
+
+    public function scopeWaitForPreCheck($query)
+    {
+        return $query->where('pre_check', 0);
+    }
+
 }

@@ -28,11 +28,11 @@
 					<td class="text-center">{{ $applicant->email }}</td>
 					<td class="text-center">
 						@if($applicant->pre_check == 0)
-							<span class="label label-warning"><i class="fa fa-clock-o"></i>Wait</span>
+							<span class="label label-warning"><i class="fa fa-clock-o"></i>รอการตรวจ</span>
 						@elseif($applicant->pre_check == 1)
-							<span class="label label-success"><i class="fa fa-check-circle"></i>Approved</span>
+							<span class="label label-success"><i class="fa fa-check-circle"></i>ผ่าน</span>
 						@else
-							<span class="label label-danger"><i class="fa fa-times-circle"></i>Cancelled</span>
+							<span class="label label-danger"><i class="fa fa-times-circle"></i>ไม่ผ่าน</span>
 						@endif
 					</td>
 					<td class="text-center">{{ $applicant->created_at }}</td>
