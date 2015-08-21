@@ -66,6 +66,12 @@ label.required::after {
 	font-weight: bold;
 }
 
+.quiz-progress {
+	font-size: 2.3em;
+	padding: 5px;
+	display: block;
+}
+
 
 /*Form Wizard*/
 .bs-wizard {margin: 10px 0; padding: 0 0 10px 0;}

@@ -37,4 +37,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\QuizScoreCard');
 	}
 
+	public static function judgers()
+	{
+		return self::where('judge_group', 1)->get();
+	}
+
+	public function isJudger()
+	{
+		return $this->judge_group > 0;
+	}
+
 }

@@ -30,6 +30,7 @@ Route::group(['middleware' => 'isAdmin'], function()
     Route::controller('backend/applicant/{applicant}', 'Backend\ApplicantController');
 	Route::resource('backend/applicant', 'Backend\ApplicantController', ['except' => ['create', 'store']]);
 	Route::get('backend/scoring', ['uses' => 'Backend\ScoringController@index', 'as' => 'backend.scoring.index']);
-	Route::get('backend/scoring/{applicant}', ['uses' => 'Backend\ScoringController@scoring', 'as' => 'backend.applicant.scoring']);
+	Route::get('backend/scoring/start/{applicant}', ['uses' => 'Backend\ScoringController@getScoring', 'as' => 'backend.scoring.start']);
+    Route::post('backend/scoring/start/{applicant}', ['uses' => 'Backend\ScoringController@postScoring', 'as' => 'backend.scoring.save']);
 	Route::resource('backend/question', 'Backend\QuestionController');
 });

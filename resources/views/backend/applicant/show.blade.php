@@ -164,15 +164,6 @@
 					@endif
 				</div>
 			</div>
-			<div class="box">
-				<div class="box-header with-border">
-					<h3 class="box-title"><i class="fa fa-search"></i>ตรวจการตอบคำถาม</h3>
-				</div>
-				<div class="box-body text-center">
-					<p><strong>สถานะการตรวจคำตอบ:</strong> ยังไม่สมบูรณ์</p>
-					<a href="{{ route('backend.applicant.scoring', $applicant->id) }}" class="btn btn-sm btn-primary btn-block @if(!$applicant->pre_check) disabled @endif"><i class="fa fa-question-circle"></i>เข้าระบบตรวจคำตอบ</a>
-				</div>
-			</div>
 		</div>
 	</div>
 @endsection

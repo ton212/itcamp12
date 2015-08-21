@@ -18,4 +18,9 @@ class QuizScoreCard extends Model {
 		return $this->belongsTo('App\applicant');
 	}
 
+	public function scopeInGroup($query, $group_id)
+	{
+		return $query->where('judger_group', $group_id);
+	}
+
 }

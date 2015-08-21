@@ -59,4 +59,9 @@ class Applicant extends Model {
         return $query->where('pre_check', 0);
     }
 
+    public function isJudgedBy($user_id)
+    {
+        return $this->score_cards()->whereUserId($user_id)->count();
+    }
+
 }
