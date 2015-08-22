@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Applicant;
+use App\QuizQuestion;
 use App\QuizScoreCard;
 use App\User;
 use Auth;
@@ -53,20 +54,23 @@ class ScoringController extends Controller {
         if ($applicant_id != 0) {
             if (Auth::user()->judge_group != 5) {
                 return redirect(route('backend.scoring.start', 0));
-            } else {
-                $answers = Applicant::findOrFail($applicant_id)->quiz_answers->toArray();
             }
         } else {
             $checked_applicant = array_pluck(Auth::user()->score_cards()->get(['applicant_id'])->toArray(), 'applicant_id');
             $applicant = Applicant::whereNotIn('id', $checked_applicant)->approved()->with('quiz_answers')->orderBy(\DB::raw('RAND()'))->take(1)->first();
-
-            $answers = $applicant->quiz_answers->toArray();
+            $applicant_id = $applicant->id;
         }
 
-        session(['judging_applicant' => $answers[0]['applicant_id']]);
+        $questions = QuizQuestion::with(array('answers' => function($query) use ($applicant_id)
+        {
+            $query->where('quiz_answers.applicant_id', '=', $applicant_id);
+
+        }))->get();
+
+        session(['judging_applicant' => $applicant_id]);
 
         $data = [
-            'answers' => $answers
+            'questions' => $questions
         ];
 
         return view('backend.scoring.show', $data);
