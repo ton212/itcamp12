@@ -14,12 +14,12 @@
 								<lable class="control-label"><h3>Question : {{ $question->title }}</h3></label>
 								<textarea class="form-control" rows="10" readonly>{{ $question->answers[0]->answer}}
 								</textarea>
-								<strong>Score :</strong> 
+								<strong>Score :</strong>
 								@foreach($question->score_scale as $scale)
 								<label class="radio-inline">
-									<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="{{ $scale }}"> {{ $scale }}
+									<input type="radio" name="ans{{ $question->id }}" id="inlineRadio1" value="{{ $scale }}"> {{ $scale }}
 								</label>
-							@endforeach
+								@endforeach
 							</div>
 						@endforeach
 						<button class="btn btn-info">Submit</button>

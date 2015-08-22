@@ -51,13 +51,24 @@ class ScoringController extends Controller {
 	{
         session()->forget('judging_applicant');
 
+        $judger_limit = [
+                1 => 3,
+                2 => 3,
+                3 => 3,
+                4 => 3,
+                5 => 3
+        ];
+
         if ($applicant_id != 0) {
             if (Auth::user()->judge_group != 5) {
                 return redirect(route('backend.scoring.start', 0));
             }
         } else {
             $checked_applicant = array_pluck(Auth::user()->score_cards()->get(['applicant_id'])->toArray(), 'applicant_id');
-            $applicant = Applicant::whereNotIn('id', $checked_applicant)->approved()->with('quiz_answers')->orderBy(\DB::raw('RAND()'))->take(1)->first();
+            $applicant = Applicant::whereNotIn('id', $checked_applicant)->approved()->orderBy(\DB::raw('RAND()'))->take(1)->first();
+            if(empty($applicant)) {
+                return redirect(route('backend.scoring.index'));
+            }
             $applicant_id = $applicant->id;
         }
 
@@ -76,9 +87,28 @@ class ScoringController extends Controller {
         return view('backend.scoring.show', $data);
 	}
 
-    public function postScoring()
+    public function postScoring(Request $request)
     {
         $applicant_id = session()->pull('judging_applicant');
+        $questions = QuizQuestion::all();
+        $score = [];
+
+        foreach ($questions as $question) {
+            if( $request->input('ans' . $question->id, False) !== False ) {
+                $score[$question->id] = $request->input('ans' . $question->id);
+            } else {
+                return redirect(route('backend.scoring.start', 0));
+            }
+        }
+
+        $score_cards                = new QuizScoreCard();
+        $score_cards->scores        = $score;
+        $score_cards->user_id       = Auth::user()->id;
+        $score_cards->applicant_id  = $applicant_id;
+        $score_cards->judger_group  = Auth::user()->judge_group;
+        $score_cards->save();
+
+        return redirect(route('backend.scoring.start', 0));
     }
 
 }
