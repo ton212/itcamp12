@@ -51,14 +51,6 @@ class ScoringController extends Controller {
 	{
         session()->forget('judging_applicant');
 
-        $judger_limit = [
-                1 => 3,
-                2 => 3,
-                3 => 3,
-                4 => 3,
-                5 => 3
-        ];
-
         if ($applicant_id != 0) {
             if (Auth::user()->judge_group != 5) {
                 return redirect(route('backend.scoring.start', 0));
@@ -94,7 +86,7 @@ class ScoringController extends Controller {
         $score = [];
 
         foreach ($questions as $question) {
-            if( $request->input('ans' . $question->id, False) !== False ) {
+            if($request->has('ans' . $question->id)) {
                 $score[$question->id] = $request->input('ans' . $question->id);
             } else {
                 return redirect(route('backend.scoring.start', 0));
