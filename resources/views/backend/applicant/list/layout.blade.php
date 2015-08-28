@@ -14,7 +14,7 @@
 						<label class="control-label">การแสดงผล</label><br>
 						<div>
 							<div class="btn-group">
-								<a href="{{ route('backend.applicant.index', ['show' => -1, 'limit' => Input::get('limit', 10)]) }}" class="btn btn-default @if(Input::get('show') == -1) active @endif">
+								<a href="{{ route('backend.applicant.index', ['show' => -1, 'limit' => Input::get('limit', 10)]) }}" class="btn btn-default @if(Input::get('show') == -1 || !Input::has('show')) active @endif">
 									ทั้งหมด
 								</a>
 								<a href="{{ route('backend.applicant.index', ['show' => 1, 'limit' => Input::get('limit', 10)]) }}" class="btn btn-default @if(Input::get('show') == 1) active @endif">
@@ -23,7 +23,7 @@
 								<a href="{{ route('backend.applicant.index', ['show' => 2, 'limit' => Input::get('limit', 10)]) }}" class="btn btn-default @if(Input::get('show') == 2) active @endif">
 									ไม่สมบูรณ์
 								</a>
-								<a href="{{ route('backend.applicant.index', ['show' => 0, 'limit' => Input::get('limit', 10)]) }}" class="btn btn-default @if(Input::get('show') == 0) active @endif">
+								<a href="{{ route('backend.applicant.index', ['show' => 0, 'limit' => Input::get('limit', 10)]) }}" class="btn btn-default @if(Input::get('show') == 0 && Input::has('show')) active @endif">
 									รอตรวจ
 								</a>
 							</div>
@@ -33,11 +33,11 @@
 						<label class="control-label">จำนวนใบสมัครต่อหน้า</label>
 						<div>
 							<div class="btn-group">
-								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 10]) }}" class="btn btn-default @if(Input::get('limit') == 10) active @endif">10</a>
+								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 10]) }}" class="btn btn-default @if(Input::get('limit') == 10 || !Input::has('limit')) active @endif">10</a>
 								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 20]) }}" class="btn btn-default @if(Input::get('limit') == 20) active @endif">20</a>
 								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 30]) }}" class="btn btn-default @if(Input::get('limit') == 30) active @endif">30</a>
 								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 50]) }}" class="btn btn-default @if(Input::get('limit') == 50) active @endif">50</a>
-								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 100]) }}" class="btn btn-default @if(Input::get('limit') == 100) active @endif">100</a>
+								<a href="{{ route('backend.applicant.index', ['show' => Input::get('show', -1), 'limit' => 100]) }}" class="btn btn-default @if(Input::get('limit') == 100 && Input::has('show')) active @endif">100</a>
 							</div>
 						</div>
 					</div>
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 
-		@if(!isset($filters['disable_search']))
+		@if(False)
 		<div class="box">
 			<div class="box-header with-border">
 				<h3 class="box-title"><i class="fa fa-search"></i>ค้นหาใบสมัคร</h3>

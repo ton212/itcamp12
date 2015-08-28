@@ -41,7 +41,8 @@ class ApplicantController extends Controller {
 		$data = [
 			'page_title'    => 'จัดการใบสมัคร',
 			'page_subtitle' => 'ใบสมัครทั้งหมด',
-			'applicants'    => $applicants
+			'applicants'    => $applicants,
+			'filters'       => $filters
 		];
 		return view('backend.applicant.list.all', $data);
 	}
