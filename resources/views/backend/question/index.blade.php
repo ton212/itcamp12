@@ -46,6 +46,10 @@
 								  <i class="fa fa-circle fa-stack-2x @if(in_array(4, $question->attributes->judge)) text-orange @else text-gray @endif"></i>
 								  <i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i>
 								</span>
+								<span class="fa-stack">
+								  <i class="fa fa-circle fa-stack-2x @if(in_array(6, $question->attributes->judge)) text-primary @else text-gray @endif"></i>
+								  <i class="fa fa-plug fa-stack-1x fa-inverse"></i>
+								</span>
 							</td>
 							<td class="text-center">{{ $question->attributes->weight }}</td>
 							<td class="text-center">
