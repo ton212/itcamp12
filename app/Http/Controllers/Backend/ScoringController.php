@@ -86,6 +86,9 @@ class ScoringController extends Controller {
         $score = [];
 
         foreach ($questions as $question) {
+            if(!$question->canScoring()) {
+                continue;
+            }
             if($request->has('ans' . $question->id)) {
                 $score[$question->id] = $request->input('ans' . $question->id);
             } else {

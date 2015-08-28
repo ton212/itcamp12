@@ -39,6 +39,7 @@
 							<th class="text-center">Network</th>
 							<th class="text-center">Game</th>
 							<th class="text-center">สันทนาการ</th>
+							<th class="text-center">IoT</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -91,6 +92,14 @@
 									<i class="fa fa-circle no-margin"></i>
 								@endfor
 								@for($i = 0; $i < 3 - $applicant->score_cards()->inGroup(4)->count(); $i++)
+									<i class="fa fa-circle-o no-margin"></i>
+								@endfor
+							</td>
+							<td class="text-center">
+								@for($i = 0; $i < $applicant->score_cards()->inGroup(6)->count(); $i++)
+									<i class="fa fa-circle no-margin"></i>
+								@endfor
+								@for($i = 0; $i < 3 - $applicant->score_cards()->inGroup(6)->count(); $i++)
 									<i class="fa fa-circle-o no-margin"></i>
 								@endfor
 							</td>

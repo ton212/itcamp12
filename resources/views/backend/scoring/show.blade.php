@@ -9,10 +9,11 @@
 				</div>
 				<div class="box-body">
 					<form method="post">
-						@foreach($questions as $question)
+						@forelse($questions as $question)
+							@if($question->canScoring())
 							<div class="form-group">
 								<lable class="control-label"><h3>คำถาม : {{ $question->title }}</h3></label>
-								<textarea class="form-control" rows="10" readonly>{{ $question->answers[0]->answer}}</textarea>
+								<textarea class="form-control" rows="10" readonly>{{ $question->answers[0]->answer}}</textarea>	
 								<strong>คะแนน :</strong>
 								@foreach($question->score_scale as $scale)
 								<label class="radio-inline">
@@ -20,8 +21,11 @@
 								</label>
 								@endforeach
 							</div>
-						@endforeach
-						<button class="btn btn-info">Submit</button>
+							@endif
+						@empty
+							<h2 class="text-center">ไม่มีคำถามในระบบ</h2>
+						@endforelse
+						<button class="btn btn-info">ยืนยันการตรวจ</button>
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					</form>
 				</div>
