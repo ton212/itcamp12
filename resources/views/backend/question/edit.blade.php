@@ -54,6 +54,7 @@
 										<option value="3" @if(in_array(3, $question->attributes->judge))) selected @endif>Game Development</option>
 										<option value="6" @if(in_array(6, $question->attributes->judge))) selected @endif>IoT</option>
 										<option value="4" @if(in_array(4, $question->attributes->judge))) selected @endif>สันทนาการ</option>
+										<option value="5" @if(in_array(5, $question->attributes->judge))) selected @endif>ประธานค่าย</option>
 									</select>
 								</div>
 							</div>

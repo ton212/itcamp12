@@ -53,6 +53,7 @@
 										<option value="3" @if(in_array(3, Input::old('judge', []))) selected @endif>Game Development</option>
 										<option value="3" @if(in_array(6, Input::old('judge', []))) selected @endif>IoT</option>
 										<option value="4" @if(in_array(4, Input::old('judge', []))) selected @endif>สันทนาการ</option>
+										<option value="5" @if(in_array(5, Input::old('judge', []))) selected @endif>ประธานค่าย</option>
 									</select>
 								</div>
 							</div>
