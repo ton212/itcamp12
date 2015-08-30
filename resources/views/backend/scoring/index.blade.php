@@ -106,7 +106,7 @@
 						</tr>
 						@empty
 						<tr>
-							<td colspan="9" class="text-center">ไม่มีใบสมัครในระบบ</td>
+							<td colspan="10" class="text-center">ไม่มีใบสมัครในระบบ</td>
 						</tr>
 						@endforelse
 					</tbody>
