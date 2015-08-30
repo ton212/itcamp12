@@ -16,7 +16,7 @@
 						<tr>
 							<th class="text-center" width="60px">รหัส</th>
 							<th>คำถาม</th>
-							<th class="text-center" width="160px">ผู้มีสิทธิ์ตรวจคำตอบ</th>
+							<th class="text-center" width="170px">ผู้มีสิทธิ์ตรวจคำตอบ</th>
 							<th class="text-center" width="80px">น้ำหนัก</th>
 							<th class="text-center" width="150px">การกระทำ</th>
 						</tr>
@@ -43,12 +43,12 @@
 								  <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
 								</span>
 								<span class="fa-stack">
-								  <i class="fa fa-circle fa-stack-2x @if(in_array(4, $question->attributes->judge)) text-orange @else text-gray @endif"></i>
-								  <i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i>
-								</span>
-								<span class="fa-stack">
 								  <i class="fa fa-circle fa-stack-2x @if(in_array(6, $question->attributes->judge)) text-primary @else text-gray @endif"></i>
 								  <i class="fa fa-plug fa-stack-1x fa-inverse"></i>
+								</span>
+								<span class="fa-stack">
+								  <i class="fa fa-circle fa-stack-2x @if(in_array(4, $question->attributes->judge)) text-orange @else text-gray @endif"></i>
+								  <i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i>
 								</span>
 							</td>
 							<td class="text-center">{{ $question->attributes->weight }}</td>
