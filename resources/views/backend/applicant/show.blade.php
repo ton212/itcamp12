@@ -81,36 +81,16 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-2">
+						<div class="col-md-4">
 							<div class="field">
 								<span class="title">ระดับชั้น</span>
-								<span class="value">{{ $applicant->class }}</span>
+								<span class="value">{{ $applicant->academic['grade'] }} ({{ $applicant->academic['class'] }})</span>
 							</div>
 						</div>
-						<div class="col-md-10">
+						<div class="col-md-8">
 							<div class="field">
 								<span class="title">โรงเรียน</span>
-								<span class="value">{{ $applicant->school }}</span>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="field">
-								<span class="title">ผู้ปกครอง</span>
-								<span class="value">{{ $applicant->medical }}</span>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="field">
-								<span class="title">เกี่ยวข้องเป็น</span>
-								<span class="value">{{ $applicant->medical }}</span>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="field">
-								<span class="title">เบอร์ติดต่อ</span>
-								<span class="value">{{ $applicant->medical }}</span>
+								<span class="value">{{ $applicant->academic['school'] }} ({{ $applicant->academic['location'] }})</span>
 							</div>
 						</div>
 					</div>
@@ -118,7 +98,7 @@
 						<div class="col-md-12">
 							<div class="field">
 								<span class="title">โรคประจำตัว</span>
-								<span class="value">{{ $applicant->medical }}</span>
+								<span class="value">{{ $applicant->medical['disease'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -126,7 +106,7 @@
 						<div class="col-md-12">
 							<div class="field">
 								<span class="title">แพ้อาหาร</span>
-								<span class="value">{{ $applicant->medical }}</span>
+								<span class="value">{{ $applicant->medical['food'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -134,15 +114,192 @@
 						<div class="col-md-12">
 							<div class="field">
 								<span class="title">แพ้ยา</span>
-								<span class="value">{{ $applicant->medical }}</span>
+								<span class="value">{{ $applicant->medical['med'] }}</span>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-xs-9">
 							<div class="field">
 								<span class="title">ปพ.1</span>
 								<span class="value">http://www.itcamp.in.th/12/storage/uploads/transcript/{{ $applicant->transcript }}</span>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="field">
+								<span class="title">ขนาดเสื้อ</span>
+								<span class="value">{{ $applicant->shirt_size }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box box-primary">
+				<div class="box-header with-border">
+					<h3 class="box-title"><i class="fa fa-phone"></i>ข้อมูลการติดต่อ</h3>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">บ้านเลขที่</span>
+								<span class="value">{{ $applicant->address['house_no'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="field">
+								<span class="title">หมู่</span>
+								<span class="value">{ ['village_no'] }</span>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="field">
+								<span class="title">ถนน</span>
+								<span class="value">{{ $applicant->address['street'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">แขวง</span>
+								<span class="value">{{ $applicant->address['sub_district'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">เขต</span>
+								<span class="value">{{ $applicant->address['district'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">จังหวัด</span>
+								<span class="value">{{ $applicant->address['province'] }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box box-primary">
+				<div class="box-header with-border">
+					<h3 class="box-title"><i class="fa fa-user-secret"></i>ข้อมูลผู้ปกครอง</h3>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="field">
+								<span class="title">ชื่อ</span>
+								<span class="value">{{ $applicant->parent['firstname'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="field">
+								<span class="title">นามสกุล</span>
+								<span class="value">{{ $applicant->parent['lastname'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="field">
+								<span class="title">เกี่ยวข้องเป็น</span>
+								<span class="value">{{ $applicant->parent['relate'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">บ้านเลขที่</span>
+								<span class="value">{{ $applicant->parent_addr['house_no'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="field">
+								<span class="title">หมู่</span>
+								<span class="value">{ ['village_no'] }</span>
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="field">
+								<span class="title">ถนน</span>
+								<span class="value">{{ $applicant->parent_addr['street'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">แขวง</span>
+								<span class="value">{{ $applicant->parent_addr['sub_district'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">เขต</span>
+								<span class="value">{{ $applicant->parent_addr['district'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">จังหวัด</span>
+								<span class="value">{{ $applicant->parent_addr['province'] }}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box box-primary">
+				<div class="box-header with-border">
+					<h3 class="box-title"><i class="fa fa-book"></i>ข้อมูลความสนใจ</h3>
+				</div>
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">คณะ</span>
+								<span class="value">{{ $applicant->university_interesting[0]['firstname'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">สถาบัน</span>
+								<span class="value">{{ $applicant->university_interesting[0]['lastname'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">คณะ</span>
+								<span class="value">{{ $applicant->university_interesting[1]['firstname'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">สถาบัน</span>
+								<span class="value">{{ $applicant->university_interesting[1]['lastname'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">คณะ</span>
+								<span class="value">{{ $applicant->university_interesting[2]['firstname'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">สถาบัน</span>
+								<span class="value">{{ $applicant->university_interesting[2]['lastname'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="field">
+								<span class="title">ประวัติค่าย</span>
+								<span class="value">{{ $applicant->camp_history }}</span>
 							</div>
 						</div>
 					</div>
