@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'thsansneue';
+	src: url('../fonts/ThaiSansNeue-ExtraBold.ttf')  format('truetype'),
+		url('../fonts/ThaiSansNeue-ExtraBold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'thsansneue';
+	src: url('../fonts/ThaiSansNeue-ExtraBoldItali.ttf')  format('truetype'),
+		url('../fonts/ThaiSansNeue-ExtraBoldItali.otf') format('opentype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'thsansneue';
+	src: url('../fonts/ThaiSansNeue-Regular.ttf')  format('truetype'),
+		url('../fonts/ThaiSansNeue-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'thsansneue';
+	src: url('../fonts/ThaiSansNeue-Italic.ttf')  format('truetype'),
+		url('../fonts/ThaiSansNeue-Italic.otf') format('opentype');
+	font-weight: normal;
+	font-style: italic;
+}

@@ -1,0 +1,22 @@
+@mixin createBlock($name, $bgcolor, $height:auto, $max-height:none, $min-height:none) {
+	&.block-#{$name} {
+		height: $height;
+		max-height: $max-height;
+		min-height: $min-height;
+		background-color: $bgcolor;
+	}
+}
+
+@mixin imgBGLayer() {
+	> img {
+		width: 100%;
+		margin-bottom: -12px;
+	}
+}
+
+@mixin imgPosSetting($name, $top, $left) {
+	.#{$name} {
+		top: $top;
+		left: $left;
+	}
+}
