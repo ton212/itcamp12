@@ -32,3 +32,5 @@ Route::group(['middleware' => 'isAdmin'], function()
     Route::post('backend/scoring/start/{applicant}', ['uses' => 'Backend\ScoringController@postScoring', 'as' => 'backend.scoring.save']);
 	Route::resource('backend/question', 'Backend\QuestionController');
 });
+
+Route::resource('link-exchange', 'Backend\LinkExchangeController');
