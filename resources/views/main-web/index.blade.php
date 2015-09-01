@@ -4,26 +4,35 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>ITCamp#12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 10-13 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
-		<link rel="stylesheet" href="main_assets/css/main.style.css" />
+		<link rel="stylesheet" href="main_assets/css/main.style.min.css" />
 		<script src="main_assets/javascript/jquery.min.js"></script>
 		<script src="main_assets/javascript/TweenMax.min.js"></script>
 		<script src="main_assets/javascript/jquery.gsap.min.js"></script>
 		<script src="main_assets/javascript/velocity.min.js"></script>
 		<script src="main_assets/javascript/detectmobilebrowser.js"></script>
-		<script src="main_assets/javascript/main.script.js"></script>
+		<script src="main_assets/javascript/main.script.min.js"></script>
 
 	</head>
 
 	<body>
 
 		<div class="preloader">
-			<img src="main_assets/img/dinocute_loader.gif" />
+			<img src="main_assets/img/dinocute_walking.gif" />
 		</div>
 
 		<div class="c-overlay-shield" onclick="overlayToggle()"></div>
 		<div class="c-overlay">
 			<div class="c-container">
 				<div class="close" onclick="overlayToggle()"></div>
+			</div>
+		</div>
+
+		<div class="s-overlay-shield" onclick="overlayShareToggle()">
+			
+		</div>
+		<div class="s-overlay">
+			<div class="s-container">
+				<div class="close" onclick="overlayShareToggle()"></div>
 			</div>
 		</div>
 
@@ -70,7 +79,7 @@
 			<div class="layer cloudfront" data-addoffsety="0" data-scrollmodifier="1">
 				<img src="main_assets/img/block1/cloudfront.png" />
 				<div class="background">
-					<div class="layer itcamp-description" data-addoffsety="0" data-scrollmodifier="0.56">
+					<div class="layer itcamp-description" data-addoffsety="0" data-scrollmodifier="0.72">
 						<div class="container-center">
 							<h1>ไอทีแคมป์<sup>ครั้งที่ 12</sup></h1>
 							<hr />
@@ -81,13 +90,13 @@
 			</div>
 			<div class="layer itcamp-head" data-addoffsety="0" data-scrollmodifier="0">
 				<div class="background">
-					<div class="layer itcamp-logo" data-addoffsety="40" data-scrollmodifier="1.25">
+					<div class="layer itcamp-logo" data-addoffsety="0" data-scrollmodifier="1.25">
 						<div class="container-center">
 							<img src="main_assets/img/logo/itcamp12logo.png" width="700" />
 							<div class="smoke"></div>
 							<h1>ไอทีแคมป์ครั้งที่ 12</h1>
 							<h2>คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h2>
-							<div class="sharebox">กล่องแชร์ไง</div>
+							{{-- <div class="sharebox">ใส่พวกแชร์ facebook หรือ twitter อะ ถ้าไม่ใส่ลบ tag นี้ไปเลยนะ</div> --}}
 						</div>
 					</div>
 				</div>
@@ -114,24 +123,22 @@
 			<div class="layer mountainfront" data-addoffsety="0" data-scrollmodifier="1">
 				<img src="main_assets/img/block2/mtfront.png" />
 				<div class="background">
-					<div class="layer itcamp-sponsor" data-addoffsety="-270" data-scrollmodifier="0.56">
+					<div class="layer itcamp-sponsor" data-addoffsety="-270" data-scrollmodifier="0.65">
 						<div class="container-center">
 							<h1>ผู้สนับสนุน</h1>
 							<hr />
 							<div class="sponsor">
 								<img src="main_assets/img/sponsor/kmitl.jpg" />
 								<img src="main_assets/img/sponsor/itkmitl.jpg" />
+								<div class="breakimage"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<section class="block block-forest">
-			<div class="layer tree" data-addoffsety="630" data-scrollmodifier="1.35">
-				<img src="main_assets/img/block3/tree.png" />
-				<div class="background"></div>
-			</div>
 			<div class="layer bush1" data-addoffsety="340" data-scrollmodifier="1.1655">
 				<img src="main_assets/img/block3/bush1.png" />
 				<div class="background"></div>
@@ -146,29 +153,29 @@
 							<ul class="camp">
 								<li id="content-camp-app">
 									<img src="main_assets/img/logo/applicationsaurus.png" />
-									<p>เปิดโลกกว้างไปกับดินแดนแห่งแอพพลิเคชั่น ที่จะพาน้องๆ ไปสัมผัสกับประสบการณ์การสร้างสรรค์ผลงานแอพพลิเคชั่นบนระบบปฏิบัติการ Windows 8.1 ให้ก้าวล้ำและไม่เหมือนใครในแบบของน้องๆ เอง ด้วยโปรแกรมสุดเจ๋งอย่าง Microsoft Visual Studio 2013 แล้วน้องจะพบว่าการสร้างแอพพลิเคชั่นด้วยตัวเองนั้นไม่ใช่เรื่องยากอีกต่อไป มาร่วมกันสร้างสรรค์ผลงานดีๆ ประสิทธิเยี่ยมไปพร้อมๆ กันนะ</p>
-									<p>สำหรับน้องๆ คนไหนที่กลัวว่าตัวเองจะทำไม่ได้ ไม่มีพื้นฐานทางด้าน Programming หรือคิดว่าความรู้ยังไม่แน่นพอ ไม่ต้องเก็บเอาไปคิดมากนะครับ เพราะพี่ๆ พร้อมที่จะสอนพวกน้องๆ แน่นอน ขอเพียงแค่เรามีความตั้งใจ กล้าที่จะคิด กล้าที่จะทำ ที่เหลือปล่อยหน้าที่พวกพี่เอง</p>
-									<a class="button pill camp-app" href="javascript:;">สมัครเข้าค่าย</a>
+									<p>เปิดโลกกว้างไปกับดินแดนแห่งแอพพลิเคชั่น ที่จะพาน้องๆ ไปสัมผัสกับประสบการณ์การสร้างสรรค์ผลงานแอพพลิเคชั่นบนระบบปฏิบัติการ Windows 10 ให้ก้าวล้ำและไม่เหมือนใครในแบบของตัวเอง ด้วยโปรแกรมสุดเจ๋งอย่าง Microsoft Visual Studio 2015 แล้วน้องจะพบว่าการสร้างแอพพลิเคชั่นด้วยตัวเองนั้นไม่ใช่เรื่องยากอีกต่อไป มาร่วมกันสร้างสรรค์ผลงานที่ดี ประสิทธิภาพเยี่ยมไปด้วยกันนะ</p>
+									<p>สำหรับน้องๆ คนไหนที่กลัวว่าตัวเองจะทำไม่ได้ ไม่มีพื้นฐานทางด้าน Programming หรือคิดว่าความรู้ยังไม่แน่นพอ ไม่ต้องเก็บเอาไปคิดมากนะครับ เพราะพวกพี่พร้อมที่จะสอนให้กับน้องอย่างเต็มที่แน่นอน ขอเพียงแค่เรามีความตั้งใจ กล้าที่จะคิด กล้าที่จะทำ ที่เหลือปล่อยหน้าที่พวกพี่เอง</p>
+									<a class="button pill camp-app" href="{{ route('register.create', ['camp' => 1]) }}">สมัครเข้าค่าย</a>
 								</li>
 								<li id="content-camp-game">
 									<img src="main_assets/img/logo/gamemakernodon.png" />
-									<p>ร่วมเดินทางไปด้วยกันบนเส้นทางแห่งเกมเมอร์ จากผู้เล่นสู่ผู้สร้าง ดินแดนที่จะทำให้น้องๆ ได้รับความรู้ในการสร้างสรรค์ผลงานเกมในแบบของน้องๆ เอง</p>
-									<p>โดยน้องๆ จะได้เติมแต่งจินตนาการผ่านโปรแกรม Construct 2 ที่เรียกได้ว่าสะดวกในการใช้งานและง่ายมากมาก เพียงแค่ใช้วิธี drag-and-drop ก็สามารถสร้างผลงานเจ๋งๆ ได้แล้ว ไม่ต้องเสียเวลามาเขียนโค้ดให้ยุ่งยากจนเกินไป แล้วน้องจะพบว่าการสร้างเกมจะไม่ใช่เรื่องยากสำหรับน้องๆ อีกต่อไป</p>
-									<a class="button pill camp-game" href="javascript:;">สมัครเข้าค่าย</a>
+									<p>ร่วมเดินทางไปด้วยกันบนเส้นทางแห่งเกมเมอร์ จากผู้เล่นสู่ผู้สร้าง ดินแดนที่จะทำให้น้องๆ ได้รับความรู้ในการสร้างสรรค์ผลงานเกมตามสไตล์ของตัวเอง</p>
+									<p>โดยน้องๆ จะได้เติมแต่งจินตนาการผ่านโปรแกรม Construct 2 ที่เรียกได้ว่าสะดวกในการใช้งานและง่ายมากมาก เพียงแค่ใช้วิธี drag-and-drop ก็สามารถสร้างผลงานสุดเจ๋งได้แล้ว ไม่ต้องเสียเวลามาเขียนโค้ดให้ยุ่งยากจนเกินไป แล้วน้องจะได้รู้ว่าการสร้างเกมจะไม่ใช่เรื่องยากอีกต่อไป</p>
+									<a class="button pill camp-game" href="{{ route('register.create', ['camp' => 2]) }}">สมัครเข้าค่าย</a>
 								</li>
 							</ul>
 							<ul class="camp">
 								<li id="content-camp-network">
 									<img src="main_assets/img/logo/trexnetwork.png" />
 									<p>ผจญภัยสุดมันส์ไปบนระบบเครือข่ายคอมพิวเตอร์อันซับซ้อน รวมทั้งกระบวนการทำงานที่น่าทึ่ง ที่จะทำให้น้องๆ ได้เรียนรู้ขั้นตอนการทำงานที่แท้จริงว่าทำงานอย่างไร โดยเนื้อหาส่วนที่สอนนี้ส่วนหนึ่งมาจากวิชา Fundamentals of Computer Networks และ Computer Networking for Enterprise and ISP ของคณะเทคโนโลยีสารสนเทศ เรียกได้ว่าเป็นการปูพื้นฐานและได้ทดลองเรียนไปด้วยในตัว</p>
-									<p>นอกจากความรู้ทางด้านทฤษฎีแล้ว น้องๆ ก็ยังจะได้ลองลงมือสร้างระบบจำลอง Internet บนโปรแกรม Packet Tracer พร้อมอุปกรณ์ที่ครบครัน โดยที่น้องไม่ต้องไปหาซื้อที่ไหนเลย เพราะพวกพี่ๆ ได้เตรียมไว้สอนน้องๆ เรียบร้อยแล้ว</p>
-									<a class="button pill camp-network" href="javascript:;">สมัครเข้าค่าย</a>
+									<p>นอกจากความรู้ทางด้านทฤษฎีแล้ว น้องๆ ก็ยังจะได้ลองลงมือสร้างระบบจำลอง Internet บนโปรแกรม Packet Tracer พร้อมอุปกรณ์ที่ครบครัน โดยที่น้องไม่ต้องไปหาซื้อที่ไหนเลย เพราะพวกพี่ได้เตรียมไว้สอนน้องทุกคนเรียบร้อยแล้ว</p>
+									<a class="button pill camp-network" href="{{ route('register.create', ['camp' => 3]) }}">สมัครเข้าค่าย</a>
 								</li>
 								<li id="content-camp-iot">
 									<img src="main_assets/img/logo/iotceramus.png" />
-									<p>เปิดโลกกว้างไปกับดินแดนแห่งแอพพลิเคชั่น ที่จะพาน้องๆ ไปสัมผัสกับประสบการณ์การสร้างสรรค์ผลงานแอพพลิเคชั่นบนระบบปฏิบัติการ Windows 8.1 ให้ก้าวล้ำและไม่เหมือนใครในแบบของน้องๆ เอง ด้วยโปรแกรมสุดเจ๋งอย่าง Microsoft Visual Studio 2013 แล้วน้องจะพบว่าการสร้างแอพพลิเคชั่นด้วยตัวเองนั้นไม่ใช่เรื่องยากอีกต่อไป มาร่วมกันสร้างสรรค์ผลงานดีๆ ประสิทธิเยี่ยมไปพร้อมๆ กันนะ</p>
-									<p>สำหรับน้องๆ คนไหนที่กลัวว่าตัวเองจะทำไม่ได้ ไม่มีพื้นฐานทางด้าน Programming หรือคิดว่าความรู้ยังไม่แน่นพอ ไม่ต้องเก็บเอาไปคิดมากนะครับ เพราะพี่ๆ พร้อมที่จะสอนพวกน้องๆ แน่นอน ขอเพียงแค่เรามีความตั้งใจ กล้าที่จะคิด กล้าที่จะทำ ที่เหลือปล่อยหน้าที่พวกพี่เอง</p>
-									<a class="button pill camp-iot" href="javascript:;">สมัครเข้าค่าย</a>
+									<p>ท่องไปบนดินแดนแห่งเทคโนโลยีล้ำสมัย ที่พัฒนาขึ้นตามแนวคิด Internet of Things ที่จะเปลี่ยนโลกให้ก้าวไปข้างหน้าด้วยเทคโนโลยีสุดไฮเทค มาร่วมเป็นส่วนหนึ่งในการสร้างสรรค์ผลงานสุดพิเศษนี้ไปด้วยกัน ไม่เพียงแค่การเรียนรู้ในเชิงทฤษฎี แต่พวกพี่ยังได้เตรียมอุปกรณ์ไว้ให้สำหรับน้องๆ ได้ทดลองลงมือสร้างมันขึ้นมาจริงๆ ไม่ว่าจะเป็น Arduino Uno R3, ESP8266 รวมทั้งเครื่องมืออีกมากมายที่จะช่วยให้น้องสามารถสร้างสรรค์ผลงานอันล้ำเลิศนี้</p>
+									<p>แต่ไม่ต้องห่วงไป เพราะอุปกรณ์ที่พวกพี่ได้เตรียมไว้ให้นั้นน้องจะไม่ต้องเสียค่าใช้จ่ายเพิ่มเติมใดๆ ทั้งสิ้น และไม่ต้องกลัวว่าจะใช้งานไม่เป็น เพราะพวกพี่จะคอยดูแลและคอยสอนวิธีการใช้งานให้กับน้องๆ เองแม้เป็นมือใหม่ รู้อย่างนี้แล้วจะรออะไร รีบสมัครมาเข้าร่วมกันเลย</p>
+									<a class="button pill camp-iot" href="{{ route('register.create', ['camp' => 6]) }}">สมัครเข้าค่าย</a>
 								</li>
 							</ul>
 						</div>
@@ -200,7 +207,7 @@
 								<li onclick="enlarge(9)"><img src="main_assets/img/pic/09.jpg" width="100%" height="100%" alt=""></li>
 								<li onclick="enlarge(10)"><img src="main_assets/img/pic/10.jpg" width="100%" height="100%" alt=""></li>
 								<li onclick="enlarge(11)"><img src="main_assets/img/pic/11.jpg" width="100%" height="100%" alt=""></li>
-								<li onclick="enlarge(9)"><img src="main_assets/img/pic/09.jpg" width="100%" height="100%" alt=""></li>
+								<li onclick="enlarge(12)"><img src="main_assets/img/pic/12.jpg" width="100%" height="100%" alt=""></li>
 							</ul>
 							<div class="clearfloat"></div>
 						</div>
@@ -233,7 +240,7 @@
 									<div class="profile-data">
 										<h1>นายศุภโชค พงษ์ขวัญ (พี่นัท)</h1>
 										<ul class="profile-history">
-											<li><span class="label label--badge">ITCamp 7, 9, 10</span> พี่ค่าย</li>
+											<li><span class="label label--badge">ITCAMP 7, 9, 10</span> พี่ค่าย</li>
 											<li><span class="label label--badge">ปัจจุบัน</span> Network engineer บริษัท Dimension data</li>
 										</ul>
 										<p>ไอทีแคมป์เป็นค่ายที่เต็มไปด้วยภาพของความสุข มีการผสมผสานความรู้ ควบคู่กับความสนุกสนานได้ลงตัวมากๆ น้องๆ หลายคนได้เรียนรู้อะไรใหม่ๆ ที่นี่ จนกลายเป็นแรงบันดาลใจในการศึกษาด้านเทคโนโลยีคอมพิวเตอร์ ก่อนที่จะก้าวเข้าสู่รั้วมหาวิทยาลัย บางคนที่มีพื้นฐานทางด้านนี้อยู่แล้วก็ได้มาพบปะพูดคุยกับพี่ๆ และได้เจอเพื่อนๆ ที่สนใจอะไรเหมือนกัน จับกลุ่มคุยกันสนุกถูกคอจนกลายมาเป็นเพื่อนสนิทกัน บางคนยังมีคำถามค้างอยู่ในใจของตัวเอง ว่าจริงๆ แล้วเราชอบอะไร? ก็ได้มาเจอกับคำตอบที่ตรงใจ ณ ที่แห่งนี้
@@ -256,7 +263,7 @@
 									<div class="profile-data">
 										<h1>นายธีรโชติ จิวะรังสินี (พี่โอ๊ต)</h1>
 										<ul class="profile-history">
-											<li><span class="label label--badge">ITCAMP 10</span> Network</li>
+											<li><span class="label label--badge">ITCAMP 10</span> น้องค่าย Network</li>
 											<li><span class="label label--badge">ITCAMP 11</span> พี่ค่าย</li>
 											<li><span class="label label--badge">ปัจจุบัน</span> นักศึกษาคณะเทคโนโลยีสารสนเทศ สจล. ชั้นปีที่ 2</li>
 										</ul>
@@ -283,13 +290,6 @@
 				<div class="background">
 					<div class="itcamp-contact" data-addoffsety="140" data-scrollmodifier="1">
 						<div class="container-center">
-							<!--
-							<div class="box-history">
-								<h2>ความเป็นมา</h2>
-								<p>เนื่องจากปัจจุบันเทคโนโลยีสารสนเทศเป็นสิ่งที่มีความสำคัญและมีบทบาทอย่างมากไม่ว่าจะเป็นด้านการเรียนการสอน การวิจัยและด้านกิจกรรมต่างๆ ทางคณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง คณะที่มีความพร้อมทางด้านเทคโนโลยีคอมพิวเตอร์และการสื่อสาร ตลอดจนบุคลากรที่มีความรู้และความสามารถ จึงมีวัตถุประสงค์ให้เยาวชนมีโอกาสเพิ่มพูนความรู้ที่ได้ไปประยุกต์ใช้ให้เกิดประโยชน์</p>
-								<p>ดังนั้นสโมสรนักศึกษาคณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบังจึงได้จัดทำค่ายไอทีแคมป์ครั้งที่ 12 ขึ้นมา เพื่อให้นักเรียนระดับชั้นมัธยมศึกษาตอนปลายและ ปวช. ได้มาเรียนรู้เกี่ยวกับเทคโนโลยีคอมพิวเตอร์ซึ่งประกอบด้วยค่ายย่อย Applicationosaurus, Game Maker Nodon, T-Rex Network และ IoT-Ceramus อีกทั้งยังเป็นการเปิดโอกาสให้น้องๆ ได้สอบถามข้อสงสัยที่น่าสนใจต่างๆ เพื่อเป็นแนวทางในการศึกษาต่อในอนาคตอีกด้วย</p>
-							</div>
-							-->
 							<h1>กำหนดการ</h1>
 							<hr />
 							<div class="box">
@@ -304,7 +304,7 @@
 										<img class="tree end" src="main_assets/img/timeline/camp.png" />
 									</div>
 									<div class="timeline-current">
-										<img class="dinocute" src="main_assets/img/timeline/dinocute.gif" width="80" />
+										<img class="dinocute" src="main_assets/img/timeline/dinocute_still.gif" width="80" />
 									</div>
 									<div class="timeline-description">
 										<span class="start">1 กันยายน 58<br />เปิดรับสมัคร</span>
@@ -320,13 +320,13 @@
 										<h2>คำถามที่พบบ่อย</h2>
 										<ul>
 											<li>Q: ค่ายนี้จัดขึ้นที่ไหน อย่างไร ?</li>
-											<li>A: ค่ายนี้จัดที่<b>คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</b> ตลอดระยะเวลา 4 วัน 3 คืน โดยที่น้องจะไม่ได้รับอนุญาตให้ออกจากบริเวณที่จัดกิจกรรม ยกเว้นในกรณีที่ติดธุระเร่งด่วน และมีผู้ปกครองมารับด้วยตนเอง การเดินทางมายังคณะเทคโนโลยีสารสนเทศ สามารถดูได้ที่<b><a href="http://www.it.kmitl.ac.th/about/contact/map" target="_blank">เว็บไซต์ของคณะ</a></b>ได้เลยนะครับ</li>
+											<li>A: ค่ายนี้จัดที่คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง ตลอดระยะเวลา 4 วัน 3 คืน โดยที่น้องจะไม่ได้รับอนุญาตให้ออกจากบริเวณที่จัดกิจกรรม ยกเว้นในกรณีที่ติดธุระเร่งด่วน และมีผู้ปกครองมารับด้วยตนเอง การเดินทางมายังคณะเทคโนโลยีสารสนเทศ สามารถดูได้ที่<a href="http://www.it.kmitl.ac.th/about/contact/map" target="_blank">เว็บไซต์ของคณะ</a>ได้เลยนะครับ</li>
 											<li>Q: มีค่าใช้จ่ายหรือไม่ จำนวนเท่าไหร่ และชำระตอนไหน สละสิทธิ์ได้เงินคืนหรือไม่ ? </li>
-											<li>A: <b>มีค่าใช้จ่าย จำนวน 500 บาท</b> โดยชำระตามเวลาที่กำหนด (1 - 15 พฤศจิกายน 2558) หากน้องคนใดจะสละสิทธิ์ สามารถกดปุ่มสละสิทธิ์ที่หน้าเว็บและ<b>ขอให้น้องๆ คิดให้รอบคอบก่อนจะชำระเงิน เพราะหากน้องสละสิทธิ์จะไม่ได้รับเงินคืนครับ</b></li>
+											<li>A: มีค่าใช้จ่าย จำนวน 500 บาท โดยชำระตามเวลาที่กำหนด (1 - 15 พฤศจิกายน 2558) หากน้องคนใดจะสละสิทธิ์ สามารถกดปุ่มสละสิทธิ์ที่หน้าเว็บและขอให้น้องๆ คิดให้รอบคอบก่อนจะชำระเงิน เพราะหากน้องสละสิทธิ์จะไม่ได้รับเงินคืนครับ</li>
 											<li>Q: ต้องพักค้างคืนที่ค่ายหรือเปล่า ?</li>
 											<li>A: ใช่ครับ เพื่อให้น้องๆ สะดวกต่อการเข้าร่วมกิจกรรม น้องๆ จะได้นอนพักในห้องพักที่พี่ๆ จัดเตรียมไว้ให้ที่คณะ ซึ่งติดแอร์เย็นฉ่ำ สะดวกสบาย ง่ายต่อการทำกิจกรรมของน้องๆ และที่สำคัญ พี่ๆ จะดูแลน้องได้ตลอด 24 ชั่วโมงตลอดโครงการ น้องๆ สบายใจได้ครับ</li>
 											<li>Q: สมัครมากกว่าหนึ่งค่ายย่อยหรือเปลี่ยนไปอยู่ค่ายอื่นได้หรือไม่ ?</li>
-											<li>A: <b>ไม่สามารถสมัครได้ครับ</b> ดังนั้นน้องๆ ควรจะตัดสินใจให้ชัดเจนว่าจะสมัครค่ายไหน เพราะช่วงที่มีการเรียนการสอน แต่ละค่ายจะจัดการเรียนการสอนแยกกันอย่างชัดเจน</li>
+											<li>A: ไม่สามารถสมัครได้ครับ ดังนั้นน้องๆ ควรจะตัดสินใจให้ชัดเจนว่าจะสมัครค่ายไหน เพราะช่วงที่มีการเรียนการสอน แต่ละค่ายจะจัดการเรียนการสอนแยกกันอย่างชัดเจน</li>
 											<li>Q: จำเป็นต้องมีความรู้มาก่อนหรือไม่ ?</li>
 											<li>A: ไม่จำเป็นครับ ขอแค่เพียงน้องๆ มีความสนใจและใฝ่รู้ก็พอครับ ที่เหลือพี่ๆ จะเป็นคนช่วยสอนน้องๆ เอง</li>
 											<li>Q: ค่ายรับระดับชั้นไหนบ้าง ปวช. สามารถสมัครได้หรือเปล่า ?</li>
@@ -370,6 +370,10 @@
 											</td>
 										</tr>
 									</table>
+									<div class="box-share">
+										<h3>ร่วมประชาสัมพันธ์กับเรา</h3>
+										<a class="button pill" href="javascript:;" onclick="overlayShareToggle()">คลิกที่นี่</a>
+									</div>
 								</div>
 							</div>
 						</div>
