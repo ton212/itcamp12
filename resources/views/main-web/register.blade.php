@@ -413,10 +413,10 @@
 							<input name="answers[{{$i-1}}][answer]" type="file"><br>
 							<input type="hidden" name="answers[{{$i-1}}][file]" value="1">
 						@else
-							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old('answers['.($i-1).'][answer]') }}</textarea>
+							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
 						@endif
 					@else
-						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old('answers['.($i-1).'][answer]') }}</textarea>
+						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
 					@endif
 					<input type="hidden" name="answers[{{$i-1}}][qid]" value="{{ $question->id }}">
 					<p class="help-block text-danger">{{ $question->help }}</p>
