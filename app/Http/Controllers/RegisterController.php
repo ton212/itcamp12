@@ -36,7 +36,7 @@ class RegisterController extends Controller {
 				break;
 
 			default:
-				redirect('/');
+				return redirect('/');
 				break;
 		}
 
