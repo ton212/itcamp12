@@ -4,6 +4,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Applicant extends Model {
 
+    protected $fillable =  [
+        'prefix', 'firstname', 'lastname', 'nickname', 'gender', 'email',
+        'id_card', 'birthday', 'religion', 'academic', 'medical', 'transcript',
+        'shirt_size', 'address', 'parent', 'university_interesting',
+        'camp_history', 'facebook'
+    ];
+
+    protected $casts = [
+        'academic'               => 'array',
+        'medical'                => 'array',
+        'parent'                 => 'array',
+        'university_interesting' => 'array',
+        'address'                => 'array',
+        'camp_history'           => 'array'
+    ];
+
     public function quiz_answers()
     {
         return $this->hasMany('App\QuizAnswer');
@@ -22,9 +38,9 @@ class Applicant extends Model {
     public function getFormattedTel()
     {
         if (strlen($this->tel) == 9) {
-            return preg_replace("/^(\d{2})(\d{3})(\d{4})$/", "$1-$2-$3", $this->tel);
+            return preg_replace("/^(\d{2})(\d{3})(\d{4})$/", "$1-$2-$3", $this->address['tel']);
         } else {
-            return preg_replace("/^(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $this->tel);
+            return preg_replace("/^(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $this->address['tel']);
         }
     }
 
