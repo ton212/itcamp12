@@ -165,7 +165,7 @@
 				</div>
 				<div class="form-group col-xs-5 floating-label-form-group controls">
 					<label>Facebook</label>
-					<input name="facebook" type="text" class="form-control" value="{{ Input::old('facebook') }}" placeholder="Facebook (กรอกเฉพาะ username (ดูจาก URL หน้าโปรไฟล์ของน้อง))">
+					<input name="facebook" type="text" class="form-control" value="{{ Input::old('facebook') }}" placeholder="Facebook (กรอกเฉพาะ username (ดูจาก URL หน้าโปรไฟล์)">
 				</div>
 
 			</div>

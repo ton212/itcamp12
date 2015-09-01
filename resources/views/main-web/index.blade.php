@@ -163,7 +163,7 @@
 									<img src="main_assets/img/logo/gamemakernodon.png" />
 									<p>ร่วมเดินทางไปด้วยกันบนเส้นทางแห่งเกมเมอร์ จากผู้เล่นสู่ผู้สร้าง ดินแดนที่จะทำให้น้องๆ ได้รับความรู้ในการสร้างสรรค์ผลงานเกมตามสไตล์ของตัวเอง</p>
 									<p>โดยน้องๆ จะได้เติมแต่งจินตนาการผ่านโปรแกรม Construct 2 ที่เรียกได้ว่าสะดวกในการใช้งานและง่ายมากมาก เพียงแค่ใช้วิธี drag-and-drop ก็สามารถสร้างผลงานสุดเจ๋งได้แล้ว ไม่ต้องเสียเวลามาเขียนโค้ดให้ยุ่งยากจนเกินไป แล้วน้องจะได้รู้ว่าการสร้างเกมจะไม่ใช่เรื่องยากอีกต่อไป</p>
-									<a class="button pill camp-game" href="{{ route('register.create', ['camp' => 2]) }}">สมัครเข้าค่าย</a>
+									<a class="button pill camp-game" href="{{ route('register.create', ['camp' => 3]) }}">สมัครเข้าค่าย</a>
 								</li>
 							</ul>
 							<ul class="camp">
@@ -171,7 +171,7 @@
 									<img src="main_assets/img/logo/trexnetwork.png" />
 									<p>ผจญภัยสุดมันส์ไปบนระบบเครือข่ายคอมพิวเตอร์อันซับซ้อน รวมทั้งกระบวนการทำงานที่น่าทึ่ง ที่จะทำให้น้องๆ ได้เรียนรู้ขั้นตอนการทำงานที่แท้จริงว่าทำงานอย่างไร โดยเนื้อหาส่วนที่สอนนี้ส่วนหนึ่งมาจากวิชา Fundamentals of Computer Networks และ Computer Networking for Enterprise and ISP ของคณะเทคโนโลยีสารสนเทศ เรียกได้ว่าเป็นการปูพื้นฐานและได้ทดลองเรียนไปด้วยในตัว</p>
 									<p>นอกจากความรู้ทางด้านทฤษฎีแล้ว น้องๆ ก็ยังจะได้ลองลงมือสร้างระบบจำลอง Internet บนโปรแกรม Packet Tracer พร้อมอุปกรณ์ที่ครบครัน โดยที่น้องไม่ต้องไปหาซื้อที่ไหนเลย เพราะพวกพี่ได้เตรียมไว้สอนน้องทุกคนเรียบร้อยแล้ว</p>
-									<a class="button pill camp-network" href="{{ route('register.create', ['camp' => 3]) }}">สมัครเข้าค่าย</a>
+									<a class="button pill camp-network" href="{{ route('register.create', ['camp' => 2]) }}">สมัครเข้าค่าย</a>
 								</li>
 								<li id="content-camp-iot">
 									<img src="main_assets/img/logo/iotceramus.png" />

@@ -164,7 +164,8 @@ class RegisterController extends Controller {
 
 		$a->quiz_answers()->saveMany($answers_object);
 
-		dd($a->fresh());
+		return view('main-web.register-done');
+
 	}
 
 }
