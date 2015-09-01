@@ -22,6 +22,7 @@ var navbarElem;
 var cShield, cOverlayElem, cContainer;
 var sShield, sOverlayElem, sContainer;
 var overlaytoggleflag = false;
+var loadflag = {};
 var overlaysharetoggleflag = false;
 var cimage;
 
@@ -238,28 +239,26 @@ function normalize(low, high, current) {
 function enlarge(num) {
 	var url = "main_assets/img/pic/org_"+convertTwoZero(num)+".jpg";
 
-	cContainer.append("<img src='"+url+"' style='display: none;' />");
-	overlayToggle();
+	cContainer.append("<img src='"+url+"' />");
+	overlayToggle(num, url);
 }
 
-function overlayToggle() {
+function overlayToggle(num, url) {
 	if(!overlaytoggleflag) {
 		$('body').css('overflow', 'hidden');
 		cShield.velocity("fadeIn", { duration: 400, easing: 'linear' });
-		cOverlayElem.velocity("fadeIn", { duration: 400, easing: 'linear' });
+		cOverlayElem.velocity("fadeIn", { duration: 400, easing: 'linear', complete: function() {
+			if(loadflag[num]) {
+				predictSize();
+			}
+		} });
 		cimage = cContainer.find('img');
 		cimage.load(function() {
-			var width = cimage.width();
-			var height = cimage.height();
-			if(width > height) {
-				cContainer.css("width", "90%");
-			} else {
-				cContainer.css("height", "90%");
-			}
-
-			cimage.delay(100).velocity("fadeIn", { duration: 400, easing: 'linear' });
-			cContainer.find('.close').show();
+			predictSize();
+			loadflag[num] = true;
 		});
+		cimage.delay(250).velocity("fadeIn", { duration: 400, easing: 'linear' });
+		cContainer.find('.close').show();
 		overlaytoggleflag = true;
 	} else {
 		cOverlayElem.velocity("fadeOut", { duration: 400, easing: 'linear' });
@@ -269,6 +268,37 @@ function overlayToggle() {
 		cContainer.attr("style", "");
 		$('body').css('overflow', 'auto');
 		overlaytoggleflag = false;
+	}
+}
+
+function predictSize() {
+	if(overlaytoggleflag) {
+		var width = cimage.width();
+		var height = cimage.height();
+		console.log(width, height);
+		if(width > height) {
+			cContainer.css("width", "90%");
+			cimage.css("width", "100%");
+			cContainer.css("height", "");
+			width = cimage.width();
+			height = cimage.height();
+			if(height > window.innerHeight) {
+				cContainer.css("height", "90%");
+				cContainer.css("width", "");
+				cimage.css("width", "");
+			}
+		} else {
+			cContainer.css("height", "90%");
+			cContainer.css("width", "");
+			cimage.css("width", "");
+			width = cimage.width();
+			height = cimage.height();
+			if(width > window.innerWidth) {
+				cContainer.css("width", "90%");
+				cimage.css("width", "100%");
+				cContainer.css("height", "");
+			}
+		}
 	}
 }
 
@@ -407,4 +437,5 @@ $(window).resize(function() {
 	});
 	$(".itcamp-head .background").height(window.innerHeight);
 	prepare();
+	predictSize();
 })
