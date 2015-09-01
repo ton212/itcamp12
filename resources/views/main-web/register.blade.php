@@ -109,39 +109,39 @@
 					<label>ปีเกิด</label>
 					<select name="birth_y" type="text" class="form-control" placeholder="ปีเกิด">
 						<option>ปีเกิด</option>
-						<option>2558</option>
-						<option>2557</option>
-						<option>2556</option>
-						<option>2555</option>
-						<option>2554</option>
-						<option>2553</option>
-						<option>2552</option>
-						<option>2551</option>
-						<option>2550</option>
-						<option>2549</option>
-						<option>2548</option>
-						<option>2547</option>
-						<option>2546</option>
-						<option>2545</option>
-						<option>2544</option>
-						<option>2543</option>
-						<option>2542</option>
-						<option>2541</option>
-						<option>2540</option>
-						<option>2539</option>
-						<option>2538</option>
-						<option>2537</option>
-						<option>2536</option>
-						<option>2535</option>
-						<option>2534</option>
+						<option value="2558">2558</option>
+						<option value="2557">2557</option>
+						<option value="2556">2556</option>
+						<option value="2555">2555</option>
+						<option value="2554">2554</option>
+						<option value="2553">2553</option>
+						<option value="2552">2552</option>
+						<option value="2551">2551</option>
+						<option value="2550">2550</option>
+						<option value="2549">2549</option>
+						<option value="2548">2548</option>
+						<option value="2547">2547</option>
+						<option value="2546">2546</option>
+						<option value="2545">2545</option>
+						<option value="2544">2544</option>
+						<option value="2543">2543</option>
+						<option value="2542">2542</option>
+						<option value="2541">2541</option>
+						<option value="2540">2540</option>
+						<option value="2539">2539</option>
+						<option value="2538">2538</option>
+						<option value="2537">2537</option>
+						<option value="2536">2536</option>
+						<option value="2535">2535</option>
+						<option value="2534">2534</option>
 					</select>
 				</div>
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>เพศ</label>
 					<select name="gender" type="text" class="form-control" placeholder="คำนำหน้า">
 						<option>เพศ</option>
-						<option>ชาย</option>
-						<option>หญิง</option>
+						<option value="ชาย">ชาย</option>
+						<option value="หญิง">หญิง</option>
 					</select>
 				</div>
 			</div>
