@@ -410,8 +410,7 @@
 					<p style="font-size: 20px;">{{ str_replace('{file}', '', $question->description) }}</p>
 					@if($question->description != "")
 						@if(strpos($question->description, '{file}') !== false)
-							<input name="answers[{{$i-1}}][answer]" type="file"><p style="font-size:20px;">**ไฟล์นามสกุล .jpg, .png, .bmp เท่านั้น และ ขนาดไฟล์ไม่เกิน 1.5MB**</p>
-							<input name="qfile_{{$i-1}}" type="file"><br>
+							<input name="answers[{{$i-1}}][answer]" type="file"><br>
 							<input type="hidden" name="answers[{{$i-1}}][file]" value="1">
 						@else
 							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old(‘answers[{{$i-1}}][answer]’) }}</textarea>

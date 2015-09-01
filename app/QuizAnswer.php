@@ -4,6 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuizAnswer extends Model {
 
+    protected $fillable = [
+        'answer', 'quiz_question_id'
+    ];
+
 	public function applicant()
 	{
 		return $this->belongsTo('App\Applicant');
