@@ -28,12 +28,12 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>คำนำหน้า</label>
-					<select name="prefix" type="text" class="form-control" placeholder="คำนำหน้า">
+					<select name="prefix" type="text" class="form-control" placeholder="คำนำหน้า" required>
 						<option>คำนำหน้า</option>
-						<option>เด็กชาย</option>
-						<option>เด็กหญิง</option>
-						<option>นาย</option>
-						<option>นางสาว</option>
+						<option value="เด็กชาย">เด็กชาย</option>
+						<option value="เด็กหญิง">เด็กหญิง</option>
+						<option value="นาย">นาย</option>
+						<option value="นางสาว">นางสาว</option>
 					</select>
 				</div>
 				<div class="form-group col-xs-5 floating-label-form-group controls">
@@ -52,7 +52,7 @@
 				</div>
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>วันเกิด</label>
-					<select name="birth_d" type="text" class="form-control" placeholder="วันเกิด">
+					<select name="birth_d" type="text" class="form-control" placeholder="วันเกิด" required>
 						<option>วันเกิด</option>
 						<option value="01">1</option>
 						<option value="02">2</option>
@@ -89,7 +89,7 @@
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>เดือนเกิด</label>
-					<select name="birth_m" type="text" class="form-control" placeholder="เดือนเกิด">
+					<select name="birth_m" type="text" class="form-control" placeholder="เดือนเกิด" required>
 						<option>เดือนเกิด</option>
 						<option value="01">มกราคม</option>
 						<option value="02">กุมภาพันธ์</option>
@@ -107,7 +107,7 @@
 				</div>
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>ปีเกิด</label>
-					<select name="birth_y" type="text" class="form-control" placeholder="ปีเกิด">
+					<select name="birth_y" type="text" class="form-control" placeholder="ปีเกิด" required>
 						<option>ปีเกิด</option>
 						<option value="2558">2558</option>
 						<option value="2557">2557</option>
@@ -138,7 +138,7 @@
 				</div>
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>เพศ</label>
-					<select name="gender" type="text" class="form-control" placeholder="คำนำหน้า">
+					<select name="gender" type="text" class="form-control" placeholder="คำนำหน้า" required>
 						<option>เพศ</option>
 						<option value="ชาย">ชาย</option>
 						<option value="หญิง">หญิง</option>
@@ -172,36 +172,36 @@
 				</div>
 				<div class="form-group col-xs-4 floating-label-form-group controls">
 					<label>ถนน</label>
-					<input name="address[street]" type="text" class="form-control" placeholder="ถนน" >
+					<input name="address[street]" type="text" class="form-control" placeholder="ถนน" required>
 				</div>
 			</div>
 			<div class="row control-group">
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>แขวง/ตำบล</label>
-					<input name="address[sub_district]" type="text" class="form-control" placeholder="แขวง/ตำบล" >
+					<input name="address[sub_district]" type="text" class="form-control" placeholder="แขวง/ตำบล" required>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>เขต/อำเภอ</label>
-					<input name="address[district]" type="text" class="form-control" placeholder="เขต/อำเภอ" >
+					<input name="address[district]" type="text" class="form-control" placeholder="เขต/อำเภอ" required>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>จังหวัด</label>
-					<input name="address[province]" type="text" class="form-control" placeholder="จังหวัด" >
+					<input name="address[province]" type="text" class="form-control" placeholder="จังหวัด" required>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>รหัสไปรษณีย์</label>
-					<input name="address[postcode]" type="text" class="form-control" placeholder="รหัสไปรษณีย์" >
+					<input name="address[postcode]" type="text" class="form-control" placeholder="รหัสไปรษณีย์" required>
 				</div>
 			</div>
 			<div class="row control-group">
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์</label>
-					<input type="text" name="address[tel]" class="form-control" placeholder="เบอร์โทรศัพท์" id="phone" required data-validation-required-message="Please enter your phone number.">
+					<input type="text" name="address[tel]" class="form-control" placeholder="เบอร์โทรศัพท์" required>
 					<p class="help-block text-danger"></p>
 				</div>
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>อีเมล</label>
-					<input type="text" name="email" class="form-control" placeholder="อีเมล" id="phone" required data-validation-required-message="Please enter your phone number.">
+					<input type="text" name="email" class="form-control" placeholder="อีเมล" required>
 					<p class="help-block text-danger"></p>
 				</div>
 			</div>
@@ -209,7 +209,7 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</label>
-					<select name="academic[grade]" type="text" class="form-control" placeholder="ขณะนี้กำลังศึกษาอยู่ในระดับชั้น">
+					<select name="academic[grade]" type="text" class="form-control" placeholder="ขณะนี้กำลังศึกษาอยู่ในระดับชั้น" required>
 						<option>ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</option>
 						<option value="4">มัธยมศึกษาปีที่ 4</option>
 						<option value="5">มัธยมศึกษาปีที่ 5</option>
@@ -250,7 +250,7 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-4 floating-label-form-group controls">
 					<label>บ้านเลขที่</label>
-					<input name="parent[addr][house_no]" type="text" class="form-control" placeholder="ที่อยู่ที่สามารถติดต่อได้ (บ้านเลขที่)" >
+					<input name="parent[addr][house_no]" type="text" class="form-control" placeholder="ที่อยู่ที่สามารถติดต่อได้ (บ้านเลขที่)" required>
 				</div>
 				<div class="form-group col-xs-4 floating-label-form-group controls">
 					<label>หมู่</label>
@@ -258,21 +258,21 @@
 				</div>
 				<div class="form-group col-xs-4 floating-label-form-group controls">
 					<label>ถนน</label>
-					<input name="parent[addr][street]" type="text" class="form-control" placeholder="ถนน" >
+					<input name="parent[addr][street]" type="text" class="form-control" placeholder="ถนน" required>
 				</div>
 			</div>
 			<div class="row control-group">
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>แขวง/ตำบล</label>
-					<input name="parent[addr][sub_district]" type="text" class="form-control" placeholder="แขวง/ตำบล" >
+					<input name="parent[addr][sub_district]" type="text" class="form-control" placeholder="แขวง/ตำบล" required>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>เขต/อำเภอ</label>
-					<input name="parent[addr][district]" type="text" class="form-control" placeholder="เขต/อำเภอ" >
+					<input name="parent[addr][district]" type="text" class="form-control" placeholder="เขต/อำเภอ" required>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>จังหวัด</label>
-					<input name="parent[addr][province]" type="text" class="form-control" placeholder="จังหวัด" >
+					<input name="parent[addr][province]" type="text" class="form-control" placeholder="จังหวัด" required>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>รหัสไปรษณีย์</label>
@@ -282,7 +282,7 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-12 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง)</label>
-					<input type="text" name="parent[tel]" class="form-control" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง)" id="phone" required data-validation-required-message="Please enter your phone number.">
+					<input type="text" name="parent[tel]" class="form-control" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง)" required>
 					<p class="help-block text-danger"></p>
 				</div>
 			 </div>
@@ -291,31 +291,31 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>คณะ</label>
-					<input name="university_interesting[0][faculty]" type="text" class="form-control" placeholder="คณะ" required>
+					<input name="university_interesting[0][faculty]" type="text" class="form-control" placeholder="คณะ">
 				</div>
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>มหาวิทยาลัย / สถาบัน</label>
-					<input name="university_interesting[0][university]" type="text" class="form-control" placeholder="มหาวิทยาลัย / สถาบัน" required>
+					<input name="university_interesting[0][university]" type="text" class="form-control" placeholder="มหาวิทยาลัย / สถาบัน">
 				</div>
 			</div>
 			<div class="row control-group">
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>คณะ</label>
-					<input name="university_interesting[1][faculty]" type="text" class="form-control" placeholder="คณะ" required>
+					<input name="university_interesting[1][faculty]" type="text" class="form-control" placeholder="คณะ">
 				</div>
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>มหาวิทยาลัย / สถาบัน</label>
-					<input name="university_interesting[1][university]" type="text" class="form-control" placeholder="มหาวิทยาลัย / สถาบัน" required>
+					<input name="university_interesting[1][university]" type="text" class="form-control" placeholder="มหาวิทยาลัย / สถาบัน">
 				</div>
 			</div>
 			<div class="row control-group">
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>คณะ</label>
-					<input name="university_interesting[2][faculty]" type="text" class="form-control" placeholder="คณะ" required>
+					<input name="university_interesting[2][faculty]" type="text" class="form-control" placeholder="คณะ">
 				</div>
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>มหาวิทยาลัย / สถาบัน</label>
-					<input name="university_interesting[2][university]" type="text" class="form-control" placeholder="มหาวิทยาลัย / สถาบัน" required>
+					<input name="university_interesting[2][university]" type="text" class="form-control" placeholder="มหาวิทยาลัย / สถาบัน">
 				</div>
 			</div>
 			<p style="font-size: 18px;">น้องเคยเข้าร่วมค่ายของมหาวิทยาลัยหรือไม่ ถ้าเคยน้องช่วยกรอกให้พี่ทีนะครับ :D</p>
@@ -378,7 +378,7 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-4 floating-label-form-group controls">
 					<label>ขนาดเสื้อ</label>
-					<select name="shirt_size" type="text" class="form-control" placeholder="ขนาดเสื้อ">
+					<select name="shirt_size" type="text" class="form-control" placeholder="ขนาดเสื้อ" required>
 						<option>ขนาดเสื้อ</option>
 						<option>S</option>
 						<option>M</option>
