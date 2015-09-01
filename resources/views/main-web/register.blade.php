@@ -19,9 +19,10 @@
 		<div class="card">
 		<form id="contactForm" method="post">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<div class="page-header">
-				<h1 class="text-center">แบบฟอร์ม สมัครไอทีแคมป์<br><small>ค่ายย่อย "{{ $camp_name }}"</small></h1>
-				<h2>ส่วนที่ 1 ข้อมูลทั่วไปของผู้สมัคร </h2>
+			<div class="page-header text-center">
+				<img src="register_assets/img/{{ $logo }}.png" alt="">
+				<h1>แบบฟอร์ม สมัครไอทีแคมป์<br><small>ค่ายย่อย "{{ $camp_name }}"</small></h1>
+				<h2 class="text-left">ส่วนที่ 1 ข้อมูลทั่วไปของผู้สมัคร </h2>
 			</div>
 			<h3>ข้อมูลส่วนตัว</h3>
 			<div class="row control-group">
