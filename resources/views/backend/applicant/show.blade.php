@@ -293,11 +293,46 @@
 							</div>
 						</div>
 					</div>
+					<hr>
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-6">
 							<div class="field">
-								<span class="title">ประวัติค่าย</span>
-								<span class="value">{{ $applicant->camp_history }}</span>
+								<span class="title">ค่าย</span>
+								<span class="value">{{ $applicant->camp_history[0]['name'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">โดย</span>
+								<span class="value">{{ $applicant->camp_history[0]['by'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">ค่าย</span>
+								<span class="value">{{ $applicant->camp_history[1]['name'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">โดย</span>
+								<span class="value">{{ $applicant->camp_history[1]['by'] }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">ค่าย</span>
+								<span class="value">{{ $applicant->camp_history[2]['name'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="field">
+								<span class="title">โดย</span>
+								<span class="value">{{ $applicant->camp_history[2]['by'] }}</span>
 							</div>
 						</div>
 					</div>
