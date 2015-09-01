@@ -24,6 +24,15 @@
 				<h1>แบบฟอร์ม สมัครไอทีแคมป์<br><small>ค่ายย่อย "{{ $camp_name }}"</small></h1>
 				<h2 class="text-left">ส่วนที่ 1 ข้อมูลทั่วไปของผู้สมัคร </h2>
 			</div>
+			@if(count($errors))
+				<div class="alert alert-danger">
+					<ul>
+					@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+					</ul>
+				</div>
+			@endif
 			<h3>ข้อมูลส่วนตัว</h3>
 			<div class="row control-group">
 				<div class="form-group col-xs-2 floating-label-form-group controls">
@@ -401,7 +410,8 @@
 					<p style="font-size: 20px;">{{ str_replace('{file}', '', $question->description) }}</p>
 					@if($question->description != "")
 						@if(strpos($question->description, '{file}') !== false)
-							<input name="answers[{{$i-1}}][answer]" type="file"><br>
+							<input name="qfile_{{$i-1}}" type="file"><br>
+							<input type="hidden" name="answers[{{$i-1}}][file]" value="1">
 						@else
 							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required></textarea>
 						@endif
