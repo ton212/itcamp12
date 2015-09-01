@@ -111,14 +111,6 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12">
-							<div class="field">
-								<span class="title">แพ้ยา</span>
-								<span class="value">{{ $applicant->medical['med'] }}</span>
-							</div>
-						</div>
-					</div>
-					<div class="row">
 						<div class="col-xs-9">
 							<div class="field">
 								<span class="title">ปพ.1</span>
@@ -149,7 +141,7 @@
 						<div class="col-md-2">
 							<div class="field">
 								<span class="title">หมู่</span>
-								<span class="value">{ ['village_no'] }</span>
+								<span class="value">{{ $applicant->address['village_no'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-7">
@@ -176,6 +168,12 @@
 							<div class="field">
 								<span class="title">จังหวัด</span>
 								<span class="value">{{ $applicant->address['province'] }}</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="field">
+								<span class="title">รหัสไปรษณีย์</span>
+								<span class="value">{{ $applicant->address['postcode'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -210,19 +208,19 @@
 						<div class="col-md-3">
 							<div class="field">
 								<span class="title">บ้านเลขที่</span>
-								<span class="value">{{ $applicant->parent_addr['house_no'] }}</span>
+								<span class="value">{{ $applicant->parent['addr']['house_no'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="field">
 								<span class="title">หมู่</span>
-								<span class="value">{ ['village_no'] }</span>
+								<span class="value">{{ $applicant->parent['addr']['village_no'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-7">
 							<div class="field">
 								<span class="title">ถนน</span>
-								<span class="value">{{ $applicant->parent_addr['street'] }}</span>
+								<span class="value">{{ $applicant->parent['addr']['street'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -230,19 +228,19 @@
 						<div class="col-md-3">
 							<div class="field">
 								<span class="title">แขวง</span>
-								<span class="value">{{ $applicant->parent_addr['sub_district'] }}</span>
+								<span class="value">{{ $applicant->parent['addr']['sub_district'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="field">
 								<span class="title">เขต</span>
-								<span class="value">{{ $applicant->parent_addr['district'] }}</span>
+								<span class="value">{{ $applicant->parent['addr']['district'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="field">
 								<span class="title">จังหวัด</span>
-								<span class="value">{{ $applicant->parent_addr['province'] }}</span>
+								<span class="value">{{ $applicant->parent['addr']['province'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -257,13 +255,13 @@
 						<div class="col-md-6">
 							<div class="field">
 								<span class="title">คณะ</span>
-								<span class="value">{{ $applicant->university_interesting[0]['firstname'] }}</span>
+								<span class="value">{{ $applicant->university_interesting[0]['faculty'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="field">
 								<span class="title">สถาบัน</span>
-								<span class="value">{{ $applicant->university_interesting[0]['lastname'] }}</span>
+								<span class="value">{{ $applicant->university_interesting[0]['university'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -271,13 +269,13 @@
 						<div class="col-md-6">
 							<div class="field">
 								<span class="title">คณะ</span>
-								<span class="value">{{ $applicant->university_interesting[1]['firstname'] }}</span>
+								<span class="value">{{ $applicant->university_interesting[1]['faculty'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="field">
 								<span class="title">สถาบัน</span>
-								<span class="value">{{ $applicant->university_interesting[1]['lastname'] }}</span>
+								<span class="value">{{ $applicant->university_interesting[1]['university'] }}</span>
 							</div>
 						</div>
 					</div>
@@ -285,13 +283,13 @@
 						<div class="col-md-6">
 							<div class="field">
 								<span class="title">คณะ</span>
-								<span class="value">{{ $applicant->university_interesting[2]['firstname'] }}</span>
+								<span class="value">{{ $applicant->university_interesting[2]['faculty'] }}</span>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="field">
 								<span class="title">สถาบัน</span>
-								<span class="value">{{ $applicant->university_interesting[2]['lastname'] }}</span>
+								<span class="value">{{ $applicant->university_interesting[2]['university'] }}</span>
 							</div>
 						</div>
 					</div>
