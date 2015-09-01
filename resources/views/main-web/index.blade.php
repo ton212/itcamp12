@@ -28,11 +28,13 @@
 		</div>
 
 		<div class="s-overlay-shield" onclick="overlayShareToggle()">
-			
+
 		</div>
 		<div class="s-overlay">
 			<div class="s-container">
 				<div class="close" onclick="overlayShareToggle()"></div>
+
+				<a class="button pill" href="{{ route('link-exchange.create') }}">คลิกที่นี่</a>
 			</div>
 		</div>
 
