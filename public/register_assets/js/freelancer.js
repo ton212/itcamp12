@@ -24,6 +24,12 @@ $(function() {
     }).on("blur", ".floating-label-form-group", function() {
         $(this).removeClass("floating-label-form-group-with-focus");
     }).on("");
+
+    $('input').each(function() {
+        if($(this).val() != "") {
+            $(this).closest(".floating-label-form-group").toggleClass("floating-label-form-group-with-value");
+        }
+    })
 });
 
 // Highlight the top nav as scrolling occurs
