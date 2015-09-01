@@ -2,11 +2,18 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Applicant;
 
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller {
+
+	use ValidatesRequests;
+
+	protected $validator_msg = [
+		'field_name.required' => 'กรอกช่อง field_name ด้วยครับ',
+	];
 
 	public function create(Request $request)
 	{
@@ -52,12 +59,20 @@ class RegisterController extends Controller {
 
 	public function store(Request $request)
 	{
+		$this->validate($request, [
+			'field_name' => 'required',
+		], $this->validator_msg);
+
 		$data = $request->except('_token', 'birth_d', 'birth_m', 'birth_y');
 		$data['birthday'] = $request->birth_d.'-'.$request->birth_m.'-'.$request->birth_y;
-		$data['transcript'] = null;
+		$data['transcript'] = "";
 		$a = new Applicant();
 		$a->fill($data);
-		dd($a);
+		$a->save();
+
+
+
+		dd($a->fresh());
 	}
 
 }

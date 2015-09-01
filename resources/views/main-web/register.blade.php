@@ -17,7 +17,7 @@
 <body>
 	<div class="container">
 		<div class="card">
-		<form id="contactForm" method="post">
+		<form id="contactForm" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="page-header text-center">
 				<img src="register_assets/img/{{ $logo }}.png" alt="">
@@ -156,7 +156,7 @@
 				</div>
 				<div class="form-group col-xs-5 floating-label-form-group controls">
 					<label>Facebook</label>
-					<input name="facebook" type="text" class="form-control" placeholder="Facebook (กรอกเฉพาะ username (ดูจาก URL หน้าโปรไฟล์ของน้อง))" required>
+					<input name="facebook" type="text" class="form-control" placeholder="Facebook (กรอกเฉพาะ username (ดูจาก URL หน้าโปรไฟล์ของน้อง))">
 				</div>
 
 			</div>
@@ -353,7 +353,7 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>อาหาร/สิ่งที่แพ้</label>
-					<textarea name="medical[food]" rows="3" type="text" class="form-control" placeholder="อาหาร/สิ่งที่แพ้ (รวมถึงน้องๆ ที่ทานมังสวิรัติ หรือทานเจwด้วยนะครับ)" ></textarea>
+					<textarea name="medical[food]" rows="3" type="text" class="form-control" placeholder="อาหาร/สิ่งที่แพ้ (รวมถึงน้องๆ ที่ทานมังสวิรัติ หรือทานเจด้วยนะครับ)" ></textarea>
 				</div>
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>โรคประจำตัว</label>
@@ -396,10 +396,19 @@
 			@foreach(array_sort($questions, function($question) { return $question->attributes->weight; }) as $question)
 			@if(in_array($camp, $question->attributes->judge) || in_array(5, $question->attributes->judge) || in_array(4, $question->attributes->judge))
 				<div class="row control-group">
-				<div class="form-group col-xs-12 floating-label-form-group controls">
-					<label>{{ $i.". ".$question->title }}</label>
-					<p style="font-size: 20px;">{{ $question->description }}</p>
-					<textarea rows="5" class="form-control" placeholder="{{ $i.". ".$question->title }}" required></textarea>
+				<div class="form-group col-xs-12 floating-label-form-group-area controls">
+					<label style="font-size:1.5em;color:#ff5959;">{{ $i.". ".$question->title }}</label>
+					<p style="font-size: 20px;">{{ str_replace('{file}', '', $question->description) }}</p>
+					@if($question->description != "")
+						@if(strpos($question->description, '{file}') !== false)
+							<input name="answers[{{$i-1}}][answer]" type="file"><br>
+						@else
+							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required></textarea>
+						@endif
+					@else
+						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required></textarea>
+					@endif
+					<input type="hidden" name="answers[{{$i-1}}][qid]" value="{{ $question->id }}">
 					<p class="help-block text-danger">{{ $question->help }}</p>
 				</div>
 			</div>
