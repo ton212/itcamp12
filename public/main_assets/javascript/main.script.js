@@ -22,7 +22,6 @@ var navbarElem;
 var cShield, cOverlayElem, cContainer;
 var sShield, sOverlayElem, sContainer;
 var overlaytoggleflag = false;
-var loadflag = {};
 var cimage;
 
 var oldwinScrollY;
@@ -253,15 +252,9 @@ function overlayToggle(num, url) {
         $('body').css('overflow', 'hidden');
         cShield.velocity("fadeIn", { duration: 400, easing: 'linear' });
         cOverlayElem.velocity("fadeIn", { duration: 400, easing: 'linear', complete: function() {
-            if(loadflag[num]) {
-                predictSize();
-            }
+            predictSize();
         } });
         cimage = cContainer.find('img');
-        cimage.load(function() {
-            predictSize();
-            loadflag[num] = true;
-        });
         cimage.delay(250).velocity("fadeIn", { duration: 400, easing: 'linear' });
         cContainer.find('.close').show();
         overlaytoggleflag = true;
@@ -364,7 +357,7 @@ $(document).ready(function() {
     preload([
     'assets/img/campbtn/Apphover.png',
     'assets/img/campbtn/Gamehover.png',
-    'assets/img/campbtn/nethover.png',
+    'assets/img/campbtn/networkhover.png',
     'assets/img/campbtn/IoThover.png',
     ]);
 })
