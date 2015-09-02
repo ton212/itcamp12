@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="register_assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="register_assets/css/style.css">
 	<title>ได้รับข้อมูลเรียบร้อย</title>
 </head>
 <body>

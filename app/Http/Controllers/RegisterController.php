@@ -43,7 +43,8 @@ class RegisterController extends Controller {
 		'parent.addr.province.required'     => 'กรุณากรอก "จังหวัด" ด้วยครับ',
 		'parent.addr.postcode.required'     => 'กรุณากรอก "รหัสไปรษณีย์" ด้วยครับ',
 		'shirt_size.required'                 => 'กรุณาเลือกขนาดเสื้อด้วยครับ',
-		'parent.tel.required'                => 'กรุณากรอก "เบอร์โทรศัพท์ผู้ปกครอง" ด้วยครับ',
+		'parent.tel.0.required'                => 'กรุณากรอก "เบอร์โทรศัพท์ผู้ปกครอง" ด้วยครับ',
+		'parent.tel.1.required'                => 'กรุณากรอก "เบอร์โทรศัพท์ผู้ปกครอง" ด้วยครับ',
 		'address.tel.required'                => 'กรุณากรอก "เบอร์โทรศัพท์" ด้วยครับ'
 	];
 
@@ -122,7 +123,8 @@ class RegisterController extends Controller {
 			'parent.addr.district'     => 'required',
 			'parent.addr.province'     => 'required',
 			'parent.addr.postcode'     => 'required',
-			'parent.tel'                => 'required',
+			'parent.tel.0'                => 'required',
+			'parent.tel.1'                => 'required',
 			'shirt_size'                 => 'required',
 		];
 
@@ -143,6 +145,7 @@ class RegisterController extends Controller {
 		$data = $request->except('_token', 'birth_d', 'birth_m', 'birth_y');
 		$data['birthday'] = $request->birth_d.'-'.$request->birth_m.'-'.$request->birth_y;
 		$data['transcript'] = "";
+		$data['parent']['tel'] = $request->parent['tel'][0]." / ".$request->parent['tel'][1];
 		$a = new Applicant();
 		$a->fill($data);
 		$a->save();
@@ -153,7 +156,7 @@ class RegisterController extends Controller {
 			$file = $file['answer'];
 			$filename = str_random(20)."-".date('Y-m-d').'.'.$file->guessExtension();
 			$file->move(storage_path().'/quiz_answer/', $filename);
-			$answers[$qid]['answer'] = storage_path().'/quiz_answer/'.$filename;
+			$answers[$qid]['answer'] = storage_path().'/quiz_answer/'.$filename.' | '.$answers[$qid]['text'];
 		}
 
 		$answers_object = [];

@@ -8,7 +8,7 @@ class Applicant extends Model {
         'prefix', 'firstname', 'lastname', 'nickname', 'gender', 'email',
         'id_card', 'birthday', 'religion', 'academic', 'medical', 'transcript',
         'shirt_size', 'address', 'parent', 'university_interesting',
-        'camp_history', 'facebook'
+        'camp_history', 'facebook', 'pr_from'
     ];
 
     protected $casts = [
@@ -17,7 +17,8 @@ class Applicant extends Model {
         'parent'                 => 'array',
         'university_interesting' => 'array',
         'address'                => 'array',
-        'camp_history'           => 'array'
+        'camp_history'           => 'array',
+        'pr_from'                => 'array'
     ];
 
     public function quiz_answers()

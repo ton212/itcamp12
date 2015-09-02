@@ -289,9 +289,14 @@
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-12 floating-label-form-group controls">
-					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง)</label>
-					<input type="text" name="parent[tel]" class="form-control" value="{{ Input::old('parent.tel.') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง)" required>
+				<div class="form-group col-xs-6 floating-label-form-group controls">
+					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1</label>
+					<input type="text" name="parent[tel][0]" class="form-control" value="{{ Input::old('parent.tel.0') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1" required>
+					<p class="help-block text-danger"></p>
+				</div>
+				<div class="form-group col-xs-6 floating-label-form-group controls">
+					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2</label>
+					<input type="text" name="parent[tel][1]" class="form-control" value="{{ Input::old('parent.tel.1') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2" required>
 					<p class="help-block text-danger"></p>
 				</div>
 			 </div>
@@ -365,8 +370,8 @@
 					<textarea name="medical[food]" rows="3" type="text" class="form-control" placeholder="อาหาร/สิ่งที่แพ้ (รวมถึงน้องๆ ที่ทานมังสวิรัติ หรือทานเจด้วยนะครับ)">{{ Input::old('medical.food') }}</textarea>
 				</div>
 				<div class="form-group col-xs-6 floating-label-form-group controls">
-					<label>โรคประจำตัว</label>
-					<textarea name="medical[disease]" rows="3" type="text" class="form-control" placeholder="โรคประจำตัว" >{{ Input::old('medical.disease') }}</textarea>
+					<label>โรคประจำตัว / แพ้ยา</label>
+					<textarea name="medical[disease]" rows="3" type="text" class="form-control" placeholder="โรคประจำตัว / แพ้ยา" >{{ Input::old('medical.disease') }}</textarea>
 				</div>
 			</div>
 			<h3>น้องรู้จักค่ายไอทีแคมป์ได้อย่างไรครับ ?</h3>
@@ -410,6 +415,7 @@
 					@if($question->description != "")
 						@if(strpos($question->description, '{file}') !== false)
 							<input name="answers[{{$i-1}}][answer]" type="file"><br>
+							<textarea name="answers[{{$i-1}}][text]" rows="2" class="form-control" placeholder="อย่าลืมอัปโหลดไฟล์นะ หรือเขียนบรรยายด้วยนะ :3">{{ Input::old('answers.'.($i-1).'.text') }}</textarea>
 							<input type="hidden" name="answers[{{$i-1}}][file]" value="1">
 						@else
 							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
