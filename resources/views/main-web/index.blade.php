@@ -87,7 +87,7 @@
                             <div class="smoke"></div>
                             <h1>ไอทีแคมป์ครั้งที่ 12</h1>
                             <h2>คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h2>
-                            {{-- <div class="sharebox">ใส่พวกแชร์ facebook หรือ twitter อะ ถ้าไม่ใส่ลบ tag นี้ไปเลยนะ</div> --}}
+                            {{-- <div class="sharebox">ใส่พวกแชร์ facebook หรือ twitter อะ ถ้าไม่ใส่ลบ tag นี้ไปเลยนะ</div> <-- ต้นฝากใส่ share like fb&twitter ด้วยนะ --}}
                         </div>
                     </div>
                 </div>
@@ -120,8 +120,8 @@
                             <hr />
                             <div class="sponsor">
                                 <img src="main_assets/img/sponsor/kmitl.jpg" />
-                                <img src="main_assets/img/sponsor/itkmitl.jpg" />
-                                <div class="breakimage"></div>
+                                <img src="assets/img/sponsor/itkmitl.jpg" width="120" />
+                                {{-- <div class="breakimage"></div> <- ไว้ขึ้นบรรทัดใหม่ของรูปนะ --}}
                             </div>
                         </div>
                     </div>
