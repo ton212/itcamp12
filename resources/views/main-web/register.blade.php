@@ -372,10 +372,9 @@
 			<h3>น้องรู้จักค่ายไอทีแคมป์ได้อย่างไรครับ ?</h3>
 			<div class="row control-group">
 				<div class="col-xs-1"></div>
-				<div class="form-group col-xs-7" style="padding-left: 45px;">
+				<div class="form-group col-xs-6" style="width:440px;">
 					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">Facebook</label>
 					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">Twitter</label>
-					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">เว็บไซต์ CampHUB.in.th</label>
 					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">เพื่อนๆ แนะนำ</label>
 					<label id="choose1"class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" value="" name="etc" id="choose">อื่นๆ ระบุ</label>
 				</div>
@@ -413,10 +412,10 @@
 							<input name="answers[{{$i-1}}][answer]" type="file"><br>
 							<input type="hidden" name="answers[{{$i-1}}][file]" value="1">
 						@else
-							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
+							<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
 						@endif
 					@else
-						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" style="font-size: 20px;" placeholder="{{ $i.". ".$question->title }}" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
+						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
 					@endif
 					<input type="hidden" name="answers[{{$i-1}}][qid]" value="{{ $question->id }}">
 					<p class="help-block text-danger">{{ $question->help }}</p>
@@ -443,8 +442,6 @@
 
 	<!-- Plugin JavaScript -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	<script src="register_assets/js/classie.js"></script>
-	<script src="register_assets/js/cbpAnimatedHeader.js"></script>
 
 	<!-- Contact Form JavaScript -->
 	<script src="register_assets/js/jqBootstrapValidation.js"></script>

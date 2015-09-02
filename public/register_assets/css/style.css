@@ -56,6 +56,19 @@ body{
     resize: none;
 }
 
+.floating-label-form-group-area textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 8px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.5em;
+    background: #e3e3e3;
+    box-shadow: none!important;
+    resize: none;
+}
+
 .floating-label-form-group label {
     display: block;
     z-index: 0;
