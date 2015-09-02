@@ -424,7 +424,7 @@
 						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
 					@endif
 					<input type="hidden" name="answers[{{$i-1}}][qid]" value="{{ $question->id }}">
-					<p class="help-block text-danger">{!! $question->help !!}</p>
+					<p class="help-block text-danger" style="font-size: 18px;">{{ $question->help }}</p>
 				</div>
 			</div>
 			<?php $i++; ?>
