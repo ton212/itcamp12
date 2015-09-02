@@ -379,7 +379,7 @@
 					<label id="choose1"class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" value="" name="etc" id="choose">อื่นๆ ระบุ</label>
 				</div>
 				<div class="form-group col-xs-3 floating-label-form-group" id="input_choose" style="display: none; margin-top:6px margin-left: 0px;">
-					<input name="pr_from[other]" value="Input::old('pr_from.other')" type="text" class="form-control" placeholder="โปรดระบุ" >
+					<input name="pr_from[other]" value="{{Input::old('pr_from.other')}}" type="text" class="form-control" placeholder="โปรดระบุ" >
 				</div>
 			</div>
 			<h3>เลือกขนาดเสื้อค่าย</h3>
