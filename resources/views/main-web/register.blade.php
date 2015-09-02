@@ -406,7 +406,7 @@
 				<div class="row control-group">
 				<div class="form-group col-xs-12 floating-label-form-group-area controls">
 					<label style="font-size:1.5em;color:#ff5959;">{{ $i.". ".$question->title }}</label>
-					<p style="font-size: 20px;">{{ str_replace('{file}', '', $question->description) }}</p>
+					<p style="font-size: 20px;">{!! str_replace('{file}', '', $question->description) !!}</p>
 					@if($question->description != "")
 						@if(strpos($question->description, '{file}') !== false)
 							<input name="answers[{{$i-1}}][answer]" type="file"><br>
@@ -418,7 +418,7 @@
 						<textarea name="answers[{{$i-1}}][answer]" rows="5" class="form-control" required>{{ Input::old('answers.'.($i-1).'.answer') }}</textarea>
 					@endif
 					<input type="hidden" name="answers[{{$i-1}}][qid]" value="{{ $question->id }}">
-					<p class="help-block text-danger">{{ $question->help }}</p>
+					<p class="help-block text-danger">{!! $question->help !!}</p>
 				</div>
 			</div>
 			<?php $i++; ?>
