@@ -374,38 +374,44 @@ bdo[dir="rtl"] {
   font-style: italic; }
 
 .button.camp-app {
-  background-color: #959FF5; }
+  background-image: url("../img/campbtn/App.png");
+  background-size: cover; }
   .button.camp-app.is-disabled {
-    background-color: #bac1f9 !important; }
+    background-image: url("../img/campbtn/disable.png"); }
+    .button.camp-app.is-disabled:hover {
+      background-image: url("../img/campbtn/disable.png"); }
   .button.camp-app:hover {
-    background-color: #707df1; }
+    background-image: url("../img/campbtn/Apphover.png"); }
 
 .button.camp-game {
-  background-color: #EB9B00; }
+  background-image: url("../img/campbtn/Game.png");
+  background-size: cover; }
   .button.camp-game.is-disabled {
-    background-color: #E4C890; }
+    background-image: url("../img/campbtn/disable.png"); }
     .button.camp-game.is-disabled:hover {
-      background-color: #E4C890 !important; }
+      background-image: url("../img/campbtn/disable.png"); }
   .button.camp-game:hover {
-    background-color: #FBAB10; }
+    background-image: url("../img/campbtn/Gamehover.png"); }
 
 .button.camp-network {
-  background-color: #FF2A2B; }
+  background-image: url("../img/campbtn/network.png");
+  background-size: cover; }
   .button.camp-network.is-disabled {
-    background-color: #ff5354; }
+    background-image: url("../img/campbtn/disable.png"); }
     .button.camp-network.is-disabled:hover {
-      background-color: #ff5354 !important; }
+      background-image: url("../img/campbtn/disable.png"); }
   .button.camp-network:hover {
-    background-color: #ff0102; }
+    background-image: url("../img/campbtn/networkhover.png"); }
 
 .button.camp-iot {
-  background-color: #72D554; }
+  background-image: url("../img/campbtn/IoT.png");
+  background-size: cover; }
   .button.camp-iot.is-disabled {
-    background-color: #8ddd75; }
+    background-image: url("../img/campbtn/disable.png"); }
     .button.camp-iot.is-disabled:hover {
-      background-color: #8ddd75 !important; }
+      background-image: url("../img/campbtn/disable.png"); }
   .button.camp-iot:hover {
-    background-color: #57cd33; }
+    background-image: url("../img/campbtn/IoThover.png"); }
 
 .breakimage {
   clear: both;
@@ -418,7 +424,7 @@ bdo[dir="rtl"] {
   display: inline-block; }
 
 .color-app {
-  color: #959FF5; }
+  color: #90CAF7; }
 
 .color-game {
   color: #EB9B00; }
@@ -557,52 +563,15 @@ h1, h2, h3, h4, h5, h6 {
       .c-overlay .c-container .close:hover {
         cursor: pointer; }
 
-.s-overlay-shield {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 20000; }
-  .s-overlay-shield:hover {
-    cursor: pointer; }
-
-.s-overlay {
-  display: none;
-  top: 0;
-  z-index: 20001; }
-  .s-overlay .s-container {
-    position: fixed;
-    width: 90%;
-    height: 90%;
-    top: 50%;
-    left: 50%;
-    border-radius: 20px;
-    background-color: white;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    z-index: 20002; }
-    .s-overlay .s-container .close {
-      display: none;
-      position: absolute;
-      width: 52px;
-      height: 52px;
-      top: 20px;
-      right: 20px;
-      background-image: url("../img/closebtn.png");
-      background-size: cover;
-      z-index: 20002; }
-      .s-overlay .s-container .close:hover {
-        cursor: pointer; }
-
 .navbar {
   position: fixed;
   top: -125px;
   left: 0;
   width: 100%;
   z-index: 15001; }
+  @media screen and (max-width: 1200px) {
+    .navbar {
+      display: none; } }
   .navbar .navbar-menu {
     text-align: center;
     min-width: 1200px;
@@ -775,6 +744,8 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.3rem; }
       .itcamp-camp > div[class*="container"] .camp li .button {
         position: absolute;
+        width: 158px;
+        height: 69.6px;
         bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
@@ -809,10 +780,10 @@ h1, h2, h3, h4, h5, h6 {
     .itcamp-gallery > div[class*="container"] > ul li {
       display: inline-block;
       margin: 45px 25px 20px;
-      border: 10px solid white;
+      border: 7px solid white;
       border-radius: 20px;
-      width: 290px;
-      height: 290px;
+      width: 280px;
+      height: 280px;
       overflow: hidden;
       background-position: center center !important;
       background-size: cover !important;
@@ -877,6 +848,8 @@ h1, h2, h3, h4, h5, h6 {
               font-size: .95em;
               letter-spacing: 0;
               padding-top: 0;
+              padding-left: .625rem;
+              padding-right: .625rem;
               vertical-align: baseline;
               text-transform: none; }
         .itcamp-opinion > div[class*="container"] ul.profile > li .profile-data p {
@@ -1243,12 +1216,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /*
 .tree {
-	top: -140px;
-	@include imgBGLayer();
-	> .background {
-		height: 1200px;
-		background-color: $bg-tree;
-	}
+    top: -140px;
+    @include imgBGLayer();
+    > .background {
+        height: 1200px;
+        background-color: $bg-tree;
+    }
 }
 */
 .bush1 {
