@@ -31,28 +31,28 @@
 		<h2>ภาพประชาสัมพันธ์</h2><br>
 		</div>
 		<div class="text-center">
-		<img src="{{URL::to('link-exchange/banner/bn_500x500.jpg')}}" width="125" height="125">
+		<img src="{{URL::to('banner/bn_500x500.jpg')}}" width="125" height="125">
 		</div>
 		<p>ขนาด 125x125</p>
-		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('link-exchange/banner/bn_500x500.jpg')}}" width="125" height="125" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
+		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('/banner/bn_500x500.jpg')}}" width="125" height="125" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
 		<br>
 		<div class="text-center">
-		<img src="{{URL::to('link-exchange/banner/bn_500x500.jpg')}}" width="250" height="250">
+		<img src="{{URL::to('banner/bn_500x500.jpg')}}" width="250" height="250">
 		</div>
 		<p>ขนาด 250x250</p>
-		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('link-exchange/banner/bn_500x500.jpg')}}" width="250" height="250" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
+		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('/banner/bn_500x500.jpg')}}" width="250" height="250" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
 		<br>
 		<div class="text-center">
-		<img src="{{URL::to('link-exchange/banner/bn_500x500.jpg')}}" width="500" height="500">
+		<img src="{{URL::to('banner/bn_500x500.jpg')}}" width="500" height="500">
 		</div>
 		<p>ขนาด 500x500</p>
-		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('link-exchange/banner/bn_500x500.jpg')}}" width="500" height="500" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
+		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('/banner/bn_500x500.jpg')}}" width="500" height="500" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
 		<br>
 		<div class="text-center">
-		<img src="{{URL::to('link-exchange/banner/bn_600x1200.jpg')}}" width="300" height="600">
+		<img src="{{URL::to('banner/bn_600x1200.jpg')}}" width="300" height="600">
 		</div>
 		<p>ขนาด 300x600</p>
-		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('link-exchange/banner/bn_600x1200.jpg')}}" width="300" height="600" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
+		<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('/banner/bn_600x1200.jpg')}}" width="300" height="600" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
 	</div>
 	</div>
 	</div>

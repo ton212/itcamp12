@@ -43,7 +43,7 @@ class LinkExchangeController extends Controller {
 		$link->url = $request->url;
 		$link->name = $request->name;
 		$link->save();
-		return redirect(route('link-exchange.create'))->with('alert', 'การบันทึกสำเร็จ โปรดรอการตรวจสอบเพื่อให้ลิงก์ขึ้นบนหน้าเว็บของเรานะคะ');
+		return redirect(route('link-exchange.create'))->with('alert', 'การบันทึกสำเร็จ โปรดรอการตรวจสอบเพื่อให้ลิงก์ขึ้นบนหน้าเว็บของเรานะครับ');
 	}
 
 	/**
