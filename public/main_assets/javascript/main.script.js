@@ -100,6 +100,33 @@ function register() {
             }, 2100);
         }
     });
+    
+    $(window).keypress(function(event) {
+        if($(window).scrollTop() >= itcampContactOffsetY - (window.innerHeight / 2) && $(window).scrollTop() <= itcampContactOffsetY + (window.innerHeight / 2) ) {
+            if(event.keyCode == 32) {
+                if(!isDinocuteJumping) {
+                    isDinocuteJumping = true;
+                    Rightkeydown = false;
+                    RightKeyProcessed = false;
+                    Leftkeydown = false;
+                    LeftKeyProcessed = false;
+                    var oldsrc = dinocuteElem.attr("src");
+                    dinocuteElem.attr("src", "assets/img/timeline/dinocute_jumping.gif");
+                    dinocuteElem.width("82px");
+                    setTimeout(function() {
+                        jumpAudio.play();
+                    }, 300);
+                    setTimeout(function() {
+                        dinocuteElem.attr("src", oldsrc);
+                        dinocuteElem.width("80px");
+                        isDinocuteJumping = false;
+                        RemainAnimDinoCute = false;
+                    }, 2100);
+                }
+            }
+            event.preventDefault();
+        }
+    });
 
     $(window).keydown(function(event) {
         if($(window).scrollTop() >= itcampContactOffsetY - (window.innerHeight / 2) && $(window).scrollTop() <= itcampContactOffsetY + (window.innerHeight / 2) ) {
@@ -121,7 +148,9 @@ function register() {
                     }, 1000/60);
                 }
                 if(!RightKeyProcessed) {
-                    dinocuteElem.attr("src", "assets/img/timeline/dinocute_walking.gif");
+                    if(!isDinocuteJumping) {
+                        dinocuteElem.attr("src", "assets/img/timeline/dinocute_walking.gif");
+                    }
                     RightKeyProcessed = true;
                 }
             }
@@ -140,10 +169,13 @@ function register() {
                     }, 1000/60);
                 }
                 if(!LeftKeyProcessed) {
-                    dinocuteElem.attr("src", "assets/img/timeline/dinocute_walking.gif");
+                    if(!isDinocuteJumping) {
+                        dinocuteElem.attr("src", "assets/img/timeline/dinocute_walking.gif");
+                    }
                     LeftKeyProcessed = true;
                 }
             }
+            
         } else if(RemainAnimDinoCute) {
             dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
             calcDianocutePos();
@@ -152,12 +184,13 @@ function register() {
             RightKeyProcessed = false;
             Leftkeydown = false;
             LeftKeyProcessed = false;
+            isDinocuteJumping = false;
         }
     });
 
     $(window).keyup(function(event) {
         if(event.keyCode == 39) {
-            if(!Leftkeydown) {
+            if(!Leftkeydown && !isDinocuteJumping) {
                 dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
                 RemainAnimDinoCute = false;
             }
@@ -165,7 +198,7 @@ function register() {
             RightKeyProcessed = false;
         }
         if(event.keyCode == 37) {
-            if(!Rightkeydown) {
+            if(!Rightkeydown && !isDinocuteJumping) {
                 dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
                 RemainAnimDinoCute = false;
             }
@@ -359,6 +392,9 @@ $(document).ready(function() {
     'assets/img/campbtn/Gamehover.png',
     'assets/img/campbtn/networkhover.png',
     'assets/img/campbtn/IoThover.png',
+    'assets/img/timeline/dinocute_jumping.gif',
+    'assets/img/timeline/dinocute_walking.gif',
+    'assets/img/timeline/dinocute_still.gif',
     ]);
 })
 
