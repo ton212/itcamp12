@@ -431,6 +431,13 @@
 			@endif
 			@endforeach
 			<br>
+			<div class="text-center"><p style="font-size:20px;">คำเตือน !! ตรวจสอบข้อมูลให้ครบถ้วนก่อนส่งนะครับ หากส่งมาแล้วน้องจะไม่สามารถแก้ไขข้อมูลได้นะครับ</p></div>
+			<div class="checkbox text-center" style="font-size:20px;">
+				<label>
+					<input type="checkbox"> ข้อมูลถูกต้อง ยืนยันการส่ง 
+					<br>
+				</label>
+			</div>
 			<div id="success"></div>
 			<div class="row">
 				<div class="form-group col-xs-12">
