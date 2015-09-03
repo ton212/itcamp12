@@ -660,6 +660,13 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.75rem;
     font-weight: bold;
     margin-top: 10px; }
+    .itcamp-logo > div[class*="container"] > div.sharebox .social {
+      text-align: center;
+      font-size: 18px;
+      color: #000; }
+    .itcamp-logo > div[class*="container"] > div.sharebox .facebook, .itcamp-logo > div[class*="container"] > div.sharebox .twitter {
+      display: inline-block;
+      margin-bottom: 0px; }
 
 .itcamp-description {
   z-index: 10001;

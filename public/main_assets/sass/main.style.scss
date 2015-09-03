@@ -107,9 +107,9 @@ $camp-iot-color: #72D554;
 }
 
 .shadow-image {
-    width: 230px;
-    height: 130px;
-    background-color: rgba(0,0,0,0.75);
+    width: 176.923px;
+    height: 100px;
+    background-color: rgba(255,255,255,1);
     display: inline-block;
 }
 
@@ -391,6 +391,15 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 1.75rem;
             font-weight: bold;
             margin-top: 10px;
+            .social {
+                text-align: center;
+                font-size: 18px;
+                color: #000;
+            }
+            .facebook, .twitter {
+                display: inline-block;
+                margin-bottom: 0px;
+            }
         }
     }
 }
@@ -444,11 +453,13 @@ h1, h2, h3, h4, h5, h6 {
             width: 100%;
             margin-top: 35px;
             padding: 30px;
-            background-color: white;
+            //background-color: white;
             border-radius: 20px;
-            box-shadow: 0 0 15px $box-shadow-color;
+            //box-shadow: 0 0 15px $box-shadow-color;
             img {
                 margin-right: 20px;
+                box-shadow: 0 0 15px $box-shadow-color;
+                border-radius: 5px;
                 &:last-of-type {
                     margin-right: 0;
                 }
