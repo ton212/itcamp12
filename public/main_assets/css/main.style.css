@@ -418,9 +418,9 @@ bdo[dir="rtl"] {
   margin-top: 30px; }
 
 .shadow-image {
-  width: 230px;
-  height: 130px;
-  background-color: rgba(0, 0, 0, 0.75);
+  width: 176.923px;
+  height: 100px;
+  background-color: white;
   display: inline-block; }
 
 .color-app {
@@ -700,11 +700,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     margin-top: 35px;
     padding: 30px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 0 15px #a1a1a1; }
+    border-radius: 20px; }
     .itcamp-sponsor > div[class*="container"] .sponsor img {
-      margin-right: 20px; }
+      margin-right: 20px;
+      box-shadow: 0 0 15px #a1a1a1;
+      border-radius: 5px; }
       .itcamp-sponsor > div[class*="container"] .sponsor img:last-of-type {
         margin-right: 0; }
 
@@ -1318,16 +1318,3 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: -12px; }
   .dirtfront > .background {
     background-color: #AC8158; }
-
-.social {
-  padding: 36px;
-  text-align: center;
-  font-size: 18px;
-  color: #000;
-}
-
-.facebook,
-.twitter {
-  display: inline-block;
-  margin-bottom: 0px;
-}
