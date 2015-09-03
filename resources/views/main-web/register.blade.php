@@ -37,8 +37,8 @@
 			<div class="row control-group">
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>คำนำหน้า</label>
-					<select name="prefix" type="text" class="form-control" placeholder="คำนำหน้า" required>
-						<option>คำนำหน้า</option>
+					<select required name="prefix" type="text" class="form-control" placeholder="คำนำหน้า" >
+						<option value="">คำนำหน้า</option>
 						<option value="เด็กชาย">เด็กชาย</option>
 						<option value="เด็กหญิง">เด็กหญิง</option>
 						<option value="นาย">นาย</option>
@@ -61,8 +61,8 @@
 				</div>
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>วันเกิด</label>
-					<select name="birth_d" type="text" class="form-control" placeholder="วันเกิด" required>
-						<option>วันเกิด</option>
+					<select required name="birth_d" type="text" class="form-control" placeholder="วันเกิด">
+						<option value="">วันเกิด</option>
 						<option value="01">1</option>
 						<option value="02">2</option>
 						<option value="03">3</option>
@@ -99,7 +99,7 @@
 				<div class="form-group col-xs-3 floating-label-form-group controls">
 					<label>เดือนเกิด</label>
 					<select name="birth_m" type="text" class="form-control" placeholder="เดือนเกิด" required>
-						<option>เดือนเกิด</option>
+						<option value="">เดือนเกิด</option>
 						<option value="01">มกราคม</option>
 						<option value="02">กุมภาพันธ์</option>
 						<option value="03">มีนาคม</option>
@@ -117,7 +117,7 @@
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>ปีเกิด</label>
 					<select name="birth_y" type="text" class="form-control" placeholder="ปีเกิด" required>
-						<option>ปีเกิด</option>
+						<option value="">ปีเกิด</option>
 						<option value="2558">2558</option>
 						<option value="2557">2557</option>
 						<option value="2556">2556</option>
@@ -148,7 +148,7 @@
 				<div class="form-group col-xs-2 floating-label-form-group controls">
 					<label>เพศ</label>
 					<select name="gender" type="text" class="form-control" placeholder="คำนำหน้า" required>
-						<option>เพศ</option>
+						<option value="">เพศ</option>
 						<option value="ชาย">ชาย</option>
 						<option value="หญิง">หญิง</option>
 					</select>
@@ -219,7 +219,7 @@
 				<div class="form-group col-xs-6 floating-label-form-group controls">
 					<label>ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</label>
 					<select name="academic[grade]" type="text" class="form-control"  placeholder="ขณะนี้กำลังศึกษาอยู่ในระดับชั้น" required>
-						<option>ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</option>
+						<option value="">ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</option>
 						<option value="4">มัธยมศึกษาปีที่ 4</option>
 						<option value="5">มัธยมศึกษาปีที่ 5</option>
 						<option value="6">มัธยมศึกษาปีที่ 6</option>
@@ -392,7 +392,7 @@
 				<div class="form-group col-xs-4 floating-label-form-group controls">
 					<label>ขนาดเสื้อ</label>
 					<select name="shirt_size" type="text" class="form-control" placeholder="ขนาดเสื้อ" required>
-						<option>ขนาดเสื้อ</option>
+						<option value="">ขนาดเสื้อ</option>
 						<option>S</option>
 						<option>M</option>
 						<option>L</option>
@@ -431,10 +431,10 @@
 			@endif
 			@endforeach
 			<br>
-			<div class="text-center"><p style="font-size:20px;">คำเตือน !! ตรวจสอบข้อมูลให้ครบถ้วนก่อนส่งนะครับ หากส่งมาแล้วน้องจะไม่สามารถแก้ไขข้อมูลได้นะครับ</p></div>
-			<div class="checkbox text-center" style="font-size:20px;">
+			<div class="text-center"><p style="font-size:22px;">คำเตือน !! ตรวจสอบข้อมูลให้ครบถ้วนก่อนส่งนะครับ หากส่งมาแล้วน้องจะไม่สามารถแก้ไขข้อมูลได้นะครับ</p></div>
+			<div class="checkbox text-center" style="font-size:20px;" >
 				<label>
-					<input type="checkbox"> ข้อมูลถูกต้อง ยืนยันการส่ง 
+					<input id="checker" type="checkbox"> ขอรับรองว่าข้อมูลข้างต้นทั้งหมดเป็นความจริง หากได้รับการตรวจสอบว่ามีการให้ข้อมูลเป็นเท็จจะอนุญาตให้ทางพี่ๆ ทีมงานตัดสิทธิ์ได้โดยไม่แจ้งให้ทราบล่วงหน้า
 					<br>
 				</label>
 			</div>

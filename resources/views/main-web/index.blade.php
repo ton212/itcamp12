@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
         <title>ITCamp#12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 10-13 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
-        <link rel="stylesheet" href="main_assets/css/main.style.min.css" />
+        <link rel="stylesheet" href="main_assets/css/main.style.css" />
         <script src="main_assets/javascript/jquery.min.js"></script>
         <script src="main_assets/javascript/TweenMax.min.js"></script>
         <script src="main_assets/javascript/jquery.gsap.min.js"></script>
@@ -87,7 +87,20 @@
                             <div class="smoke"></div>
                             <h1>ไอทีแคมป์ครั้งที่ 12</h1>
                             <h2>คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h2>
-                            {{-- <div class="sharebox">ใส่พวกแชร์ facebook หรือ twitter อะ ถ้าไม่ใส่ลบ tag นี้ไปเลยนะ</div> <-- ต้นฝากใส่ share like fb&twitter ด้วยนะ --}}
+                            <div class="sharebox">
+                                <div class="social">
+        <div class="facebook">
+          <a href="https://www.facebook.com/itcampKMITL" target="_blank">facebook.com/itcampKMITL</a>
+         <div class="fb-like" data-href="http://itcamp.in.th" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+        </div>
+        <div class="twitter">
+          <a href="https://twitter.com/ITCAMP" target="_blank">@ITCAMP</a>
+         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.itcamp.in.th" data-text="เตรียมพบกับการผจญภัยในดินแดนมหัศจรรย์ ที่ไม่สามารถหาได้จากที่ไหน ไอทีแคมป์ครั้งที่ 12 เร็วๆ นี้" data-via="ITCAMP" data-hashtags="ITCAMP12" data-dnt="true">Tweet</a>
+
+
+        </div>
+      </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -312,7 +325,7 @@
                                             <li>Q: ค่ายนี้จัดขึ้นที่ไหน อย่างไร ?</li>
                                             <li>A: ค่ายนี้จัดที่คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง ตลอดระยะเวลา 4 วัน 3 คืน โดยที่น้องจะไม่ได้รับอนุญาตให้ออกจากบริเวณที่จัดกิจกรรม ยกเว้นในกรณีที่ติดธุระเร่งด่วน และมีผู้ปกครองมารับด้วยตนเอง การเดินทางมายังคณะเทคโนโลยีสารสนเทศ สามารถดูได้ที่<a href="http://www.it.kmitl.ac.th/about/contact/map" target="_blank">เว็บไซต์ของคณะ</a>ได้เลยนะครับ</li>
                                             <li>Q: มีค่าใช้จ่ายหรือไม่ จำนวนเท่าไหร่ และชำระตอนไหน สละสิทธิ์ได้เงินคืนหรือไม่ ? </li>
-                                            <li>A: มีค่าใช้จ่าย จำนวน 500 บาท โดยชำระตามเวลาที่กำหนด (1 - 15 พฤศจิกายน 2558) หากน้องคนใดจะสละสิทธิ์ สามารถกดปุ่มสละสิทธิ์ที่หน้าเว็บและขอให้น้องๆ คิดให้รอบคอบก่อนจะชำระเงิน เพราะหากน้องสละสิทธิ์จะไม่ได้รับเงินคืนครับ</li>
+                                            <li>A: มีค่าใช้จ่าย จำนวน 500 บาท โดยชำระตามเวลาที่กำหนด (1 - 15 พฤศจิกายน 2558) หากน้องคนใดจะสละสิทธิ์ สามารถกดปุ่มสละสิทธิ์ที่หน้าเว็บและขอให้น้องๆ คิดให้รอบคอบก่อนจะชำระเงิน เพราะหากน้องสละสิทธิ์จะไม่ได้รับเงินคืนครับ เพราะหากน้องสละสิทธิ์จะไม่ได้รับเงินคืนครับ และหากโอนเงินไม่ทันภายในวันที่กำหนดจะถือว่าสละสิทธิ์นะครับ</li>
                                             <li>Q: ต้องพักค้างคืนที่ค่ายหรือเปล่า ?</li>
                                             <li>A: ใช่ครับ เพื่อให้น้องๆ สะดวกต่อการเข้าร่วมกิจกรรม น้องๆ จะได้นอนพักในห้องพักที่พี่ๆ จัดเตรียมไว้ให้ที่คณะ ซึ่งติดแอร์เย็นฉ่ำ สะดวกสบาย ง่ายต่อการทำกิจกรรมของน้องๆ และที่สำคัญ พี่ๆ จะดูแลน้องได้ตลอด 24 ชั่วโมงตลอดโครงการ น้องๆ สบายใจได้ครับ</li>
                                             <li>Q: สมัครมากกว่าหนึ่งค่ายย่อยหรือเปลี่ยนไปอยู่ค่ายอื่นได้หรือไม่ ?</li>
@@ -371,5 +384,24 @@
                 </div>
             </div>
         </section>
+        <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66507345-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
     </body>
 </html>

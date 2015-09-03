@@ -1318,3 +1318,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: -12px; }
   .dirtfront > .background {
     background-color: #AC8158; }
+
+.social {
+  padding: 36px;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+
+.facebook,
+.twitter {
+  display: inline-block;
+  margin-bottom: 0px;
+}

@@ -48,3 +48,9 @@ $('#choose1').click(function(){
         $('#input_choose').toggle('display');
     }
 });
+
+
+
+$( "#contactForm" ).submit(function( event ) {
+if(!$("#checker").is(':checked')) { alert('กรุณายืนยันข้อมูลก่อนส่งแบบฟอร์มครับ'); event.preventDefault(); }
+});
