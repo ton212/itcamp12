@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ITCamp#12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 10-13 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
+        <title>ITCAMP12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 17-20 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
         <link rel="stylesheet" href="main_assets/css/main.style.css" />
         <script src="main_assets/javascript/jquery.min.js"></script>
         <script src="main_assets/javascript/TweenMax.min.js"></script>
@@ -130,27 +130,17 @@
                             <h1>ผู้สนับสนุน</h1>
                             <hr />
                             <div class="sponsor">
-                                <div class="spon-image x-large"><img src="main_assets/img/sponsor/kmitl.jpg" /></div>
-                                <div class="spon-image x-large last"><img src="main_assets/img/sponsor/itkmitl.jpg" /></div>
-                                {-- 
+                                <img src="main_assets/img/sponsor/kmitl.jpg" />
+                                <img src="main_assets/img/sponsor/itkmitl.jpg" width="97" />
                                 <div class="breakimage"></div>
-                                <div class="spon-image large" /><img src="" /></div>
-                                <div class="spon-image large" /><img src="" /></div>
-                                <div class="spon-image large" /><img src="" /></div>
-                                <div class="spon-image large last" /><img src="" /></div>
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
                                 <div class="breakimage"></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium last" /></div>
-                                <div class="breakimage"></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium" /></div>
-                                <div class="spon-image medium last" /></div>
-                                --}
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
                             </div>
                         </div>
                     </div>
@@ -326,12 +316,12 @@
                                         <img class="dinocute" src="main_assets/img/timeline/dinocute_still.gif" width="80" />
                                     </div>
                                     <div class="timeline-description">
-                                        <span class="start">7 กันยายน 58<br />เปิดรับสมัคร</span>
-                                        <span class="endregis">31 ตุลาคม 58<br />เปิดรับสมัครวันสุดท้าย</span>
-                                        <span class="announce">6 พฤศจิกายน 58<br />ประกาศผลและโอนเงินยืนยันสิทธ์</span>
-                                        <span class="lastconday">21 พฤศจิกายน 58<br />วันสุดท้ายของการยืนยันสิทธ์</span>
-                                        <span class="lastconop">29 พฤศจิกายน 58<br />ตัวสำรองโอนเงินวันสุดท้าย</span>
-                                        <span class="end">17 - 20 ธันวาคม 58<br />ITCAMP12 Day!</span>
+                                        <span class="start">1 กันยายน 58<br />เปิดรับสมัคร</span>
+                                        <span class="endregis">24 ตุลาคม 58<br />เปิดรับสมัครวันสุดท้าย</span>
+                                        <span class="announce">1 พฤศจิกายน 58<br />ประกาศผลและโอนเงินยืนยันสิทธ์</span>
+                                        <span class="lastconday">15 พฤศจิกายน 58<br />วันสุดท้ายของการยืนยันสิทธ์</span>
+                                        <span class="lastconop">20 พฤศจิกายน 58<br />ตัวสำรองโอนเงินวันสุดท้าย</span>
+                                        <span class="end">10 - 13 ธันวาคม 58<br />ITCAMP12 Day!</span>
                                     </div>
                                 </div>
                                 <div class="box-contact">
