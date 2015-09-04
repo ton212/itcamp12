@@ -130,17 +130,27 @@
                             <h1>ผู้สนับสนุน</h1>
                             <hr />
                             <div class="sponsor">
-                                <img src="main_assets/img/sponsor/kmitl.jpg" />
-                                <img src="main_assets/img/sponsor/itkmitl.jpg" width="97" />
+                                <div class="spon-image x-large"><img src="main_assets/img/sponsor/kmitl.jpg" /></div>
+                                <div class="spon-image x-large last"><img src="main_assets/img/sponsor/itkmitl.jpg" /></div>
+                                {-- 
                                 <div class="breakimage"></div>
-                                <img class="shadow-image" />
-                                <img class="shadow-image" />
-                                <img class="shadow-image" />
-                                <img class="shadow-image" />
+                                <div class="spon-image large" /><img src="" /></div>
+                                <div class="spon-image large" /><img src="" /></div>
+                                <div class="spon-image large" /><img src="" /></div>
+                                <div class="spon-image large last" /><img src="" /></div>
                                 <div class="breakimage"></div>
-                                <img class="shadow-image" />
-                                <img class="shadow-image" />
-                                <img class="shadow-image" />
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium last" /></div>
+                                <div class="breakimage"></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium" /></div>
+                                <div class="spon-image medium last" /></div>
+                                --}
                             </div>
                         </div>
                     </div>
@@ -316,12 +326,12 @@
                                         <img class="dinocute" src="main_assets/img/timeline/dinocute_still.gif" width="80" />
                                     </div>
                                     <div class="timeline-description">
-                                        <span class="start">1 กันยายน 58<br />เปิดรับสมัคร</span>
-                                        <span class="endregis">24 ตุลาคม 58<br />เปิดรับสมัครวันสุดท้าย</span>
-                                        <span class="announce">1 พฤศจิกายน 58<br />ประกาศผลและโอนเงินยืนยันสิทธ์</span>
-                                        <span class="lastconday">15 พฤศจิกายน 58<br />วันสุดท้ายของการยืนยันสิทธ์</span>
-                                        <span class="lastconop">20 พฤศจิกายน 58<br />ตัวสำรองโอนเงินวันสุดท้าย</span>
-                                        <span class="end">10 - 13 ธันวาคม 58<br />ITCAMP12 Day!</span>
+                                        <span class="start">7 กันยายน 58<br />เปิดรับสมัคร</span>
+                                        <span class="endregis">31 ตุลาคม 58<br />เปิดรับสมัครวันสุดท้าย</span>
+                                        <span class="announce">6 พฤศจิกายน 58<br />ประกาศผลและโอนเงินยืนยันสิทธ์</span>
+                                        <span class="lastconday">21 พฤศจิกายน 58<br />วันสุดท้ายของการยืนยันสิทธ์</span>
+                                        <span class="lastconop">29 พฤศจิกายน 58<br />ตัวสำรองโอนเงินวันสุดท้าย</span>
+                                        <span class="end">17 - 20 ธันวาคม 58<br />ITCAMP12 Day!</span>
                                     </div>
                                 </div>
                                 <div class="box-contact">

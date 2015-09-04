@@ -417,11 +417,17 @@ bdo[dir="rtl"] {
   clear: both;
   margin-top: 30px; }
 
-.shadow-image {
+.pre-image {
   width: 176.923px;
   height: 100px;
   background-color: white;
   display: inline-block; }
+  .pre-image.small {
+    width: 176.923px;
+    height: 100px; }
+  .pre-image.big {
+    width: 221.15375px;
+    height: 125px; }
 
 .color-app {
   color: #90CAF7; }
@@ -708,11 +714,26 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 35px;
     padding: 30px;
     border-radius: 20px; }
-    .itcamp-sponsor > div[class*="container"] .sponsor img {
+    .itcamp-sponsor > div[class*="container"] .sponsor .spon-image {
+      display: inline-block;
+      padding: 8px;
+      border-radius: 5px;
+      background-color: white;
       margin-right: 20px;
       box-shadow: 0 0 15px #a1a1a1;
-      border-radius: 5px; }
-      .itcamp-sponsor > div[class*="container"] .sponsor img:last-of-type {
+      text-align: center; }
+      .itcamp-sponsor > div[class*="container"] .sponsor .spon-image.x-large {
+        width: 280px;
+        height: 150px; }
+      .itcamp-sponsor > div[class*="container"] .sponsor .spon-image.large {
+        width: 214.667px;
+        height: 115px; }
+      .itcamp-sponsor > div[class*="container"] .sponsor .spon-image.medium {
+        width: 168px;
+        height: 90px; }
+      .itcamp-sponsor > div[class*="container"] .sponsor .spon-image img {
+        height: 100%; }
+      .itcamp-sponsor > div[class*="container"] .sponsor .spon-image.last {
         margin-right: 0; }
 
 .itcamp-camp {

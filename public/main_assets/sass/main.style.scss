@@ -106,11 +106,19 @@ $camp-iot-color: #72D554;
     margin-top: 30px;
 }
 
-.shadow-image {
+.pre-image {
     width: 176.923px;
     height: 100px;
     background-color: rgba(255,255,255,1);
     display: inline-block;
+    &.small {
+        width: 176.923px;
+        height: 100px;
+    }
+    &.big {
+        width: 221.15375px;
+        height: 125px;
+    }
 }
 
 .color-app {
@@ -456,11 +464,30 @@ h1, h2, h3, h4, h5, h6 {
             //background-color: white;
             border-radius: 20px;
             //box-shadow: 0 0 15px $box-shadow-color;
-            img {
+            .spon-image {
+                display: inline-block;
+                padding: 8px;
+                border-radius: 5px;
+                background-color: white;
                 margin-right: 20px;
                 box-shadow: 0 0 15px $box-shadow-color;
-                border-radius: 5px;
-                &:last-of-type {
+                text-align: center;
+                &.x-large {
+                    width: 280px;
+                    height: 150px;
+                }
+                &.large {
+                    width: 214.667px;
+                    height: 115px;
+                }
+                &.medium {
+                    width: 168px;
+                    height: 90px;
+                }
+                img {
+                    height: 100%;
+                }
+                &.last {
                     margin-right: 0;
                 }
             }
