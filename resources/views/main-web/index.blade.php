@@ -132,7 +132,7 @@
                             <div class="sponsor">
                                 <div class="spon-image x-large"><img src="main_assets/img/sponsor/kmitl.jpg" /></div>
                                 <div class="spon-image x-large last"><img src="main_assets/img/sponsor/itkmitl.jpg" /></div>
-                                {--
+                                {{--
                                 <div class="breakimage"></div>
                                 <div class="spon-image large" /><img src="" /></div>
                                 <div class="spon-image large" /><img src="" /></div>
@@ -150,7 +150,7 @@
                                 <div class="spon-image medium" /></div>
                                 <div class="spon-image medium" /></div>
                                 <div class="spon-image medium last" /></div>
-                                --}
+                                --}}
                             </div>
                         </div>
                     </div>
