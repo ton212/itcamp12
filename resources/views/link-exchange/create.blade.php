@@ -83,7 +83,7 @@
 				<img src="{{URL::to('banner/bn_1600x300.jpg')}}" width="800" height="150">
 			</div>
 			<div class="col-md-8 col-md-offset-2">
-				<p>ขนาด 800x300</p>
+				<p>ขนาด 800x150</p>
 				<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('/banner/bn_1600x300.jpg')}}" width="800" height="150" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
 				<br>
 			</div>
