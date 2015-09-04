@@ -4,6 +4,8 @@ var isSafari = navigator.vendor.indexOf("Apple")==0 && /\sSafari\//.test(navigat
 if(isSafari) { $.browser.device = true; }
 //$.browser.device = true;
 
+var srcbase = "main_assets";
+
 var layerSet = [];
 var layerlength;
 
@@ -88,7 +90,7 @@ function register() {
         if(!isDinocuteJumping) {
             isDinocuteJumping = true;
             var oldsrc = $(this).attr("src");
-            $(this).attr("src", "assets/img/timeline/dinocute_jumping.gif");
+            $(this).attr("src", srcbase + "/img/timeline/dinocute_jumping.gif");
             $(this).width("82px");
             setTimeout(function() {
                 jumpAudio.play();
@@ -111,7 +113,7 @@ function register() {
                     Leftkeydown = false;
                     LeftKeyProcessed = false;
                     var oldsrc = dinocuteElem.attr("src");
-                    dinocuteElem.attr("src", "assets/img/timeline/dinocute_jumping.gif");
+                    dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_jumping.gif");
                     dinocuteElem.width("82px");
                     setTimeout(function() {
                         jumpAudio.play();
@@ -149,7 +151,7 @@ function register() {
                 }
                 if(!RightKeyProcessed) {
                     if(!isDinocuteJumping) {
-                        dinocuteElem.attr("src", "assets/img/timeline/dinocute_walking.gif");
+                        dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_walking.gif");
                     }
                     RightKeyProcessed = true;
                 }
@@ -170,14 +172,14 @@ function register() {
                 }
                 if(!LeftKeyProcessed) {
                     if(!isDinocuteJumping) {
-                        dinocuteElem.attr("src", "assets/img/timeline/dinocute_walking.gif");
+                        dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_walking.gif");
                     }
                     LeftKeyProcessed = true;
                 }
             }
             
         } else if(RemainAnimDinoCute) {
-            dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
+            dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_still.gif");
             calcDianocutePos();
             RemainAnimDinoCute = false;
             Rightkeydown = false;
@@ -191,7 +193,7 @@ function register() {
     $(window).keyup(function(event) {
         if(event.keyCode == 39) {
             if(!Leftkeydown && !isDinocuteJumping) {
-                dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
+                dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_still.gif");
                 RemainAnimDinoCute = false;
             }
             Rightkeydown = false;
@@ -199,7 +201,7 @@ function register() {
         }
         if(event.keyCode == 37) {
             if(!Rightkeydown && !isDinocuteJumping) {
-                dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
+                dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_still.gif");
                 RemainAnimDinoCute = false;
             }
             Leftkeydown = false;
@@ -249,19 +251,25 @@ function smokeAnimateRnFn() {
 function calcDianocutePos() {
     var d = new Date();
     var t = d.getTime();
-    if(t < 1441040400000) {
+    var s1 = new Date("September 7 2015 00:00:00").getTime(),
+        s2 = new Date("October 31 2015 00:00:00").getTime(),
+        s3 = new Date("November 6 2015 00:00:00").getTime(),
+        s4 = new Date("November 21 2015 00:00:00").getTime(),
+        s5 = new Date("November 29 2015 00:00:00").getTime(),
+        s6 = new Date("December 17 2015 00:00:00").getTime();
+    if(t < s1) {
         dinocuteElem.css("left", 0+"%");
-        dinocuteElem.attr("src", "assets/img/timeline/dinocute_still.gif");
-    } else if(t < 1445619600000) {
-        dinocuteElem.css("left", (normalize(1441040400000, 1445619600000, t) * 18)+"%");
-    } else if(t < 1446310800000) {
-        dinocuteElem.css("left", (18 + (normalize(1445619600000, 1446310800000, t) * 20))+"%");
-    } else if(t < 1447520400000) {
-        dinocuteElem.css("left", (38 + (normalize(1446310800000, 1447520400000, t) * 22))+"%");
-    } else if(t < 1447952400000) {
-        dinocuteElem.css("left", (60 + (normalize(1447520400000, 1447952400000, t) * 20))+"%");
-    } else if(t < 1449680400000) {
-        dinocuteElem.css("left", (80 + (normalize(1447952400000, 1449680400000, t) * 20))+"%");
+        dinocuteElem.attr("src", srcbase + "/img/timeline/dinocute_still.gif");
+    } else if(t < s2) {
+        dinocuteElem.css("left", (normalize(s1, s2, t) * 18)+"%");
+    } else if(t < s3) {
+        dinocuteElem.css("left", (18 + (normalize(s2, s3, t) * 20))+"%");
+    } else if(t < s4) {
+        dinocuteElem.css("left", (38 + (normalize(s3, s4, t) * 22))+"%");
+    } else if(t < s5) {
+        dinocuteElem.css("left", (60 + (normalize(s4, s5, t) * 20))+"%");
+    } else if(t < s6) {
+        dinocuteElem.css("left", (80 + (normalize(s5, s6, t) * 20))+"%");
     } else {
         dinocuteElem.css("left", 100+"%");
     }
@@ -274,7 +282,7 @@ function normalize(low, high, current) {
 }
 
 function enlarge(num) {
-    var url = "assets/img/pic/org_"+convertTwoZero(num)+".jpg";
+    var url = srcbase + "/img/pic/org_"+convertTwoZero(num)+".jpg";
 
     cContainer.append("<img src='"+url+"' />");
     overlayToggle(num, url);
@@ -422,7 +430,7 @@ $(window).scroll(function() {
             });
         }
         wavebackelem.stop().animate({
-            backgroundPositionX: -(windowScrollY * 0.12)+"px",
+            backgroundPositionX: -(windowScrollY * 0.24)+"px",
             z: 0
         }, 1200, 'easeOutCubic');
         wavefrontelem.stop().animate({
