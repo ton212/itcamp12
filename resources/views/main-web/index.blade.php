@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>ITCamp#12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 10-13 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
+        <title>ITCAMP12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 17-20 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
         <link rel="stylesheet" href="main_assets/css/main.style.css" />
         <script src="main_assets/javascript/jquery.min.js"></script>
         <script src="main_assets/javascript/TweenMax.min.js"></script>

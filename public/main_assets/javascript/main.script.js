@@ -394,15 +394,15 @@ $(document).ready(function() {
     $(window).scrollTop(0);
     $('body').css('overflow', 'hidden');
 
-    jumpAudio = new Audio('assets/sound/MarioJump.wav');
+    jumpAudio = new Audio(srcbase + '/sound/MarioJump.wav');
     preload([
-    'assets/img/campbtn/Apphover.png',
-    'assets/img/campbtn/Gamehover.png',
-    'assets/img/campbtn/networkhover.png',
-    'assets/img/campbtn/IoThover.png',
-    'assets/img/timeline/dinocute_jumping.gif',
-    'assets/img/timeline/dinocute_walking.gif',
-    'assets/img/timeline/dinocute_still.gif',
+    srcbase + '/img/campbtn/Apphover.png',
+    srcbase + '/img/campbtn/Gamehover.png',
+    srcbase + '/img/campbtn/networkhover.png',
+    srcbase + '/img/campbtn/IoThover.png',
+    srcbase + '/img/timeline/dinocute_jumping.gif',
+    srcbase + '/img/timeline/dinocute_walking.gif',
+    srcbase + '/img/timeline/dinocute_still.gif',
     ]);
 })
 
