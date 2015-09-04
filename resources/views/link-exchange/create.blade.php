@@ -79,7 +79,7 @@
 				<textarea class="form-control" style="font-size:18px;" onclick="this.select();">&lt;a href="http://www.itcamp.in.th"&gt;&lt;img src="{{URL::to('/banner/bn_1120x580.jpg')}}" width="560" height="290" border="0" alt="itcamp#12"&gt;&lt;/a&gt;</textarea>
 				<br>
 			</div>
-			<div class="text-center">
+			<div class="text-center img-responsive">
 				<img src="{{URL::to('banner/bn_1600x300.jpg')}}" width="800" height="150">
 			</div>
 			<div class="col-md-8 col-md-offset-2">
