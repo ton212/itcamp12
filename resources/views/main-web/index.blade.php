@@ -89,17 +89,15 @@
                             <h2>คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h2>
                             <div class="sharebox">
                                 <div class="social">
-        <div class="facebook">
-          <a href="https://www.facebook.com/itcampKMITL" target="_blank">facebook.com/itcampKMITL</a>
-         <div class="fb-like" data-href="http://itcamp.in.th" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-        </div>
-        <div class="twitter">
-          <a href="https://twitter.com/ITCAMP" target="_blank">@ITCAMP</a>
-         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.itcamp.in.th" data-text="เตรียมพบกับการผจญภัยในดินแดนมหัศจรรย์ ที่ไม่สามารถหาได้จากที่ไหน ไอทีแคมป์ครั้งที่ 12 เร็วๆ นี้" data-via="ITCAMP" data-hashtags="ITCAMP12" data-dnt="true">Tweet</a>
-
-
-        </div>
-      </div>
+                                    <div class="facebook">
+                                        <a href="https://www.facebook.com/itcampKMITL" target="_blank">facebook.com/itcampKMITL</a>
+                                        <div class="fb-like" data-href="http://itcamp.in.th" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                                    </div>
+                                    <div class="twitter">
+                                        <a href="https://twitter.com/ITCAMP" target="_blank">@ITCAMP</a>
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.itcamp.in.th" data-text="เตรียมพบกับการผจญภัยในดินแดนมหัศจรรย์ ที่ไม่สามารถหาได้จากที่ไหน ไอทีแคมป์ครั้งที่ 12 เร็วๆ นี้" data-via="ITCAMP" data-hashtags="ITCAMP12" data-dnt="true">Tweet</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,9 +130,17 @@
                             <h1>ผู้สนับสนุน</h1>
                             <hr />
                             <div class="sponsor">
-                                <img src="main_assets/img/sponsor/kmitl.jpg" />
-                                <img src="assets/img/sponsor/itkmitl.jpg" width="120" />
-                                {{-- <div class="breakimage"></div> <- ไว้ขึ้นบรรทัดใหม่ของรูปนะ --}}
+                                <img src="assets/img/sponsor/kmitl.jpg" />
+                                <img src="assets/img/sponsor/itkmitl.jpg" width="97" />
+                                <div class="breakimage"></div>
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <div class="breakimage"></div>
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
+                                <img class="shadow-image" />
                             </div>
                         </div>
                     </div>
