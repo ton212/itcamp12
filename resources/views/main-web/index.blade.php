@@ -130,8 +130,8 @@
                             <h1>ผู้สนับสนุน</h1>
                             <hr />
                             <div class="sponsor">
-                                <img src="assets/img/sponsor/kmitl.jpg" />
-                                <img src="assets/img/sponsor/itkmitl.jpg" width="97" />
+                                <img src="main_assets/img/sponsor/kmitl.jpg" />
+                                <img src="main_assets/img/sponsor/itkmitl.jpg" width="97" />
                                 <div class="breakimage"></div>
                                 <img class="shadow-image" />
                                 <img class="shadow-image" />
