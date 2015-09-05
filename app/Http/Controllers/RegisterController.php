@@ -55,24 +55,28 @@ class RegisterController extends Controller {
 				$bg = "bg03";
 				$logo = "logo03";
 				$name = "Applicationsaurus";
+				$label = "#3498DB";
 				break;
 
 			case 2:
 				$bg = "bg";
 				$logo = "logo01";
 				$name = "T-Rex Network";
+				$label = "#ff5959";
 				break;
 
 			case 3:
 				$bg = "bg04";
 				$logo = "logo04";
 				$name = "GameMakerNodon";
+				$label = "#EB974E";
 				break;
 
 			case 6:
 				$bg = "bg02";
 				$logo = "logo02";
 				$name = "IoT Ceramus";
+				$label = "#3FC380";
 				break;
 
 			default:
@@ -83,6 +87,7 @@ class RegisterController extends Controller {
 		$data = [
 			'bg'        => $bg,
 			'logo'		=> $logo,
+			'label'		=> $label,
 			'questions' => \App\QuizQuestion::all(),
 			'camp'      => $request->camp,
 			'camp_name' => $name

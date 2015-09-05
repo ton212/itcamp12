@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="register_assets/css/bootstrap.min.css">
 	<!-- StyleSheet -->
@@ -11,6 +12,9 @@
 		body {
 			background: url(register_assets/img/{{ $bg }}.png);
 			background-attachment: fixed;
+		}
+		.floating-label-form-group-with-focus label {
+    		color: {{ $label }};
 		}
 	</style>
 </head>
@@ -35,7 +39,7 @@
 			@endif
 			<h3>ข้อมูลส่วนตัว</h3>
 			<div class="row control-group">
-				<div class="form-group col-xs-2 floating-label-form-group controls">
+				<div class="form-group col-md-2 floating-label-form-group controls">
 					<label>คำนำหน้า</label>
 					<select required name="prefix" type="text" class="form-control" placeholder="คำนำหน้า" >
 						<option value="">คำนำหน้า</option>
@@ -45,21 +49,21 @@
 						<option value="นางสาว">นางสาว</option>
 					</select>
 				</div>
-				<div class="form-group col-xs-5 floating-label-form-group controls">
+				<div class="form-group col-md-5 floating-label-form-group controls">
 					<label>ชื่อ</label>
 					<input name="firstname" type="text" class="form-control" value="{{ Input::old('firstname') }}" placeholder="ชื่อ" required>
 				</div>
-				<div class="form-group col-xs-5 floating-label-form-group controls">
+				<div class="form-group col-md-5 floating-label-form-group controls">
 					<label>นามสกุล</label>
 					<input name="lastname" type="text" class="form-control" value="{{ Input::old('lastname') }}" placeholder="นามสกุล" required>
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>ชื่อเล่น</label>
 					<input name="nickname" type="text" class="form-control" value="{{ Input::old('nickname') }}" placeholder="ชื่อเล่น" required>
 				</div>
-				<div class="form-group col-xs-2 floating-label-form-group controls">
+				<div class="form-group col-md-2 floating-label-form-group controls">
 					<label>วันเกิด</label>
 					<select required name="birth_d" type="text" class="form-control" placeholder="วันเกิด">
 						<option value="">วันเกิด</option>
@@ -96,7 +100,7 @@
 						<option value="31">31</option>
 					</select>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>เดือนเกิด</label>
 					<select name="birth_m" type="text" class="form-control" placeholder="เดือนเกิด" required>
 						<option value="">เดือนเกิด</option>
@@ -114,7 +118,7 @@
 						<option value="12">ธันวาคม</option>
 					</select>
 				</div>
-				<div class="form-group col-xs-2 floating-label-form-group controls">
+				<div class="form-group col-md-2 floating-label-form-group controls">
 					<label>ปีเกิด</label>
 					<select name="birth_y" type="text" class="form-control" placeholder="ปีเกิด" required>
 						<option value="">ปีเกิด</option>
@@ -145,7 +149,7 @@
 						<option value="2534">2534</option>
 					</select>
 				</div>
-				<div class="form-group col-xs-2 floating-label-form-group controls">
+				<div class="form-group col-md-2 floating-label-form-group controls">
 					<label>เพศ</label>
 					<select name="gender" type="text" class="form-control" placeholder="คำนำหน้า" required>
 						<option value="">เพศ</option>
@@ -155,15 +159,15 @@
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-2 floating-label-form-group controls">
+				<div class="form-group col-md-2 floating-label-form-group controls">
 					<label>ศาสนา</label>
 					<input name="religion" type="text" class="form-control" value="{{ Input::old('religion') }}" placeholder="ศาสนา" required>
 				</div>
-				<div class="form-group col-xs-5 floating-label-form-group controls">
+				<div class="form-group col-md-5 floating-label-form-group controls">
 					<label>เลขประจำตัวประชาชน</label>
 					<input name="id_card" type="text" class="form-control" value="{{ Input::old('id_card') }}" placeholder="เลขประจำตัวประชาชน" required>
 				</div>
-				<div class="form-group col-xs-5 floating-label-form-group controls">
+				<div class="form-group col-md-5 floating-label-form-group controls">
 					<label>Facebook</label>
 					<input name="facebook" type="text" class="form-control" value="{{ Input::old('facebook') }}" placeholder="Facebook (กรอกเฉพาะ username (ดูจาก URL หน้าโปรไฟล์)">
 				</div>
@@ -171,44 +175,44 @@
 			</div>
 			<h3>ที่อยู่ปัจจุบันที่สามารถติดต่อได้</h3>
 			<div class="row control-group">
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>บ้านเลขที่</label>
 					<input name="address[house_no]" type="text" class="form-control" value="{{ Input::old('address.house_no') }}" placeholder="บ้านเลขที่" required>
 				</div>
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>หมู่</label>
 					<input name="address[village_no]" type="text" class="form-control" value="{{ Input::old('address.village_no') }}" placeholder="หมู่" >
 				</div>
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>ถนน</label>
 					<input name="address[street]" type="text" class="form-control" value="{{ Input::old('address.street') }}" placeholder="ถนน" required>
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>แขวง/ตำบล</label>
 					<input name="address[sub_district]" type="text" class="form-control" value="{{ Input::old('address.sub_district') }}" placeholder="แขวง/ตำบล" required>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>เขต/อำเภอ</label>
 					<input name="address[district]" type="text" class="form-control" value="{{ Input::old('address.district') }}" placeholder="เขต/อำเภอ" required>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>จังหวัด</label>
 					<input name="address[province]" type="text" class="form-control" value="{{ Input::old('address.province') }}" placeholder="จังหวัด" required>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>รหัสไปรษณีย์</label>
 					<input name="address[postcode]" type="text" class="form-control" value="{{ Input::old('address.postcode') }}" placeholder="รหัสไปรษณีย์" required>
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์</label>
 					<input type="text" name="address[tel]" class="form-control" value="{{ Input::old('address.tel') }}" placeholder="เบอร์โทรศัพท์" required>
 					<p class="help-block text-danger"></p>
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>อีเมล</label>
 					<input type="text" name="email" class="form-control" value="{{ Input::old('email') }}" placeholder="อีเมล" required>
 					<p class="help-block text-danger"></p>
@@ -216,7 +220,7 @@
 			</div>
 			<h3>การศึกษา</h3>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</label>
 					<select name="academic[grade]" type="text" class="form-control"  placeholder="ขณะนี้กำลังศึกษาอยู่ในระดับชั้น" required>
 						<option value="">ขณะนี้กำลังศึกษาอยู่ในระดับชั้น</option>
@@ -226,75 +230,75 @@
 						<option value="ปวช.">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
 					</select>
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>แผนการเรียน (ถ้ามี)</label>
 					<input name="academic[class]" type="text" class="form-control" value="{{ Input::old('academic.class') }}" placeholder="แผนการเรียน (ถ้ามี)" >
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>โรงเรียน / วิทยาลัย</label>
 					<input name="academic[school]" type="text" class="form-control" value="{{ Input::old('academic.school') }}" placeholder="โรงเรียน / วิทยาลัย" required>
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>จังหวัด</label>
 					<input name="academic[location]" type="text" class="form-control" value="{{ Input::old('academic.location') }}" placeholder="จังหวัด" required>
 				</div>
 			</div>
 			<h3>ข้อมูลผู้ปกครอง</h3>
 			<div class="row control-group">
-				<div class="form-group col-xs-5 floating-label-form-group controls">
+				<div class="form-group col-md-5 floating-label-form-group controls">
 					<label>ชื่อ</label>
 					<input name="parent[firstname]" type="text" class="form-control" value="{{ Input::old('parent.firstname') }}" placeholder="ชื่อ" required>
 				</div>
-				<div class="form-group col-xs-5 floating-label-form-group controls">
+				<div class="form-group col-md-5 floating-label-form-group controls">
 					<label>นามสกุล</label>
 					<input name="parent[lastname]" type="text" class="form-control" value="{{ Input::old('parent.lastname') }}" placeholder="นามสกุล" required>
 				</div>
-				<div class="form-group col-xs-2 floating-label-form-group controls">
+				<div class="form-group col-md-2 floating-label-form-group controls">
 					<label>เกี่ยวข้องเป็น</label>
 					<input name="parent[relate]" type="text" class="form-control" value="{{ Input::old('parent.relate') }}" placeholder="เกี่ยวข้องเป็น" required>
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>บ้านเลขที่</label>
 					<input name="parent[addr][house_no]" type="text" class="form-control" value="{{ Input::old('parent.addr.house_no') }}" placeholder="ที่อยู่ที่สามารถติดต่อได้ (บ้านเลขที่)" required>
 				</div>
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>หมู่</label>
 					<input name="parent[addr][village_no]" type="text" class="form-control" value="{{ Input::old('parent.addr.village_no') }}" placeholder="หมู่" >
 				</div>
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>ถนน</label>
 					<input name="parent[addr][street]" type="text" class="form-control" value="{{ Input::old('parent.addr.street') }}" placeholder="ถนน" required>
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>แขวง/ตำบล</label>
 					<input name="parent[addr][sub_district]" type="text" class="form-control" value="{{ Input::old('parent.addr.sub_district') }}" placeholder="แขวง/ตำบล" required>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>เขต/อำเภอ</label>
 					<input name="parent[addr][district]" type="text" class="form-control" value="{{ Input::old('parent.addr.district') }}" placeholder="เขต/อำเภอ" required>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>จังหวัด</label>
 					<input name="parent[addr][province]" type="text" class="form-control" value="{{ Input::old('parent.addr.province') }}" placeholder="จังหวัด" required>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group controls">
+				<div class="form-group col-md-3 floating-label-form-group controls">
 					<label>รหัสไปรษณีย์</label>
 					<input name="parent[addr][postcode]" type="text" class="form-control" value="{{ Input::old('parent.addr.postcode') }}" placeholder="รหัสไปรษณีย์" >
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1</label>
 					<input type="text" name="parent[tel][0]" class="form-control" value="{{ Input::old('parent.tel.0') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1" required>
 					<p class="help-block text-danger"></p>
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2</label>
 					<input type="text" name="parent[tel][1]" class="form-control" value="{{ Input::old('parent.tel.1') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2" required>
 					<p class="help-block text-danger"></p>
@@ -303,93 +307,93 @@
 			<h3>ความสนใจ</h3>
 			<p style="font-size: 18px;">คณะและมหาวิทยาลัยที่น้องสนใจเข้าศึกษาต่อ (ไม่มีผลต่อการเข้าร่วมโครงการ)</p>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>คณะ</label>
 					<input name="university_interesting[0][faculty]" type="text" class="form-control" value="{{ Input::old('university_interesting.0.faculty') }}" placeholder="คณะ">
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>มหาวิทยาลัย / สถาบัน</label>
 					<input name="university_interesting[0][university]" type="text" class="form-control" value="{{ Input::old('university_interesting.0.university') }}" placeholder="มหาวิทยาลัย / สถาบัน">
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>คณะ</label>
 					<input name="university_interesting[1][faculty]" type="text" class="form-control" value="{{ Input::old('university_interesting.1.faculty') }}" placeholder="คณะ">
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>มหาวิทยาลัย / สถาบัน</label>
 					<input name="university_interesting[1][university]" type="text" class="form-control" value="{{ Input::old('university_interesting.1.university') }}" placeholder="มหาวิทยาลัย / สถาบัน">
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>คณะ</label>
 					<input name="university_interesting[2][faculty]" type="text" class="form-control" value="{{ Input::old('university_interesting.2.faculty') }}" placeholder="คณะ">
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>มหาวิทยาลัย / สถาบัน</label>
 					<input name="university_interesting[2][university]" type="text" class="form-control" value="{{ Input::old('university_interesting.2.university') }}" placeholder="มหาวิทยาลัย / สถาบัน">
 				</div>
 			</div>
 			<p style="font-size: 18px;">น้องเคยเข้าร่วมค่ายของมหาวิทยาลัยหรือไม่ ถ้าเคยน้องช่วยกรอกให้พี่ทีนะครับ :D</p>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>ชื่อค่าย ลำดับที่ 1</label>
 					<input name="camp_history[0][name]" type="text" class="form-control" value="{{ Input::old('camp_history.0.name') }}" placeholder="ชื่อค่าย ลำดับที่ 1" >
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>จัดโดย</label>
 					<input name="camp_history[0][by]" type="text" class="form-control" value="{{ Input::old('camp_history.0.by') }}" placeholder="จัดโดย" >
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>ชื่อค่าย ลำดับที่ 2</label>
 					<input name="camp_history[1][name]" type="text" class="form-control" value="{{ Input::old('camp_history.1.name') }}" placeholder="ชื่อค่าย ลำดับที่ 2" >
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>จัดโดย</label>
 					<input name="camp_history[1][by]" type="text" class="form-control" value="{{ Input::old('camp_history.1.by') }}" placeholder="จัดโดย" >
 				</div>
 			</div>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>ชื่อค่าย ลำดับที่ 3</label>
 					<input name="camp_history[2][name]" type="text" class="form-control" value="{{ Input::old('camp_history.2.name') }}" placeholder="ชื่อค่าย ลำดับที่ 3" >
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>จัดโดย</label>
 					<input name="camp_history[2][by]" type="text" class="form-control" value="{{ Input::old('camp_history.2.by') }}" placeholder="จัดโดย" >
 				</div>
 			</div>
 			<h3>ข้อมูลอื่นๆ</h3>
 			<div class="row control-group">
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>อาหาร/สิ่งที่แพ้</label>
 					<textarea name="medical[food]" rows="3" type="text" class="form-control" placeholder="อาหาร/สิ่งที่แพ้ (รวมถึงน้องๆ ที่ทานมังสวิรัติ หรือทานเจด้วยนะครับ)">{{ Input::old('medical.food') }}</textarea>
 				</div>
-				<div class="form-group col-xs-6 floating-label-form-group controls">
+				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>โรคประจำตัว / แพ้ยา</label>
 					<textarea name="medical[disease]" rows="3" type="text" class="form-control" placeholder="โรคประจำตัว / แพ้ยา" >{{ Input::old('medical.disease') }}</textarea>
 				</div>
 			</div>
 			<h3>น้องรู้จักค่ายไอทีแคมป์ได้อย่างไรครับ ?</h3>
 			<div class="row control-group">
-				<div class="col-xs-1"></div>
-				<div class="form-group col-xs-6" style="width:440px;">
+				<div class="col-md-1"></div>
+				<div class="form-group col-md-6" style="width:440px;">
 					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">Facebook</label>
 					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">Twitter</label>
 					<label class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" name="pr_from[]">เพื่อนๆ แนะนำ</label>
 					<label id="choose1"class="checkbox-inline" style="font-size: 20px; margin: 8px;"><input type="checkbox" value="" name="etc" id="choose">อื่นๆ ระบุ</label>
 				</div>
-				<div class="form-group col-xs-3 floating-label-form-group" id="input_choose" style="display: none; margin-top:6px margin-left: 0px;">
+				<div class="form-group col-md-3 floating-label-form-group" id="input_choose" style="display: none; margin-top:6px margin-left: 0px;">
 					<input name="pr_from[other]" value="{{Input::old('pr_from.other')}}" type="text" class="form-control" placeholder="โปรดระบุ" >
 				</div>
 			</div>
 			<h3>เลือกขนาดเสื้อค่าย</h3>
 			<div class="row control-group">
-				<div class="form-group col-xs-4 floating-label-form-group controls">
+				<div class="form-group col-md-4 floating-label-form-group controls">
 					<label>ขนาดเสื้อ</label>
 					<select name="shirt_size" type="text" class="form-control" placeholder="ขนาดเสื้อ" required>
 						<option value="">ขนาดเสื้อ</option>
@@ -409,8 +413,8 @@
 			@foreach(array_sort($questions, function($question) { return $question->attributes->weight; }) as $question)
 			@if(in_array($camp, $question->attributes->judge) || in_array(5, $question->attributes->judge) || in_array(4, $question->attributes->judge))
 				<div class="row control-group">
-				<div class="form-group col-xs-12 floating-label-form-group-area controls">
-					<label style="font-size:1.5em;color:#ff5959;">{{ $i.". ".$question->title }}</label>
+				<div class="form-group col-md-12 floating-label-form-group-area controls">
+					<label style="font-size:1.5em;color:{{ $label }};">{{ $i.". ".$question->title }}</label>
 					<p style="font-size: 20px;">{!! str_replace('{file}', '', $question->description) !!}</p>
 					@if($question->description != "")
 						@if(strpos($question->description, '{file}') !== false)
@@ -431,7 +435,7 @@
 			@endif
 			@endforeach
 			<br>
-			<div class="text-center"><p style="font-size:22px;">คำเตือน !! ตรวจสอบข้อมูลให้ครบถ้วนก่อนส่งนะครับ หากส่งมาแล้วน้องจะไม่สามารถแก้ไขข้อมูลได้นะครับ</p></div>
+			<div class="text-center"><p style="font-size:22px;">คำเตือน !! ตรวจสอบข้อมูลให้ครบถ้วนก่อนส่งนะครับ หากส่งมาแล้วจะไม่สามารถแก้ไขข้อมูลได้นะครับ</p></div>
 			<div class="checkbox text-center" style="font-size:20px;" >
 				<label>
 					<input id="checker" type="checkbox"> ขอรับรองว่าข้อมูลข้างต้นทั้งหมดเป็นความจริง หากได้รับการตรวจสอบว่ามีการให้ข้อมูลเป็นเท็จจะอนุญาตให้ทางพี่ๆ ทีมงานตัดสิทธิ์ได้โดยไม่แจ้งให้ทราบล่วงหน้า
@@ -440,8 +444,8 @@
 			</div>
 			<div id="success"></div>
 			<div class="row">
-				<div class="form-group col-xs-12">
-					<button type="submit" class="btn btn-warning btn-lg col-xs-12" style="font-size: 22px;">ส่งใบสมัคร</button>
+				<div class="form-group col-md-12">
+					<button type="submit" class="btn btn-warning btn-lg col-md-12" style="font-size: 22px;">ส่งใบสมัคร</button>
 				</div>
 			</div>
 		</form>
