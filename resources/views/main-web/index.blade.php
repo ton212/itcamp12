@@ -132,6 +132,8 @@
                             <div class="sponsor">
                                 <div class="spon-image x-large"><img src="main_assets/img/sponsor/kmitl.jpg" /></div>
                                 <div class="spon-image x-large last"><img src="main_assets/img/sponsor/itkmitl.jpg" /></div>
+                                <div class="breakimage"></div>
+                                <div class="spon-image medium last" /><img src="main_assets/img/sponsor/camphub.png" /></div>
                                 {{--
                                 <div class="breakimage"></div>
                                 <div class="spon-image large" /><img src="" /></div>
