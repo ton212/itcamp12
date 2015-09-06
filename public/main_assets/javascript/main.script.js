@@ -9,6 +9,7 @@ function checkie() {
         var msie = ua.indexOf("MSIE ");
         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
             $.browser.device = true;
+            $.browser.ie = true;
         }
 }
 
@@ -243,6 +244,11 @@ function prepare() {
         }
     } else {
         $("body").addClass("static");
+    }
+    
+    if($.browser.ie) {
+        $(".navbar .navbar-shield").width(1150);
+        $(".navbar .navbar-shield").css("margin-left", "-575.1px");
     }
 }
 
