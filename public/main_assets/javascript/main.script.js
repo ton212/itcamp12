@@ -377,7 +377,7 @@ function scrollToBlock(name) {
                 tooffset = $('.rainbow').offset().top;
                 break;
             case 'sponsor':
-                tooffset = $('.mountainfront').offset().top + ((400 / 720) * window.innerHeight);
+                tooffset = $('.mountainfront').offset().top + ((285 / 720) * window.innerHeight);
                 break;
             case 'camp':
                 tooffset = $('.itcamp-camp').offset().top - 40;
