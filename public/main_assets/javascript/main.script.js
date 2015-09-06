@@ -4,6 +4,14 @@ var isSafari = navigator.vendor.indexOf("Apple")==0 && /\sSafari\//.test(navigat
 if(isSafari) { $.browser.device = true; }
 //$.browser.device = true;
 
+function checkie() {
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+            $.browser.device = true;
+        }
+}
+
 var srcbase = "main_assets";
 
 var layerSet = [];
@@ -35,6 +43,8 @@ function preload(arrayOfImages) {
 }
 
 function register() {
+    checkie();
+    
     var galleryElem = $(".itcamp-gallery ul li");
     var timelineDescriptElem = $(".timeline-description span");
     var itcampContactOffsetY = $('.itcamp-contact').offset().top;
