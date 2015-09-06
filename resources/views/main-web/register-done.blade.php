@@ -4,6 +4,13 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="register_assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="register_assets/css/style.css">
+	<style>
+			body {
+			background: url(register_assets/img/BG_form_registered.png);
+			background-
+			attachment: fixed;
+		}
+	</style>
 	<title>ได้รับข้อมูลเรียบร้อย</title>
 </head>
 <body>
