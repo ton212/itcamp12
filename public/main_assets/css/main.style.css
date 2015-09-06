@@ -521,7 +521,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: white;
   z-index: 1000000; }
   .preloader img {
-    height: 80%;
+    height: 55%;
     position: absolute;
     top: 46%;
     left: 47%;
