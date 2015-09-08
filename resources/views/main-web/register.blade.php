@@ -32,7 +32,7 @@
 				<div class="alert alert-danger">
 					<ul>
 					@foreach($errors->all() as $error)
-						<li>{{ $error }}</li>
+						<li style="font-size:22px;">{{ $error }}</li>
 					@endforeach
 					</ul>
 				</div>
@@ -209,12 +209,12 @@
 			<div class="row control-group">
 				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์</label>
-					<input type="text" name="address[tel]" class="form-control" value="{{ Input::old('address.tel') }}" placeholder="เบอร์โทรศัพท์" required>
+					<input type="tel" name="address[tel]" class="form-control" value="{{ Input::old('address.tel') }}" placeholder="เบอร์โทรศัพท์" required>
 					<p class="help-block text-danger"></p>
 				</div>
 				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>อีเมล</label>
-					<input type="text" name="email" class="form-control" value="{{ Input::old('email') }}" placeholder="อีเมล" required>
+					<input type="email" name="email" class="form-control" value="{{ Input::old('email') }}" placeholder="อีเมล" required>
 					<p class="help-block text-danger"></p>
 				</div>
 			</div>
@@ -295,12 +295,12 @@
 			<div class="row control-group">
 				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1</label>
-					<input type="text" name="parent[tel][0]" class="form-control" value="{{ Input::old('parent.tel.0') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1" required>
+					<input type="tel" name="parent[tel][0]" class="form-control" value="{{ Input::old('parent.tel.0') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 1" required>
 					<p class="help-block text-danger"></p>
 				</div>
 				<div class="form-group col-md-6 floating-label-form-group controls">
 					<label>เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2</label>
-					<input type="text" name="parent[tel][1]" class="form-control" value="{{ Input::old('parent.tel.1') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2" required>
+					<input type="tel" name="parent[tel][1]" class="form-control" value="{{ Input::old('parent.tel.1') }}" placeholder="เบอร์โทรศัพท์ที่สามารถติดต่อได้ในกรณีฉุกเฉิน (ผู้ปกครอง) 2" required>
 					<p class="help-block text-danger"></p>
 				</div>
 			 </div>

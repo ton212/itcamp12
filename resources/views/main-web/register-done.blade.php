@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="register_assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="register_assets/css/style.css">
+	<link rel="stylesheet" href="{{ asset('register_assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('register_assets/css/style.css') }}">
+	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
 	<style>
 			body {
-			background: url(register_assets/img/BG_form_registered.png);
-			background-
-			attachment: fixed;
+			background: url(register_assets/img/BG_form_registered.png) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
 		}
 	</style>
 	<title>ได้รับข้อมูลเรียบร้อย</title>

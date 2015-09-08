@@ -22,19 +22,19 @@ class ApplicantController extends Controller {
 
 		switch ($filters['show']) {
 			case 0:
-				$applicants = Applicant::waitForPreCheck()->paginate($filters['limit']);
+				$applicants = Applicant::waitForPreCheck()->paginate($filters['limit'])->setPath(route('backend.applicant.index'))->appends($filters);
 				break;
 
 			case 1:
-				$applicants = Applicant::approved()->paginate($filters['limit']);
+				$applicants = Applicant::approved()->paginate($filters['limit'])->setPath(route('backend.applicant.index'))->appends($filters);
 				break;
 
 			case 2:
-				$applicants = Applicant::unapproved()->paginate($filters['limit']);
+				$applicants = Applicant::unapproved()->paginate($filters['limit'])->setPath(route('backend.applicant.index'))->appends($filters);
 				break;
 
 			default:
-				$applicants = Applicant::paginate($filters['limit']);
+				$applicants = Applicant::paginate($filters['limit'])->setPath(route('backend.applicant.index'))->appends($filters);
 				break;
 		}
 

@@ -4,7 +4,14 @@
     <head>
         <meta charset="utf-8" />
         <title>ITCAMP12 | ไอทีแคมป์ครั้งที่ 12 วันที่ 17-20 ธันวาคม 2558 ณ ไอทีลาดกระบังฯ</title>
+        <meta property="og:title" content="ITCAMP12 ไอทีแคมป์ครั้งที่ 12 วันที่ 17-20 ธันวาคมนี้ ณ ไอทีลาดกระบัง"/>
+        <meta property="og:type" content="website"
+        <meta property="og:url" content="http://www.itcamp.in.th/12"/>
+        <meta property="og:image" content="http://www.itcamp.in.th/12/preweb_assets/images/thumbnail02.jpg"/>
+        <meta property="og:site_name" content="เปิดแล้ว !! รับสมัครเหล่านักผจญภัยหน้าใหม่ที่พร้อมจะร่วมผจญภัยไปในค่าย ไอทีแคมป์ครั้งที่ 12 เปิดแล้ววันนี้ สมัครเลย !!"/>
+        <meta property="og:description" content="เปิดแล้ว !! รับสมัครเหล่านักผจญภัยหน้าใหม่ที่พร้อมจะร่วมผจญภัยไปในค่าย ไอทีแคมป์ครั้งที่ 12 เปิดแล้ววันนี้ สมัครเลย !!"/>
         <link rel="stylesheet" href="main_assets/css/main.style.css" />
+        <link rel="icon" href="main_assets/img/favicon.ico">
         <script src="main_assets/javascript/jquery.min.js"></script>
         <script src="main_assets/javascript/TweenMax.min.js"></script>
         <script src="main_assets/javascript/jquery.gsap.min.js"></script>
@@ -95,7 +102,7 @@
                                     </div>
                                     <div class="twitter">
                                         <a href="https://twitter.com/ITCAMP" target="_blank">@ITCAMP</a>
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.itcamp.in.th" data-text="เตรียมพบกับการผจญภัยในดินแดนมหัศจรรย์ ที่ไม่สามารถหาได้จากที่ไหน ไอทีแคมป์ครั้งที่ 12 เร็วๆ นี้" data-via="ITCAMP" data-hashtags="ITCAMP12" data-dnt="true">Tweet</a>
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.itcamp.in.th" data-text="เปิดรับสมัครแล้ว !! ITCAMP12 ไอทีแคมป์ครั้งที่ 12 วันที่ 17-20 ธันวาคมนี้ ณ ไอทีลาดกระบัง" data-via="ITCAMP" data-hashtags="ITCAMP12" data-dnt="true">Tweet</a>
                                     </div>
                                 </div>
                             </div>
