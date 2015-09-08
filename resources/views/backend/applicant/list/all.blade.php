@@ -47,7 +47,7 @@
 		</table>
 	</div>
 	<div class="box-footer text-right">
-		{{ $applicants->render() }}
+		{!! $applicants->render() !!}
 	</div>
 </div>
 

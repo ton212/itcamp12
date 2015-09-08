@@ -43,7 +43,7 @@
 			<span class="info-box-icon"><i class="fa no-margin fa-users"></i></span>
 			<div class="info-box-content">
 				<span class="info-box-text">จำนวนผู้สมัคร</span>
-				<span class="info-box-number">0 คน</span>
+				<span class="info-box-number">{{ \App\Applicant::all()->count() }} คน</span>
 				<div class="progress">
 					<div class="progress-bar" style="width: 100%"></div>
 				</div>
