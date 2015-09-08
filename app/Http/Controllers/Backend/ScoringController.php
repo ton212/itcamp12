@@ -64,16 +64,12 @@ class ScoringController extends Controller {
             $applicant_id = $applicant->id;
         }
 
-        $questions = QuizQuestion::with(array('answers' => function($query) use ($applicant_id)
-        {
-            $query->where('quiz_answers.applicant_id', '=', $applicant_id);
-
-        }))->get();
+        $answers = Applicant::findOrFail($applicant_id)->quiz_answers;
 
         session(['judging_applicant' => $applicant_id]);
 
         $data = [
-            'questions' => $questions
+            'answers'   => $answers
         ];
 
         return view('backend.scoring.show', $data);
@@ -83,18 +79,7 @@ class ScoringController extends Controller {
     {
         $applicant_id = session()->pull('judging_applicant');
         $questions = QuizQuestion::all();
-        $score = [];
-
-        foreach ($questions as $question) {
-            if(!$question->canScoring()) {
-                continue;
-            }
-            if($request->has('ans' . $question->id)) {
-                $score[$question->id] = $request->input('ans' . $question->id);
-            } else {
-                return redirect(route('backend.scoring.start', 0));
-            }
-        }
+        $score = $request->get('answers');
 
         $score_cards                = new QuizScoreCard();
         $score_cards->scores        = $score;

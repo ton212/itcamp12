@@ -9,18 +9,20 @@
 				</div>
 				<div class="box-body">
 					<form method="post">
-						@forelse($questions as $question)
-							@if($question->canScoring())
+						<?php $i = 1; ?>
+						@forelse($answers as $answer)
+							@if(in_array(Auth::user()->judge_group, $answer->question->attributes->judge) or Auth::user()->judge_group == 5)
 							<div class="form-group">
-								<lable class="control-label"><h3>คำถาม : {{ $question->title }}</h3></label>
-								<textarea class="form-control" rows="10" readonly>{{ $question->answers[0]->answer}}</textarea>	
+								<h4 style="line-height: 1.5em">{{ $i.". ".$answer->question->title }}</h4>
+								<textarea class="form-control" rows="10" readonly>{{ $answer->answer }}</textarea>	
 								<strong>คะแนน :</strong>
-								@foreach($question->score_scale as $scale)
+								@foreach($answer->question->score_scale as $scale)
 								<label class="radio-inline">
-									<input type="radio" name="ans{{ $question->id }}" id="inlineRadio1" value="{{ $scale }}"> {{ $scale }}
+									<input type="radio" name="answers[{{ $answer->question->id }}]" id="inlineRadio1" value="{{ $scale }}"> {{ $scale }}
 								</label>
 								@endforeach
 							</div>
+							<?php $i++; ?>
 							@endif
 						@empty
 							<h2 class="text-center">ไม่มีคำถามในระบบ</h2>
