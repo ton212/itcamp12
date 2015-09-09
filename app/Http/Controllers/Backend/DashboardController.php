@@ -16,9 +16,14 @@ class DashboardController extends Controller {
 	{
 		$data = [
 			'page_title'    => 'ภาพรวม',
-			'page_subtitle' => 'ภาพรวมของระบบ'
+			'page_subtitle' => 'ภาพรวมของระบบ',
+			'all_applicant' => \App\Applicant::all()->count(),
+			'chk_applicant' => \App\Applicant::approved()->count(),
+			'chk_answer' 	=> \Auth::user()->score_cards->count()
 		];
 		return view('backend.dashboard', $data);
 	}
+
+
 
 }

@@ -43,12 +43,27 @@
 			<span class="info-box-icon"><i class="fa no-margin fa-users"></i></span>
 			<div class="info-box-content">
 				<span class="info-box-text">จำนวนผู้สมัคร</span>
-				<span class="info-box-number">16 คน</span>
+				<span class="info-box-number">สัปดาห์นี้ {{ $all_applicant }} คน</span>
 				<div class="progress">
 					<div class="progress-bar" style="width: 100%"></div>
 				</div>
 				<span class="progress-description">
-					สัปดาห์นี้ 16 คน
+					จากจำนวนทั้งหมด {{ $all_applicant }} คน
+				</span>
+			</div><!-- /.info-box-content -->
+		</div><!-- /.info-box -->
+	</div><!-- /.col -->
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="info-box bg-yellow">
+			<span class="info-box-icon"><i class="fa no-margin fa-child"></i></span>
+			<div class="info-box-content">
+				<span class="info-box-text">ตรวจสอบใบสมัครแล้ว</span>
+				<span class="info-box-number">{{ $chk_applicant }} คน</span>
+				<div class="progress">
+					<div class="progress-bar" style="width: {{($chk_applicant/$all_applicant)*100}}%"></div>
+				</div>
+				<span class="progress-description">
+					จากจำนวนผู้สมัครทั้งหมด {{ $all_applicant }} คน
 				</span>
 			</div><!-- /.info-box-content -->
 		</div><!-- /.info-box -->
@@ -58,27 +73,12 @@
 			<span class="info-box-icon"><i class="fa no-margin fa-check-circle"></i></span>
 			<div class="info-box-content">
 				<span class="info-box-text">ตรวจคำตอบแล้ว</span>
-				<span class="info-box-number">0 คน</span>
+				<span class="info-box-number">{{ $chk_answer }} คน</span>
 				<div class="progress">
-					<div class="progress-bar" style="width: 70%"></div>
+					<div class="progress-bar" style="width: {{($chk_answer/$chk_applicant)*100}}%"></div>
 				</div>
 				<span class="progress-description">
-					เหลือ 0 คน
-				</span>
-			</div><!-- /.info-box-content -->
-		</div><!-- /.info-box -->
-	</div><!-- /.col -->
-	<div class="col-md-3 col-sm-6 col-xs-12">
-		<div class="info-box bg-yellow">
-			<span class="info-box-icon"><i class="fa no-margin fa-child"></i></span>
-			<div class="info-box-content">
-				<span class="info-box-text">ผ่านการคัดเลือก</span>
-				<span class="info-box-number">0 คน</span>
-				<div class="progress">
-					<div class="progress-bar" style="width: 70%"></div>
-				</div>
-				<span class="progress-description">
-					จาก 50 คน
+					เหลือ {{ $chk_applicant }} คน
 				</span>
 			</div><!-- /.info-box-content -->
 		</div><!-- /.info-box -->
@@ -90,7 +90,7 @@
 				<span class="info-box-text">ยืนยันสิทธิ์</span>
 				<span class="info-box-number">0 คน</span>
 				<div class="progress">
-					<div class="progress-bar" style="width: 70%"></div>
+					<div class="progress-bar" style="width: 0%"></div>
 				</div>
 				<span class="progress-description">
 					เหลือ 0 คน
