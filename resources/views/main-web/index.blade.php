@@ -401,6 +401,10 @@
                                     <div class="box-share">
                                         <h3>ร่วมประชาสัมพันธ์กับเรา</h3>
                                         <a class="button pill" href="{{ route('link-exchange.create') }}">คลิกที่นี่</a>
+                                        <h4>เว็บไซต์ที่ร่วมประชาสัมพันธ์</h4>
+                                        <ul>
+                                            <li><a href="http://meranote.in.th" target="_blank">meranote.in.th</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
