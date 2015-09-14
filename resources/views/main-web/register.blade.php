@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="register_assets/css/bootstrap.min.css">
 	<!-- StyleSheet -->
 	<link rel="stylesheet" href="register_assets/css/style.css">
+	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
 	<title>แบบฟอร์ม สมัครไอทีแคมป์ | ค่ายย่อย "{{ $camp_name }}"</title>
 	<style>
 		body {
@@ -22,7 +23,6 @@
 	<div class="container">
 		<div class="card">
 		<form id="contactForm" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="page-header text-center">
 				<img src="register_assets/img/{{ $logo }}.png" alt="">
 				<h1>แบบฟอร์ม สมัครไอทีแคมป์<br><small>ค่ายย่อย "{{ $camp_name }}"</small></h1>

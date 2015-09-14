@@ -19,7 +19,7 @@ class ScoringController extends Controller {
         ];
 
         if ($filters['show']) {
-            $applicants = Applicant::approved()->orderBy('id')->paginate(20);
+            $applicants = Applicant::approved()->orderBy('id')->paginate(20)->setPath(route('backend.scoring.index'));
         } else {
             $applicants = Applicant::approved()->orderBy('id')->with('score_cards')->get(['id'])->toArray();
 
@@ -31,7 +31,7 @@ class ScoringController extends Controller {
 
             $checked_applicants = array_pluck($checked_applicants, 'id');
 
-            $applicants = Applicant::whereNotIn('id', $checked_applicants)->approved()->with('quiz_answers')->orderBy('id')->paginate(20);
+            $applicants = Applicant::whereNotIn('id', $checked_applicants)->approved()->with('quiz_answers')->orderBy('id')->paginate(20)->setPath(route('backend.scoring.index'));
         }
 
         $data = [

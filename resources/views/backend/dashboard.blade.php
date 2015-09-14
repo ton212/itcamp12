@@ -43,7 +43,7 @@
 			<span class="info-box-icon"><i class="fa no-margin fa-users"></i></span>
 			<div class="info-box-content">
 				<span class="info-box-text">จำนวนผู้สมัคร</span>
-				<span class="info-box-number">สัปดาห์นี้ {{ $all_applicant }} คน</span>
+				<span class="info-box-number">สัปดาห์นี้ {{ $all_applicant-277 }} คน</span>
 				<div class="progress">
 					<div class="progress-bar" style="width: 100%"></div>
 				</div>
@@ -98,10 +98,6 @@
 			</div><!-- /.info-box-content -->
 		</div><!-- /.info-box -->
 	</div><!-- /.col -->
-</div>
-
-<div class="row">
-	
 </div>
 
 @endsection

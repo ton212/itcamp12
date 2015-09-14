@@ -21,7 +21,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link href="{{ asset('backend_assets/adminlte/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend_assets/adminlte/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
-
     <link href="{{ asset('backend_assets/style.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
