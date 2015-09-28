@@ -14,25 +14,17 @@ class ScoringController extends Controller {
 
 	public function index(Request $request)
 	{
-        $filters = [
-            'show' => 0
-        ];
+        $applicants = Applicant::approved()->orderBy('id')->with('score_cards')->get(['id'])->toArray();
 
-        if ($filters['show']) {
-            $applicants = Applicant::approved()->orderBy('id')->paginate(20)->setPath(route('backend.scoring.index'));
-        } else {
-            $applicants = Applicant::approved()->orderBy('id')->with('score_cards')->get(['id'])->toArray();
+        $checked_applicants = array_filter($applicants, function($applicant) {
+            if (count($applicant['score_cards']) == 14) {
+                return True;
+            } return False;
+        });
 
-            $checked_applicants = array_filter($applicants, function($applicant) {
-                if (count($applicant['score_cards']) == 14) {
-                    return True;
-                } return False;
-            });
+        $checked_applicants = array_pluck($checked_applicants, 'id');
 
-            $checked_applicants = array_pluck($checked_applicants, 'id');
-
-            $applicants = Applicant::whereNotIn('id', $checked_applicants)->approved()->with('quiz_answers')->orderBy('id')->paginate(20)->setPath(route('backend.scoring.index'));
-        }
+        $applicants = Applicant::whereNotIn('id', $checked_applicants)->approved()->with('quiz_answers')->orderBy('id')->paginate(20)->setPath(route('backend.scoring.index'));
 
         $data = [
             'page_title'    => 'การคัดเลือก',
@@ -44,7 +36,6 @@ class ScoringController extends Controller {
         ];
 
         return view('backend.scoring.index', $data);
-		dd(Applicant::with('score_cards')->get());
 	}
 
 	public function getScoring($applicant_id)
