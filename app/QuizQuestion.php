@@ -21,4 +21,9 @@ class QuizQuestion extends Model {
     {
         return in_array(Auth::user()->judge_group, $this->toArray()['attributes']->judge) or Auth::user()->judge_group == 5;
     }
+
+    public function scopeGroup($query, $group_id)
+    {
+        return $query->where('attributes', 'LIKE', '{"judge":["'.$group_id.'"]%');
+    }
 }

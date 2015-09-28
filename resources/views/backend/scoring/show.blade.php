@@ -14,7 +14,10 @@
 							@if(in_array(Auth::user()->judge_group, $answer->question->attributes->judge) or Auth::user()->judge_group == 5)
 							<div class="form-group">
 								<h4 style="line-height: 1.5em">{{ $i.". ".$answer->question->title }}</h4>
-								<textarea class="form-control" rows="10" readonly>{{ $answer->answer }}</textarea>	
+								@if(is_array($answer->answer))
+								<img src="data:image/png;base64,{{ base64_encode($answer->answer[0]) }}" style="max-width: 100%;">
+								@endif
+								<textarea class="form-control" rows="10" readonly>@if(is_array($answer->answer)){{ $answer->answer[1] }}@else{{ $answer->answer }}@endif</textarea>
 								<strong>คะแนน :</strong>
 								@foreach($answer->question->score_scale as $scale)
 								<label class="radio-inline">
