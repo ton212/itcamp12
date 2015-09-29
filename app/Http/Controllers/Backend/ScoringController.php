@@ -48,7 +48,11 @@ class ScoringController extends Controller {
             }
         } else {
             $checked_applicant = array_pluck(Auth::user()->score_cards()->get(['applicant_id'])->toArray(), 'applicant_id');
-            $applicant = Applicant::whereNotIn('id', $checked_applicant)->approved()->orderBy(\DB::raw('RAND()'))->take(1)->first();
+            if (Auth::user()->judge_group != 5) {
+                $applicant = Applicant::whereNotIn('id', $checked_applicant)->approved()->camp(Auth::user()->judge_group)->orderBy(\DB::raw('RAND()'))->take(1)->first();
+            } else {
+                $applicant = Applicant::whereNotIn('id', $checked_applicant)->approved()->orderBy(\DB::raw('RAND()'))->take(1)->first();
+            }
             if(empty($applicant)) {
                 return redirect(route('backend.scoring.index'));
             }

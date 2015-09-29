@@ -81,4 +81,9 @@ class Applicant extends Model {
         return $this->score_cards()->whereUserId($user_id)->count();
     }
 
+    public function scopeCamp($query, $camp_id)
+    {
+        return $query->where('camp', $camp_id);
+    }
+
 }
