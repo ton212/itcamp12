@@ -86,4 +86,14 @@ class Applicant extends Model {
         return $query->where('camp', $camp_id);
     }
 
+    public function scopeMale($query)
+    {
+        return $query->where('gender', "ชาย");
+    }
+
+    public function scopeFemale($query)
+    {
+        return $query->where('gender', "หญิง");
+    }
+
 }
