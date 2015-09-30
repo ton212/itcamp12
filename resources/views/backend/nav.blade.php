@@ -13,9 +13,11 @@
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li @if(Request::is('backend')) class="active bg-green-active" @endif><a href="{{ route('backend.index') }}"><i class="fa fa-dashboard"></i>ภาพรวม</a></li>
+					@if(Auth::user()->judge_group == 5)
 					<li @if(Request::is('backend/applicant*')) class="active bg-green-active" @endif><a href="{{ route('backend.applicant.index') }}"></i><i class="fa fa-file-text"></i>จัดการใบสมัคร</a></li>
-					<li @if(Request::is('backend/scoring*')) class="active bg-green-active" @endif><a href="{{ route('backend.scoring.index') }}"><i class="fa fa-check-circle"></i>การคัดเลือก (ตรวจคำตอบ)</a></li>
 					<li @if(Request::is('backend/question*')) class="active bg-green-active" @endif><a href="{{ route('backend.question.index') }}"></i><i class="fa fa-question-circle"></i>จัดการคำถาม</a></li>
+					@endif
+					<li @if(Request::is('backend/scoring*')) class="active bg-green-active" @endif><a href="{{ route('backend.scoring.index') }}"><i class="fa fa-check-circle"></i>การคัดเลือก (ตรวจคำตอบ)</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
