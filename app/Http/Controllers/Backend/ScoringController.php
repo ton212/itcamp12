@@ -31,6 +31,14 @@ class ScoringController extends Controller {
             'page_subtitle' => 'ตรวจการตอบคำถาม',
             'applicants'    => $applicants,
             'judgers'       => User::judgers(),
+            'app_male_count'=> Applicant::approved()->camp(1)->male()->count(),
+            'app_female_count'=> Applicant::approved()->camp(1)->female()->count(),
+            'net_male_count' => Applicant::approved()->camp(2)->male()->count(),
+            'net_female_count' => Applicant::approved()->camp(2)->female()->count(),
+            'game_male_count' => Applicant::approved()->camp(3)->male()->count(),
+            'game_female_count' => Applicant::approved()->camp(3)->female()->count(),
+            'iot_male_count' => Applicant::approved()->camp(6)->male()->count(),
+            'iot_female_count' => Applicant::approved()->camp(6)->female()->count(),
             'checked_app'   => Auth::user()->score_cards()->count(),
             'approved_app'  => Applicant::approved()->count()
         ];

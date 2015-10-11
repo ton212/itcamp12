@@ -43,7 +43,7 @@
 			<span class="info-box-icon"><i class="fa no-margin fa-users"></i></span>
 			<div class="info-box-content">
 				<span class="info-box-text">จำนวนผู้สมัคร</span>
-				<span class="info-box-number">สัปดาห์นี้ {{ $all_applicant-277 }} คน</span>
+				<span class="info-box-number">ทั้งหมด {{ $all_applicant }} คน</span>
 				<div class="progress">
 					<div class="progress-bar" style="width: 100%"></div>
 				</div>
@@ -57,7 +57,7 @@
 		<div class="info-box bg-yellow">
 			<span class="info-box-icon"><i class="fa no-margin fa-child"></i></span>
 			<div class="info-box-content">
-				<span class="info-box-text">ตรวจสอบใบสมัครแล้ว</span>
+				<span class="info-box-text">ใบสมัครผ่านแล้ว</span>
 				<span class="info-box-number">{{ $chk_applicant }} คน</span>
 				<div class="progress">
 					<div class="progress-bar" style="width: {{($chk_applicant/$all_applicant)*100}}%"></div>
@@ -100,4 +100,67 @@
 	</div><!-- /.col -->
 </div>
 
+<div class="row">
+	<div class="col-md-3">
+		<div class="box box-success">
+                <div class="box-header">
+                <i class="glyphicon glyphicon-th-list"></i>
+                  <h3 class="box-title">สรุปยอดแต่ละค่าย (แบ่งชายและหญิง)</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body no-padding">
+                  <table class="table table-condensed">
+                    <tbody><tr>
+                      <th>ค่าย</th>
+                      <th>ชาย</th>
+                      <th>หญิง</th>
+                      <th style="width: 40px">รวม</th>
+                    </tr>
+                    <tr>
+                      <td>Applicationosaurus</td>
+                      <td>{{ $app_male_count }}</td>
+    				  <td>{{ $app_female_count }}</td>
+    				  <td>{{ $app_male_count+$app_female_count}}</td>
+                    </tr>
+                    <tr>
+                    	<td>GameMakernodon</td>
+                        <td>{{ $game_male_count }}</td>
+						<td>{{ $game_female_count }}</td>
+    					<td>{{ $game_male_count+$game_female_count}}</td>
+                    </tr>
+                    <tr>
+                    <td>T-Rex Network</td>
+   					<td>{{ $net_male_count }}</td>
+    				<td>{{ $net_female_count }}</td>
+    				<td>{{ $net_male_count+$net_female_count}}</td>
+                    </tr>
+                    <tr>
+                      <td>Iot-Ceramus</td>
+    					<td>{{ $iot_male_count }}</td>
+    					<td>{{ $iot_female_count }}</td>
+    					<td>{{ $iot_male_count+$iot_female_count }}</td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                    	<td>{{ $app_male_count+$game_male_count+$net_male_count+$iot_male_count }}</td>
+    					<td>{{ $app_female_count+$game_female_count+$net_female_count+$iot_female_count }}</td>
+    					<td>{{ $app_male_count+$game_male_count+$net_male_count+$iot_male_count+$app_female_count+$game_female_count+$net_female_count+$iot_female_count }}</td>
+                    </tr>
+                  </tbody></table>
+                </div><!-- /.box-body -->
+              </div>
+	</div>
+	<div class="col-md-3">
+		<div class="box box-primary">
+                <div class="box-header with-border">
+                  <i class="fa fa-bar-chart-o"></i>
+                  <h3 class="box-title">สถิติช่องทางการเข้าสู่เว็บไซต์</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                
+              </div>
+	</div>
+</div>
+		
 @endsection

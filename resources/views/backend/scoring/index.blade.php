@@ -9,8 +9,32 @@
 				<h3 class="box-title"><i class="fa fa-pie-chart"></i>ความคืบหน้า</h3>
 			</div>
 			<div class="box-body text-center">
+				@if(Auth::user()->judge_group == 1)
+				<span class="quiz-progress">ตรวจแล้ว {{ $checked_app }} / {{ $app_male_count+$app_female_count }} ใบสมัคร</span>
+				<p class="text-muted">(ยังไม่ได้ตรวจอีก {{ $app_male_count+$app_female_count - $checked_app }} ใบสมัคร)</p>
+				@endif
+				@if(Auth::user()->judge_group == 2)
+				<span class="quiz-progress">ตรวจแล้ว {{ $checked_app }} / {{ $net_male_count+$net_female_count }} ใบสมัคร</span>
+				<p class="text-muted">(ยังไม่ได้ตรวจอีก {{ $net_male_count+$net_female_count - $checked_app }} ใบสมัคร)</p>
+				@endif
+				@if(Auth::user()->judge_group == 3)
+				<span class="quiz-progress">ตรวจแล้ว {{ $checked_app }} / {{ $game_male_count+$game_female_count }} ใบสมัคร</span>
+				<p class="text-muted">(ยังไม่ได้ตรวจอีก {{ $game_male_count+$game_female_count - $checked_app }} ใบสมัคร)</p>
+				@endif
+				@if(Auth::user()->judge_group == 4)
 				<span class="quiz-progress">ตรวจแล้ว {{ $checked_app }} / {{ $approved_app }} ใบสมัคร</span>
 				<p class="text-muted">(ยังไม่ได้ตรวจอีก {{ $approved_app - $checked_app }} ใบสมัคร)</p>
+				@endif
+				@if(Auth::user()->judge_group == 5)
+				<span class="quiz-progress">ตรวจแล้ว {{ $checked_app }} / {{ $approved_app }} ใบสมัคร</span>
+				<p class="text-muted">(ยังไม่ได้ตรวจอีก {{ $approved_app - $checked_app }} ใบสมัคร)</p>
+				@endif
+				@if(Auth::user()->judge_group == 6)
+				<span class="quiz-progress">ตรวจแล้ว {{ $checked_app }} / {{ $iot_male_count+$iot_female_count }} ใบสมัคร</span>
+				<p class="text-muted">(ยังไม่ได้ตรวจอีก {{ $iot_male_count+$iot_female_count - $checked_app }} ใบสมัคร)</p>
+				@endif
+
+				
 				<hr>
 				<a href="{{ route('backend.scoring.start', 0) }}" class="btn btn-block btn-primary @if($checked_app == $approved_app) disabled @endif"><strong><i class="fa fa-sign-in"></i>เข้าสู่ระบบตรวจคำตอบ</strong></a>
 			</div>
