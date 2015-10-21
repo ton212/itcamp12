@@ -93,7 +93,7 @@
 					<div class="progress-bar" style="width: 0%"></div>
 				</div>
 				<span class="progress-description">
-					เหลือ 0 คน
+					เหลือ 120 คน
 				</span>
 			</div><!-- /.info-box-content -->
 		</div><!-- /.info-box -->

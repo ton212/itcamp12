@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Link;
+
 class HomeController extends Controller {
 
 	/*
@@ -30,7 +32,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('main-web.index');
+		$data = [
+			'links' => Link::active()->get()
+		];
+		return view('main-web.index', $data);
 	}
 
 }
