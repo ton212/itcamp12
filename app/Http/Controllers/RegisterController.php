@@ -164,6 +164,7 @@ class RegisterController extends Controller {
 		$data['parent']['tel'] = $request->parent['tel'][0]." / ".$request->parent['tel'][1];
 		$a = new Applicant();
 		$a->fill($data);
+		$a->camp = $request->camp;
 		$a->save();
 
 		$answers = $request->answers;
