@@ -153,12 +153,32 @@
 		<div class="box box-primary">
                 <div class="box-header with-border">
                   <i class="fa fa-bar-chart-o"></i>
-                  <h3 class="box-title">สถิติช่องทางการเข้าสู่เว็บไซต์</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                  </div>
+                  <h3 class="box-title">สรุปยอดตามระดับชั้น</h3>
+                   <div class="box-body no-padding">
+                  <table class="table table-condensed">
+                    <tbody><tr>
+                      <th>ระดับชั้น</th>
+                      <th>จำนวนทั้งหมด</th>
+                    </tr>
+                    <tr>
+                    	<td>ชั้นมัธยมศึกษาปีที่ 4</td>
+                    	<td>{{ $grade4 }} คน</td>
+                    </tr>
+                    <tr>
+                    	<td>ชั้นมัธยมศึกษาปีที่ 5</td>
+                    	<td>{{ $grade5 }} คน</td>
+                    </tr>
+                    <tr>
+                    	<td>ชั้นมัธยมศึกษาปีที่ 6</td>
+                    	<td>{{ $grade6 }} คน</td>
+                    </tr>
+                    <tr>
+                    	<td>ประกาศนียบัตรวิชาชีพ (ปวช.)</td>
+                    	<td>{{ $gradesp }} คน</td>
+                    </tr>
+                  </tbody></table>
+                </div><!-- /.box-body -->
                 </div>
-                
               </div>
 	</div>
 </div>

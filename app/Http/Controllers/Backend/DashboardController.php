@@ -28,7 +28,12 @@ class DashboardController extends Controller {
 			'game_male_count' => Applicant::approved()->camp(3)->male()->count(),
 			'game_female_count' => Applicant::approved()->camp(3)->female()->count(),
 			'iot_male_count' => Applicant::approved()->camp(6)->male()->count(),
-			'iot_female_count' => Applicant::approved()->camp(6)->female()->count()
+			'iot_female_count' => Applicant::approved()->camp(6)->female()->count(),
+			'grade4' => Applicant::grade(4)->count(),
+			'grade5' => Applicant::grade(5)->count(),
+			'grade6' => Applicant::grade(6)->count(),
+			'gradesp' => Applicant::grade('ปวช.')->count()
+
 		];
 		return view('backend.dashboard', $data);
 	}

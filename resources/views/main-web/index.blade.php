@@ -141,6 +141,8 @@
                                 <div class="spon-image x-large last"><img src="main_assets/img/sponsor/itkmitl.jpg" /></div>
                                 <div class="breakimage"></div>
                                 <div class="spon-image medium last" /><img src="main_assets/img/sponsor/camphub.png" /></div>
+                                <div class="spon-image medium last" /><img src="main_assets/img/sponsor/logo_CSS.jpg" /></div>
+                                <div class="spon-image medium last" /><img src="main_assets/img/sponsor/logo-witty.jpg" /></div>
                                 {{--
                                 <div class="breakimage"></div>
                                 <div class="spon-image large" /><img src="" /></div>
@@ -407,10 +409,10 @@
                                         <a class="button pill" href="{{ route('link-exchange.create') }}">คลิกที่นี่</a>
                                         <h4>เว็บไซต์ที่ร่วมประชาสัมพันธ์</h4>
                                         <ul>
-                                            <li><a href="http://www.camphub.in.th" target="_blank">CampHUB</a></li>
-                                            <li><a href="https://line-sticker.net" target="_blank">Line-Sticker.net</a></li>
-                                            <li><a href="http://www.02dual.com" target="_blank">02DUAL</a></li>
-                                            <li><a href="http://www.trueplookpanya.com" target="_blank">true ปลูกปัญญา</a></li>
+                                            @forelse( $links as $link)
+                                            <li><a href="{{ $link->url }}" target="_blank">{{ $link->name }}</a></li>
+                                            @empty
+                                            @endforelse
                                         </ul>
                                     </div>
                                 </div>

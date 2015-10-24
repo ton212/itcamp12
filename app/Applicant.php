@@ -85,7 +85,7 @@ class Applicant extends Model {
     {
         return $query->where('camp', $camp_id);
     }
-
+    
     public function scopeMale($query)
     {
         return $query->where('gender', "ชาย");
@@ -94,6 +94,11 @@ class Applicant extends Model {
     public function scopeFemale($query)
     {
         return $query->where('gender', "หญิง");
+    }
+
+    public function scopeGrade($query, $grade)
+    {
+        return $query->where('academic', 'LIKE', '%'.'"grade": ".$grade."'.'%');
     }
 
 }

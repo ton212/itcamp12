@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'thaisans_neuebold';
+    src: url('../fonts/thaisansneue-bold.eot');
+    src: url('../fonts/thaisansneue-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-bold.woff2') format('woff2'),
+         url('../fonts/thaisansneue-bold.woff') format('woff'),
+         url('../fonts/thaisansneue-bold.ttf') format('truetype'),
+         url('../fonts/thaisansneue-bold.svg#thaisans_neuebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body-login{
+	background: #fff;
+    font-family: 'thaisans_neuebold';
+    padding: 15px;
+    color: #444;
+    border-top: 0;
+    color: #666;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'thaisans_neuebold';
+}
+
+.form-group input {
+	font-size: 18px;
+}
