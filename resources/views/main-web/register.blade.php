@@ -27,11 +27,11 @@
 			<div class="page-header text-center">
 				<img src="register_assets/img/{{ $logo }}.png" alt="">
 				<h1>แบบฟอร์ม สมัครไอทีแคมป์<br><small>ค่ายย่อย "{{ $camp_name }}"</small></h1>
-				<div id="getting-started" style="font-size:25px;"></div>
+				<div id="getting-started" style="font-size:25px;" class="alert alert-danger"></div>
 				<script src="register_assets/js/jquery.countdown.js"></script>
 				<script type="text/javascript">
 				  $('#getting-started').countdown('2015/11/01', function(event) {
-				    $(this).html(event.strftime('เหลือเวลาในการสมัครอีก %H ชัวโมง %M นาที %S วินาที'));
+				    $(this).html(event.strftime('เหลือเวลาในการสมัครอีก %H ชั่วโมง %M นาที %S วินาที'));
 				  });
 				</script>
 				<h2 class="text-left">ส่วนที่ 1 ข้อมูลทั่วไปของผู้สมัคร </h2>

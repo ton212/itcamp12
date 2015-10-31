@@ -181,11 +181,11 @@
                         <div class="container-center">
                             <h1 id="content-camp">ค่ายย่อย</h1>
                             <hr />
-                            <div id="getting-started" style="font-size:35px;"></div>
+                            <div id="getting-started" style="font-size:35px; background: orange; border: 2px solid red; padding: 15px; color: #fff; font-weight: bold;"></div>
                 <script src="register_assets/js/jquery.countdown.js"></script>
                 <script type="text/javascript">
                   $('#getting-started').countdown('2015/11/01', function(event) {
-                    $(this).html(event.strftime('เหลือเวลาในการสมัครอีก %H ชัวโมง %M นาที %S วินาที'));
+                    $(this).html(event.strftime('เหลือเวลาในการสมัครอีก %H ชั่วโมง %M นาที %S วินาที'));
                   });
                 </script>
                             <ul class="camp">
