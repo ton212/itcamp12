@@ -181,6 +181,13 @@
                         <div class="container-center">
                             <h1 id="content-camp">ค่ายย่อย</h1>
                             <hr />
+                            <div id="getting-started" style="font-size:35px;"></div>
+                <script src="register_assets/js/jquery.countdown.js"></script>
+                <script type="text/javascript">
+                  $('#getting-started').countdown('2015/11/01', function(event) {
+                    $(this).html(event.strftime('เหลือเวลาในการสมัครอีก %H ชัวโมง %M นาที %S วินาที'));
+                  });
+                </script>
                             <ul class="camp">
                                 <li id="content-camp-app">
                                     <img src="main_assets/img/logo/applicationsaurus.png" />

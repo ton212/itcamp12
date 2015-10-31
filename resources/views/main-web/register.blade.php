@@ -8,6 +8,7 @@
 	<!-- StyleSheet -->
 	<link rel="stylesheet" href="register_assets/css/style.css">
 	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
+	<script src="register_assets/js/jquery.js"></script>
 	<title>แบบฟอร์ม สมัครไอทีแคมป์ | ค่ายย่อย "{{ $camp_name }}"</title>
 	<style>
 		body {
@@ -26,6 +27,13 @@
 			<div class="page-header text-center">
 				<img src="register_assets/img/{{ $logo }}.png" alt="">
 				<h1>แบบฟอร์ม สมัครไอทีแคมป์<br><small>ค่ายย่อย "{{ $camp_name }}"</small></h1>
+				<div id="getting-started" style="font-size:25px;"></div>
+				<script src="register_assets/js/jquery.countdown.js"></script>
+				<script type="text/javascript">
+				  $('#getting-started').countdown('2015/11/01', function(event) {
+				    $(this).html(event.strftime('เหลือเวลาในการสมัครอีก %H ชัวโมง %M นาที %S วินาที'));
+				  });
+				</script>
 				<h2 class="text-left">ส่วนที่ 1 ข้อมูลทั่วไปของผู้สมัคร </h2>
 			</div>
 			@if(count($errors))
@@ -452,7 +460,6 @@
 		</div>
 	</div>
 						<!-- jQuery -->
-	<script src="register_assets/js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="register_assets/js/bootstrap.min.js"></script>
