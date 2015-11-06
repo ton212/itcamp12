@@ -107,4 +107,100 @@ class ApplicantController extends Controller {
 		return redirect(route('backend.applicant.show', $id))->with('alert_danger', 'SYSTEM ERROR (INVALID INPUT)');
 	}
 
+	public function getSort(Request $request)
+	{
+		$applicant_score = Applicant::approved()->camp(1)->noOldCamp()->with('score_cards')->get();
+		$sorted = [];
+		$i = 1;
+		foreach ($applicant_score as $applicant) {
+			$sorted[$applicant->id] = array_sum(array_flatten($applicant->score_cards()->get(['scores'])->toArray()));
+		}
+		$sorted = array_reverse(array_sort($sorted, function($val) { return $val; }), true);
+
+		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
+			$applicant = Applicant::findOrFail($id);
+			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
+			if ($i==30) {
+				echo "สำรอง <br/>";
+			}
+			if ($i==45) {
+				echo "<br/>";
+			}
+			$i++;
+		}
+		$applicant_score = Applicant::approved()->camp(2)->noOldCamp()->with('score_cards')->get();
+		$sorted = [];
+		$i = 46;
+		foreach ($applicant_score as $applicant) {
+			$sorted[$applicant->id] = array_sum(array_flatten($applicant->score_cards()->get(['scores'])->toArray()));
+		}
+		$sorted = array_reverse(array_sort($sorted, function($val) { return $val; }), true);
+
+		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
+			$applicant = Applicant::findOrFail($id);
+			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
+			if ($i==75) {
+				echo "สำรอง <br/>";
+			}
+			if ($i==90) {
+				echo "<br/>";
+			}
+			$i++;
+		}
+		$applicant_score = Applicant::approved()->camp(3)->noOldCamp()->with('score_cards')->get();
+		$sorted = [];
+		$i = 91;
+		foreach ($applicant_score as $applicant) {
+			$sorted[$applicant->id] = array_sum(array_flatten($applicant->score_cards()->get(['scores'])->toArray()));
+		}
+		$sorted = array_reverse(array_sort($sorted, function($val) { return $val; }), true);
+
+		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
+			$applicant = Applicant::findOrFail($id);
+			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
+			if ($i==120) {
+				echo "สำรอง <br/>";
+			}
+			if ($i==135) {
+				echo "<br/>";
+			}
+			$i++;
+		}
+		$applicant_score = Applicant::approved()->camp(6)->noOldCamp()->with('score_cards')->get();
+		$sorted = [];
+		$i = 136;
+		foreach ($applicant_score as $applicant) {
+			$sorted[$applicant->id] = array_sum(array_flatten($applicant->score_cards()->get(['scores'])->toArray()));
+		}
+		$sorted = array_reverse(array_sort($sorted, function($val) { return $val; }), true);
+
+		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
+			$applicant = Applicant::findOrFail($id);
+			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
+			if ($i==165) {
+				echo "สำรอง <br/>";
+			}
+			$i++;
+		}
+		dd("");
+		
+	}
+
+	public function getSortOld(Request $request)
+	{
+		$applicant_score = Applicant::approved()->camp($request->id)->with('score_cards')->get();
+		$sorted = [];
+		foreach ($applicant_score as $applicant) {
+			$sorted[$applicant->id] = array_sum(array_flatten($applicant->score_cards()->get(['scores'])->toArray()));
+		}
+		$sorted = array_reverse(array_sort($sorted, function($val) { return $val; }), true);
+
+		foreach (array_slice($sorted, 0, 30, true) as $id => $score) {
+			$applicant = Applicant::findOrFail($id);
+			echo $applicant->id." : ".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname."<br/>";
+		}
+		dd("");
+		
+	}
+
 }
