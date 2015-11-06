@@ -19,6 +19,7 @@ Route::post('register', ['uses' => 'RegisterController@store', 'as' => 'register
 
 Route::get('result/{camp_id}', ['uses' => 'AnnouncerController@show', 'as' => 'result']);
 Route::controller('/', 'AnnouncerController');
+// Route::post('/user/disable', 'AnnouncerController@postDisable');
 
 
 // Backend Routes
