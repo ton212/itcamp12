@@ -27,6 +27,10 @@
 				<h3>ค่ายย่อย "Applicationsaurus" </h3>
 				<h1>ประกาศผลผู้ผ่านการคัดเลือก<br><small>ไอทีแคมป์ครั้งที่ 12</small></h1>
 			</div>
+			<div class="well">
+				<p style="font-size:20px; text-indent:1.5em;">สำหรับน้องๆ ตัวจริง <a href="http://www.itcamp.in.th/12/login" target="_blank">ให้ทำการ Login ที่หน้าลิ้งค์นี้</a> โดย ID คือ ชื่อผู้ใช้ itcampxxx  ที่พี่ๆ ได้ประกาศไว้ให้ ส่วน Password คือเลขบัตรประจำตัวประชาชนทั้ง 13 หลักของน้องๆ นะครับ สำหรับน้องที่มีปัญหา ไม่สามารถ Login ได้ ให้ติดต่อพี่ๆ มาทาง <a href="https://www.facebook.com/itcampKMITL" target="_blank"> IT Camp Page Inbox </a> ได้เลยครับ
+				ส่วนน้องๆ ที่ติดสำรอง ให้น้องอดใจรอซักนิดนะครับ หากมีเพื่อนๆ คนใดสละสิทธิ์ พี่ๆ จะโทรแจ้งให้น้องรับทราบนะครับ ช่วงนี้ยังไม่ต้องทำอะไรแค่พยายามทำโทรศัพท์ให้สามารถติดต่อได้ตลอดนะครับ รอรับโทรศัพท์จากพี่ๆ ด้วยนะ :D</p>
+			</div>
 			<table class="table table-hover" style="font-size:18px;">
 				<thead>
 					<tr>
