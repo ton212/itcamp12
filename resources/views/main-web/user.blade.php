@@ -152,7 +152,9 @@
                 <h3>รอตรวจเอกสาร</h3>
                 <p>หลังจากที่น้องแนบเอกสารมาเรียบร้อยแล้ว ให้น้องรอประมาณ 3 - 5 วัน เพื่อให้พี่ๆ ทีมงานได้ทำการตรวจสอบเอกสารนะครับ ในระหว่างนี้น้องสามารถเข้ามาร่วมพูดคุยกับเพื่อนๆ ที่สมัครไอทีแคมป์ 12 และเพื่อนๆ ที่เคยมาค่ายไอทีแคมป์ปีก่อนๆ ได้ในกรุ๊ป <a href="https://www.facebook.com/itcampKMITL?fref=photo" target="_blank" style="text-decoration:none"><i class="fa fa-facebook-official"></i> IT CAMP | KMITL</a></p>  
               </div>
-              <div class="tab-pane fade" id="tab4default">เร็วนี้ๆ</div>
+              <div class="tab-pane fade" id="tab4default">
+              ให้น้องดาวน์โหลด ใบตอบรับ <a href="{{ asset('file/ใบตอบรับโครงการ.pdf') }}">สามารถดาวโหลดได้ที่นี่</a>  กรอกข้อมูลให้เรียบร้อยแล้วนำมาส่งวันค่ายที่โต๊ะลงทะเบียนจ้า
+              </div>
               <div class="tab-pane fade" id="tab5default">
                   <h2>เตรียมตัวผจญภัย</h2>
                   <h3>ในการออกผจญภัยนั้น ก่อนอื่นเลยน้องๆ จะต้องเตรียมของให้ครบดังนี้</h3>
@@ -184,7 +186,7 @@
                   </ul>
                   <p><i>วันค่ายไม่อนุญาตให้ผู้ติดตามหรือผู้ปกครองมาเฝ้าน้องหรือมานอนที่คณะ</i></p>
                   <h3>กำหนดการวันค่าย</h3>
-                  <p>สามารถดาวน์โหลดได้ที่นี่จ้า</p>
+                  <p><a href="{{ asset('file/ตารางค่ายสำหรับน้อง.pdf') }}">สามารถดาวน์โหลดได้ที่นี่จ้า</a></p>
                   <h3>การเดินทาง</h3>
                   <div class="col-md-12">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.792152490152!2d100.78122500000003!3d13.73103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d6636ecec9c2b%3A0xd2850fd9ee87f249!2sFaculty+of+Information+Technology!5e0!3m2!1sen!2sth!4v1416420297310" width="100%" height="380" frameborder="0" style="border:0"></iframe>
