@@ -11,7 +11,7 @@
 	<title>เข้าสู่ระบบ ไอทีแคมป์ครั้งที่ 12 | ITCAMP12</title>
   <style>
       body {
-      background: url('login_assets/img/soon_BG.png') no-repeat center center fixed;
+      background: url('login_assets/img/soon_bg.png') no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -28,6 +28,9 @@
                 <p style="font-size: 18px;">ชื่อผู้ใช้งาน สามารถดูได้จากประกาศหน้าแรก<br>ส่วนรหัสผ่านจะเป็นเลขประจำตัวประชาชน 13 หลัก<br>ถ้าพบปัญหาในการเข้าสู่ระบบสามารถติดต่อที่ <br> 
                 <a href="https://www.facebook.com/itcampKMITL?fref=photo" target="_blank" style="text-decoration:none"><i class="fa fa-facebook-official"></i> IT CAMP | KMITL</a></p>
       </div>
+      @if(Session::has('error'))
+        <div class="callout callout-danger">{{ Session::get('error') }}</div>
+      @endif
 			<form method="post" lpformnum="1">
           <div class="form-group has-feedback">
             <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้ -> itcamp000" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;" autocomplete="off">

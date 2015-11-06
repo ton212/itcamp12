@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Applicant;
+use App\User;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class AnnouncerController extends Controller {
@@ -38,8 +39,14 @@ class AnnouncerController extends Controller {
 	public function postLogin(Request $request)
 	{
 		if (Auth::attempt($request->only(['username', 'password']))) {
+			if (!Auth::user()->active) {
+				Auth::logout();
+				return redirect('/login')->with('error', 'น้องอยู่ในรายชื่อสำรอง หรือได้สละสิทธิ์แล้ว');
+			}
 			return redirect('/user');
-		};
+		} else {
+			return redirect('/login')->with('error', 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+		}
 	}
 
 	public function getLogout()
@@ -93,6 +100,32 @@ class AnnouncerController extends Controller {
 			];
 
 		return view('main-web.user', $data)->with('success', 'บันทึกข้อมูลสำเร็จ');
+	}
+
+	public function postDisable(Request $request)
+	{
+		if (!Auth::check()) {
+			return redirect('/');
+		} else {
+			$data = [
+				'username' => Auth::user()->username,
+				'password' => $request->password
+			];
+
+			// dd(Auth::validate($data));
+
+			if (Auth::validate($data)) {
+				// dd("pass");
+				$user = Auth::user();
+				$user->active = 0;
+				$user->save();
+
+				Auth::logout();
+				return redirect('/login')->with('error', 'การสละสิทธิ์สมบูรณ์');
+			} else {
+				return redirect('/user')->with('error', 'รหัสผ่านไม่ถูกต้อง');
+			}
+		}
 	}
 
 }

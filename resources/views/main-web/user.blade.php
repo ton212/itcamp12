@@ -8,10 +8,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
-	<title>เข้าสู่ระบบ ไอทีแคมป์ครั้งที่ 12 | ITCAMP12</title>
+	<title>ระบบยืนยันสิทธิ์ ไอทีแคมป์ครั้งที่ 12 | ITCAMP12</title>
     <style>
       body {
-      background: url("{{ asset('login_assets/img/soon_BG.png') }}") no-repeat center center fixed;
+      background: url("{{ asset('login_assets/img/soon_bg.png') }}") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -49,8 +49,11 @@
             </ul>
           </div>
         @endif
-        @if(isset($success))
-          <div class="alert alert-success">{{ $success }}</div>
+        @if(Session::has('success'))
+          <div class="alert alert-success">{{ Session::get('success') }}</div>
+        @endif
+        @if(Session::has('error'))
+          <div class="alert alert-danger">{{ Session::get('error') }}</div>
         @endif
       </div>
     </div>
@@ -68,14 +71,14 @@
           @if($applicant->transfer_slip == null)
             <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
           @else
-            <span class="label label-success"><i class="fa fa-check"></i> ได้รับแล้ว</span>
+            <span class="label label-warning"><i class="fa fa-clock-o"></i> รอการตรวจสอบ</span>
           @endif
         </p>
         <p>ปพ. 1
           @if($applicant->transcript == null)
             <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
           @else
-            <span class="label label-success"><i class="fa fa-check"></i> ได้รับแล้ว</span>
+            <span class="label label-warning"><i class="fa fa-clock-o"></i> รอการตรวจสอบ</span>
           @endif
         </p>
       </div>
@@ -89,6 +92,7 @@
               <li><a href="#tab3default" data-toggle="tab">รอตรวจเอกสาร</a></li>
               <li><a href="#tab4default" data-toggle="tab">ดาวน์โหลดเอกสาร</a></li>
               <li><a href="#tab5default" data-toggle="tab">เตรียมพร้อมผจญภัย</a></li>
+              <li><a href="#tab6default" data-toggle="tab">สละสิทธิ์</a></li>
             </ul>
           </div>
         <div class="panel-body">
@@ -196,6 +200,18 @@
                     <div class="col-xs-6 col-md-3"><a href="http://www.it.kmitl.ac.th/about/contact/map#header-6" target="_blank" class="btn btn-block btn-sm btn-primary" style="font-size:18px;">รถประจำทาง</a></div>
                     <div class="col-xs-6 col-md-3"><a href="http://www.it.kmitl.ac.th/about/contact/map#header-7" target="_blank" class="btn btn-block btn-sm btn-primary" style="font-size:18px;">รถยนต์ส่วนตัว</a></div>
                 </div>
+              </div>
+              <div class="tab-pane fade" id="tab6default">
+                <h2>สละสิทธิ์</h2>
+                <p>หากน้องไม่สามารถเข้าร่วมค่ายไอทีแคมป์ครั้งที่ 12 และต้องการสละสิทธิ์ ให้น้องคลิกที่ปุ่มสละสิทธิ์ด้านล่างนี้ ขอให้น้องคิดให้ดีก่อนการสละสิทธิ์ เพราะหากน้องสละสิทธิ์แล้วทางพี่ๆ ทีมงานจะเรียกเพื่อนลำดับสำรองขึ้นมาแทนน้อง และน้องจะไม่มีสิทธิ์เข้าร่วมค่ายไอทีแคมป์ครั้งที่ 12 ไม่ว่ากรณีใดๆ ก็ตาม</p>
+                <form action="/12/disable" method="POST">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <div class="form-group">
+                    <label>ยืนยันรหัสผ่าน</label>
+                    <input type="password" name="password">
+                  </div>
+                  <button type="submit" class="btn btn-danger" style="font-size:18px;" onclick="return confirm('น้องต้องการยืนยันการสละสิทธิ์ใช่หรือไม่?');"><i class="fa fa-sign-out" ></i> สละสิทธิ์</submit>
+                </form>
               </div>
           </div>
         </div>
