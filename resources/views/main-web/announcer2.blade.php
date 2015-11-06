@@ -11,7 +11,7 @@
 	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
 	<style>
 			body {
-			background: url(register_assets/img/bg.png) no-repeat center center fixed;
+			background: url("{{ asset('register_assets/img/bg.png')}}") no-repeat center center fixed;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
@@ -23,7 +23,7 @@
 	<div class="container">
 		<div class="card">
 			<div class="page-header text-center">
-				<img src="register_assets/img/logo01.png" alt="">
+				<img src="{{ asset('register_assets/img/logo01.png')}}" alt="">
 				<h3>ค่ายย่อย "T-Rex Network" </h3>
 				<h1>ประกาศผลผู้ผ่านการคัดเลือก<br><small>ไอทีแคมป์ครั้งที่ 12</small></h1>
 			</div>
