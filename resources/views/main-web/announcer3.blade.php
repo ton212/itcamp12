@@ -221,7 +221,7 @@
 						<th>โน่</th>
 						<th>เตรียมอุดมศึกษาพัฒนาการ</th>
 					</tr>
-					<tr>
+					<tr class="danger">
 						<th></th>
 						<th style="font-size:22px;">----- ลำดับสำรอง -----</th>
 						<th></th>

@@ -20,7 +20,7 @@ class AnnouncerController extends Controller {
 			case 2:
 				return view('main-web.announcer2');
 			case 3:
-				return view('main-web.announcer2');
+				return view('main-web.announcer3');
 			case 4:
 				return view('main-web.announcer4');
 		}

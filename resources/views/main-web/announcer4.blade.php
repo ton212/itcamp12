@@ -24,7 +24,7 @@
 		<div class="card">
 			<div class="page-header text-center">
 				<img src="{{ asset('register_assets/img/logo02.png')}}" alt="">
-				<h3>ค่ายย่อย "GameMakerNodon" </h3>
+				<h3>ค่ายย่อย "IoT Ceramus" </h3>
 				<h1>ประกาศผลผู้ผ่านการคัดเลือก<br><small>ไอทีแคมป์ครั้งที่ 12</small></h1>
 			</div>
 			<div class="well">
@@ -221,7 +221,7 @@
 						<th>แป้ง</th>
 						<th>พระแม่มารี</th>
 					</tr>
-					<tr>
+					<tr class="info">
 						<th></th>
 						<th style="font-size:22px;">----- ลำดับสำรอง -----</th>
 						<th></th>
