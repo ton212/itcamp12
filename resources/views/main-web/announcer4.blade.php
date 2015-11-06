@@ -166,7 +166,7 @@
 					<tr>
 						<th>itcamp157</th>
 						<th>นายภาณุวิชญื สระอุบล</th>
-						<th>มารืค</th>
+						<th>มาร์ค</th>
 						<th>ทวีธาภิเศก</th>
 					</tr>
 					<tr>
@@ -218,10 +218,10 @@
 						<th>พระแม่มารี</th>
 					</tr>
 					<tr>
-						<th>สำรอง </th>
 						<th></th>
+						<th style="font-size:22px;">----- ลำดับสำรอง -----</th>
 						<th></th>
-						<th></th>
+						<th style="font-size:22px;">----- ลำดับสำรอง -----</th>
 					</tr>
 					<tr>
 						<th>itcamp166</th>
