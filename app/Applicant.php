@@ -100,5 +100,14 @@ class Applicant extends Model {
     {
         return $query->where('academic', 'LIKE', '%'.'"grade": ".$grade."'.'%');
     }
+    
+    public function scopeOldCamp($query)
+    {
+        return $query->where('camp_history', 'LIKE', '%'.'itcamp'.'%')->orWhere('camp_history', 'LIKE', '%'.'it camp'.'%');
+    }
 
+    public function scopeNoOldCamp($query)
+    {
+        return $query->where('camp_history', 'NOT LIKE', '%'.'itcamp'.'%')->where('camp_history', 'NOT LIKE', '%'.'it camp'.'%');
+    }
 }

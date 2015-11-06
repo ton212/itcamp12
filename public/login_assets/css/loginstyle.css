@@ -19,7 +19,22 @@
     color: #666;
 }
 
+.card{
+    background: #fff;
+    font-family: 'thaisans_neuebold';
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #444;
+    border-top: 0;
+    font-size: 18px;
+}
+
 h1, h2, h3, h4 {
+    font-family: 'thaisans_neuebold';
+}
+
+.font-web{
     font-family: 'thaisans_neuebold';
 }
 
