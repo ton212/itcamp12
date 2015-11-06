@@ -285,9 +285,15 @@ body {
     font-size: 18px;
 }
 
+.page-header{
+    margin-top: 0;
+}
+
 h1, h2, h3, h4 {
     font-family: 'thaisans_neuebold';
 }
+
+
 
 .font-web{
     font-family: 'thaisans_neuebold';
@@ -295,4 +301,8 @@ h1, h2, h3, h4 {
 
 .form-group input {
 	font-size: 18px;
+}
+
+.well{
+    padding-top: 10px;
 }

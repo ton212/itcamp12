@@ -5,9 +5,9 @@
 	<meta name="viewport" content="initial-scale=1.0">
 	<title>ประกาศผลผู้ผ่านการคัดเลือก ไอทีแคมป์ครั้งที่ 12</title>
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="register_assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ asset('register_assets/css/bootstrap.min.css')}}">
 	<!-- StyleSheet -->
-	<link rel="stylesheet" href="register_assets/css/style.css">
+	<link rel="stylesheet" href="{{ asset('register_assets/css/style.css')}}">
 	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
 	<style>
 			body {
