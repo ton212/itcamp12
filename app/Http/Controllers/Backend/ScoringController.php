@@ -67,7 +67,9 @@ class ScoringController extends Controller {
             $applicant_id = $applicant->id;
         }
 
-        $answers = Applicant::findOrFail($applicant_id)->quiz_answers;
+        $applicant = Applicant::findOrFail($applicant_id);
+        $answers = clone $applicant;
+        $answers = $answers->quiz_answers;
 
         session(['judging_applicant' => $applicant_id]);
 

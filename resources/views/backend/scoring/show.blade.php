@@ -15,7 +15,9 @@
 							<div class="form-group">
 								<h4 style="line-height: 1.5em">{{ $i.". ".$answer->question->title }}</h4>
 								@if(is_array($answer->answer))
-								<img src="data:image/png;base64,{{ base64_encode($answer->answer[0]) }}" style="max-width: 100%;">
+								{{-- <p>ภาพพังอยู่ค่าาาา T_T</p> --}}
+								{{-- <p>{{ $answer->answer[0] }}</p> --}}
+								<img src="{{ $answer->answer[0] }}" style="width: 50%;"><br><br>
 								@endif
 								<textarea class="form-control" rows="10" readonly>@if(is_array($answer->answer)){{ $answer->answer[1] }}@else{{ $answer->answer }}@endif</textarea>
 								<strong>คะแนน :</strong>

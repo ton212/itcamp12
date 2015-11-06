@@ -18,4 +18,12 @@ class QuizAnswer extends Model {
 		return $this->belongsTo('App\QuizQuestion', 'quiz_question_id');
 	}
 
+    public function getAnswerAttribute($value)
+    {
+        if (strpos($value, ' | ')) {
+            return explode(' | ', $value);
+        }
+        return $value;
+    }
+
 }

@@ -158,6 +158,10 @@ class RegisterController extends Controller {
 
 		$this->validate($request, $rules, $this->validator_msg);
 
+		if (\Carbon\Carbon::now()->gt(\Carbon\Carbon::create(2015, 11, 1, 0, 0, 0)) ) {
+			return redirect('main-web.register-closed');
+		}
+
 		$data = $request->except('_token', 'birth_d', 'birth_m', 'birth_y');
 		$data['birthday'] = $request->birth_d.'-'.$request->birth_m.'-'.$request->birth_y;
 		$data['transcript'] = "";
