@@ -14,9 +14,11 @@
 // Frontend Routes
 
 Route::get('/', 'HomeController@index');
-Route::get('/login','LoginController@index');
 Route::get('register', ['uses' => 'RegisterController@create', 'as' => 'register.create']);
 Route::post('register', ['uses' => 'RegisterController@store', 'as' => 'register.store']);
+
+Route::get('result/{camp_id}', ['uses' => 'AnnouncerController@show', 'as' => 'result']);
+Route::controller('/', 'AnnouncerController');
 
 
 // Backend Routes

@@ -110,4 +110,18 @@ class Applicant extends Model {
     {
         return $query->where('camp_history', 'NOT LIKE', '%'.'itcamp'.'%')->where('camp_history', 'NOT LIKE', '%'.'it camp'.'%');
     }
+
+    public function getCampName()
+    {
+        switch ($this->camp) {
+            case 1:
+                return "Applicationsaurus";
+            case 2:
+                return "T-Rex Network";
+            case 3:
+                return "GameMakerNodon";
+            case 6:
+                return "IoT Ceramus";
+        }
+    }
 }

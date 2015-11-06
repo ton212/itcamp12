@@ -4,81 +4,95 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Applicant;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class AnnouncerController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+	use ValidatesRequests;
+
+	public function show($camp_id)
 	{
-		//
+		switch ($camp_id) {
+			case 1:
+				return view('main-web.announcer');
+			case 2:
+				return view('main-web.announcer2');
+			case 3:
+				return view('main-web.announcer2');
+			case 4:
+				return view('main-web.announcer4');
+		}
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+	public function getLogin()
 	{
-		//
+		if (Auth::check()) {
+			return redirect('/user');
+		} else {
+			return view('main-web.login');
+		}
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function postLogin(Request $request)
 	{
-		//
+		if (Auth::attempt($request->only(['username', 'password']))) {
+			return redirect('/user');
+		};
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function getLogout()
 	{
-		//
+		Auth::logout();
+		return redirect('/');
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
+	public function getUser()
 	{
-		//
+		if (Auth::check()) {
+			$user = Auth::user();
+			$applicant = Applicant::findOrFail($user->applicant_id);
+
+			$data = [
+				'user'      => $user,
+				'applicant' => $applicant
+			];
+
+			return view('main-web.user', $data);
+		} else {
+			return redirect('/login');
+		}
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+	public function postUser(Request $request)
 	{
-		//
-	}
+		$this->validate($request, [
+			'transcript'    => 'mimes:jpeg,png,bmp|max:2000',
+			'transfer_slip' => 'mimes:jpeg,png,bmp|max:2000'
+		], [
+			'transcript.mimes'    => 'ปพ.1 ต้องเป็นไฟล์ jpeg, jpg, bmp เท่านั้น',
+			'transcript.max'      => 'ปพ.1 ต้องมีขนาดไม่เกิน 2MB เท่านั้น',
+			'transfer_slip.mimes' => 'หลักฐานการโอนเงินต้องเป็นไฟล์ jpeg, jpg, bmp เท่านั้น',
+			'transfer_slip.max'   => 'หลักฐานการโอนเงินต้องมีขนาดไม่เกิน 2MB เท่านั้น'
+		]);
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		$applicant = Applicant::findOrFail(Auth::user()->applicant_id);
+
+		foreach ($request->file() as $name => $file) {
+			$filename = str_random(20)."-".date('Y-m-d').'.'.$file->guessExtension();
+			$file->move(storage_path().'/confirmation/', $filename);
+			$applicant->$name = $filename;
+		}
+
+		$applicant->save();
+
+		$data = [
+				'user'      => Auth::user(),
+				'applicant' => $applicant
+			];
+
+		return view('main-web.user', $data)->with('success', 'บันทึกข้อมูลสำเร็จ');
 	}
 
 }

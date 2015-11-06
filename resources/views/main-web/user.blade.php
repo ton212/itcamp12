@@ -34,22 +34,50 @@
   <div class="card">
     <div class="page-header">
         <div class="pull-right">
-          <button type="button" class="btn btn-danger" style="font-size:18px;"><i class="fa fa-sign-out"></i> ออกจากระบบ</button>
+          <a href="/12/logout" class="btn btn-danger" style="font-size:18px;"><i class="fa fa-sign-out"></i> ออกจากระบบ</a>
         </div>
       <h1 class="title">ไอทีแคมป์ครั้งที่ 12 <small>ระบบยืนยันสิทธิ์</small></h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        @if(count($errors))
+          <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+              <li style="font-size:22px;">{{ $error }}</li>
+            @endforeach
+            </ul>
+          </div>
+        @endif
+        @if(isset($success))
+          <div class="alert alert-success">{{ $success }}</div>
+        @endif
+      </div>
     </div>
     <div class="row">
       <div class="col-md-3">
       <div class="well">
         <h2>ข้อมูลส่วนตัว</h2>
-        <p>นายณัฐวุฒิ วรกิจลาวัลย์</p>
-        <p>โรงเรียนบดินทรเดชา (สิงห์ สิงหเสนี) ๒</p>
-        <p>ค่ายที่สมัคร Applicationosaurus </p>
+        <p>น้อง{{ $applicant->firstname." ".$applicant->lastname }}</p>
+        <p>{{ $applicant->academic['school'] }}</p>
+        <p>ค่ายที่สมัคร {{ $applicant->getCampName() }} </p>
       </div>
       <div class="well">
         <h2>สถานะหลักฐาน</h2>
-        <p>หลักฐานสลิปการโอนเงิน <span class="label label-danger"><i class="fa fa-square-o"></i> ยังไม่ได้รับ</span></p>
-        <p>หลักฐานใบ ปพ. 1 <span class="label label-success"><i class="fa fa-check-square-o"></i> ได้รับเรียบร้อย</span></p>
+        <p>สลิปการโอนเงิน
+          @if($applicant->transfer_slip == null)
+            <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
+          @else
+            <span class="label label-success"><i class="fa fa-check"></i> ได้รับแล้ว</span>
+          @endif
+        </p>
+        <p>ปพ. 1
+          @if($applicant->transcript == null)
+            <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
+          @else
+            <span class="label label-success"><i class="fa fa-check"></i> ได้รับแล้ว</span>
+          @endif
+        </p>
       </div>
       </div>
       <div class="col-md-9">
@@ -104,29 +132,31 @@
               </div>
               <div class="tab-pane fade" id="tab2default">
                 <h3>ส่งหลักฐาน</h3>
-                <div class="form-group">
-                  <label for="exampleInputFile">หลักฐานสลิปการโอนเงิน</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">ไฟล์ต้องเห็นรายละเอียดชัดเจน และมีขนาดไม่เกิน 2MB</p>
-                </div>
+                <form method="POST" enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <div class="form-group">
+                    <label>หลักฐานสลิปการโอนเงิน</label>
+                    <input type="file" name="transfer_slip">
+                    <p class="help-block">ไฟล์ต้องเห็นรายละเอียดชัดเจน และมีขนาดไม่เกิน 2MB</p>
+                  </div>
 
-                <div class="form-group">
-                  <label for="exampleInputFile">หลักฐานใบ ปพ. 1</label>
-                  <input type="file" id="exampleInputFile">
-                  <p class="help-block">ไฟล์ต้องเห็นรายละเอียดชัดเจน และมีขนาดไม่เกิน 2MB</p>
-                </div>
-                <button type="button" class="btn btn-primary" style="font-size:18px;">ยืนยัน</button>
-                </p>
+                  <div class="form-group">
+                    <label>หลักฐานใบ ปพ. 1</label>
+                    <input type="file" name="transcript">
+                    <p class="help-block">ไฟล์ต้องเห็นรายละเอียดชัดเจน และมีขนาดไม่เกิน 2MB</p>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="font-size:18px;">ยืนยัน</button>
+                </form>
               </div>
               <div class="tab-pane fade" id="tab3default">
                 <h3>รอตรวจเอกสาร</h3>
                 <p>หลังจากที่น้องแนบเอกสารมาเรียบร้อยแล้ว ให้น้องรอประมาณ 3 - 5 วัน เพื่อให้พี่ๆ ทีมงานได้ทำการตรวจสอบเอกสารนะครับ ในระหว่างนี้น้องสามารถเข้ามาร่วมพูดคุยกับเพื่อนๆ ที่สมัครไอทีแคมป์ 12 และเพื่อนๆ ที่เคยมาค่ายไอทีแคมป์ปีก่อนๆ ได้ในกรุ๊ป <a href="https://www.facebook.com/itcampKMITL?fref=photo" target="_blank" style="text-decoration:none"><i class="fa fa-facebook-official"></i> IT CAMP | KMITL</a></p>  
               </div>
-              <div class="tab-pane fade" id="tab4default">Default 4</div>
+              <div class="tab-pane fade" id="tab4default">เร็วนี้ๆ</div>
               <div class="tab-pane fade" id="tab5default">
                   <h2>เตรียมตัวผจญภัย</h2>
                   <h3>ในการออกผจญภัยนั้น ก่อนอื่นเลยน้องๆ จะต้องเตรียมของให้ครบดังนี้</h3>
-                  <ol>  
+                  <ol>
                     <li>ชุดนักเรียน 2 ชุด (สำหรับใส่มาวันแรกและใส่กลับวันสุดท้าย)</li>
                     <li>ชุดลำลอง 4 ชุด (เป็นชุดสุภาพ กางเกงขายาวเลยเข่า)</li>
                     <li>ชุดนอน 3 ชุด</li>
@@ -146,7 +176,7 @@
                   </p>
                   <p><i>น้องๆ ไม่จำเป็นต้องนำสิ่งของมีค่ามาค่าย เช่นคอมพิวเตอร์โน็ตบุ๊ค หากเกิดการสูญหาย ทางค่ายจะไม่รับผิดชอบไม่ว่ากรณีใดๆ ทั้งสิ้น</i></p>
                   <h3>นอกจากสิ่งที่ต้องนำมาแล้ว ยังมีสิ่งที่ ห้าม นำมาอีกด้วย</h3>
-                  <ul>  
+                  <ul>
                     <li>สิ่งเสพย์ติดทุกชนิด เช่น บุหรี่</li>
                     <li>เครื่องดื่มแอลกอฮอล์และสิ่งมึนเมาทุกชนิด เช่น สุรา เบียร์</li>
                     <li>อุปกรณ์ที่สามารถใช้เป็นอาวุธได้ เช่น มีด</li>
@@ -172,8 +202,7 @@
         </div>
       </div>
     </div>
-   
-</div>
+  </div>
 </div>
 <div id="myModal" class="modal fade">
           <div class="modal-dialog">
@@ -181,7 +210,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span></button>
-                <h3 class="modal-title">สวัสดีจ้าน้อง ณัฐวุฒิ วรกิจลาวัลย์ </h3>
+                <h3 class="modal-title">สวัสดีจ้าน้อง{{ $applicant->firstname." ".$applicant->lastname }}</h3>
               </div>
               <div class="modal-body font-web">
                 <p style="font-size:21px;">ยินดีด้วย !! น้องเป็นผู้ถูกเลือกให้เข้าร่วมผจญภัยในดินแดนไดโนเสาร์ไปกับค่ายไอทีแคมป์ ครั้งที่ 12 

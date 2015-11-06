@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Applicant;
+use App\User;
 
 class ApplicantController extends Controller {
 
@@ -120,6 +121,17 @@ class ApplicantController extends Controller {
 		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
 			$applicant = Applicant::findOrFail($id);
 			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
+
+			$user = new User();
+			$user->name = $applicant->firstname." ".$applicant->lastname;
+			$user->username = "itcamp". str_pad($i, 3, "0", STR_PAD_LEFT);
+			$user->password = \Hash::make($applicant->id_card);
+			$user->is_admin = 0;
+			$user->active = 1;
+			$user->judge_group = 0;
+			$user->applicant_id = $id;
+			$user->save();
+
 			if ($i==30) {
 				echo "สำรอง <br/>";
 			}
@@ -139,6 +151,15 @@ class ApplicantController extends Controller {
 		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
 			$applicant = Applicant::findOrFail($id);
 			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
+			$user = new User();
+			$user->name = $applicant->firstname." ".$applicant->lastname;
+			$user->username = "itcamp". str_pad($i, 3, "0", STR_PAD_LEFT);
+			$user->password = \Hash::make($applicant->id_card);
+			$user->is_admin = 0;
+			$user->active = 1;
+			$user->judge_group = 0;
+			$user->applicant_id = $id;
+			$user->save();
 			if ($i==75) {
 				echo "สำรอง <br/>";
 			}
@@ -157,6 +178,15 @@ class ApplicantController extends Controller {
 
 		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
 			$applicant = Applicant::findOrFail($id);
+			$user = new User();
+			$user->name = $applicant->firstname." ".$applicant->lastname;
+			$user->username = "itcamp". str_pad($i, 3, "0", STR_PAD_LEFT);
+			$user->password = \Hash::make($applicant->id_card);
+			$user->is_admin = 0;
+			$user->active = 1;
+			$user->judge_group = 0;
+			$user->applicant_id = $id;
+			$user->save();
 			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
 			if ($i==120) {
 				echo "สำรอง <br/>";
@@ -176,6 +206,15 @@ class ApplicantController extends Controller {
 
 		foreach (array_slice($sorted, 0, 45, true) as $id => $score) {
 			$applicant = Applicant::findOrFail($id);
+			$user = new User();
+			$user->name = $applicant->firstname." ".$applicant->lastname;
+			$user->username = "itcamp". str_pad($i, 3, "0", STR_PAD_LEFT);
+			$user->password = \Hash::make($applicant->id_card);
+			$user->is_admin = 0;
+			$user->active = 1;
+			$user->judge_group = 0;
+			$user->applicant_id = $id;
+			$user->save();
 			echo "ID: ".$id." "."itcamp". str_pad($i, 3, "0", STR_PAD_LEFT)." ".$applicant->prefix."".$applicant->firstname." ".$applicant->lastname." ".$applicant->nickname." ".$applicant->academic['school']."<br/>";
 			if ($i==165) {
 				echo "สำรอง <br/>";

@@ -11,7 +11,7 @@
 	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
 	<style>
 			body {
-			background: url(register_assets/img/bg03.png) no-repeat center center fixed;
+			background: url({{ asset('register_assets/img/bg03.png') }}) no-repeat center center fixed;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
