@@ -11,7 +11,7 @@
 	<title>เข้าสู่ระบบ ไอทีแคมป์ครั้งที่ 12 | ITCAMP12</title>
   <style>
       body {
-      background: url(login_assets/img/soon_BG.png) no-repeat center center fixed;
+      background: url("{{ asset('login_assets/img/soon_BG.png') }}") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
