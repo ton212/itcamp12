@@ -18,7 +18,7 @@ Route::get('register', ['uses' => 'RegisterController@create', 'as' => 'register
 Route::post('register', ['uses' => 'RegisterController@store', 'as' => 'register.store']);
 
 Route::get('result/{camp_id}', ['uses' => 'AnnouncerController@show', 'as' => 'result']);
-Route::controller('/', 'AnnouncerController');
+
 // Route::post('/user/disable', 'AnnouncerController@postDisable');
 
 
@@ -40,3 +40,5 @@ Route::group(['middleware' => 'isAdmin'], function()
 });
 
 Route::resource('link-exchange', 'Backend\LinkExchangeController');
+
+Route::controller('/', 'AnnouncerController');
