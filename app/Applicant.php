@@ -18,7 +18,8 @@ class Applicant extends Model {
         'university_interesting' => 'array',
         'address'                => 'array',
         'camp_history'           => 'array',
-        'pr_from'                => 'array'
+        'pr_from'                => 'array',
+        'proof_check'            => 'array'
     ];
 
     public function quiz_answers()

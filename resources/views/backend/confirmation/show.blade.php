@@ -236,6 +236,67 @@
           </div>
         </div>
       </div>
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-check-circle"></i>ตรวจหลักฐาน</h3>
+        </div>
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-6">
+              <legend>ปพ.1</legend>
+              @if($applicant->transcript != "")
+              <div class="row">
+                <div class="col-md-6">
+                  <form method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PATCH">
+                    <input type="hidden" name="proof_check0" value="1">
+                    <button class="btn btn-sm btn-success btn-block">ผ่าน</button>
+                  </form>
+                </div>
+                <div class="col-md-6">
+                  <form method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PATCH">
+                    <input type="hidden" name="proof_check0" value="2">
+                    <button class="btn btn-sm btn-danger btn-block">ไม่ผ่าน</button>
+                  </form>
+                </div>
+              </div>
+              <img src="data:image/png;base64,{{ base64_encode(\Storage::get('/confirmation/'.$applicant->transcript)) }}" style="max-width: 100%;">
+              @else
+              <div class="text-muted text-center">ยังไม่ได้ส่งหลักฐาน</div>
+              @endif
+            </div>
+            <div class="col-md-6">
+              <legend>หลักฐานการโอนเงิน</legend>
+              @if($applicant->transfer_slip != "")
+              <div class="row">
+                <div class="col-md-6">
+                  <form method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PATCH">
+                    <input type="hidden" name="proof_check1" value="1">
+                    <button class="btn btn-sm btn-success btn-block">ผ่าน</button>
+                  </form>
+                </div>
+                <div class="col-md-6">
+                  <form method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PATCH">
+                    <input type="hidden" name="proof_check1" value="2">
+                    <button class="btn btn-sm btn-danger btn-block">ไม่ผ่าน</button>
+                  </form>
+                </div>
+              </div><br>
+              <img src="data:image/png;base64,{{ base64_encode(\Storage::get('/confirmation/'.$applicant->transfer_slip)) }}" style="max-width: 100%;">
+              @else
+              <div class="text-muted text-center">ยังไม่ได้ส่งหลักฐาน</div>
+              @endif
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-xs-3">
       <div class="box">
@@ -243,8 +304,53 @@
           <h3 class="box-title"><i class="fa fa-search"></i>ตรวจหลักฐาน</h3>
         </div>
         <div class="box-body">
-          <p><strong>เอกสารยืนยันการชำระเงิน:</strong> {{ $applicant->transfer_slip != "" ? "รอการตรวจสอบ" : "ยังไม่ได้รับ" }} <i class="fa fa-check-circle {{ $applicant->transfer_slip != '' ? 'text-orange' : 'text-muted' }}"></i>
-          <p><strong>ปพ.1 :</strong> {{ $applicant->transcript != "" ? "รอการตรวจสอบ" : "ยังไม่ได้รับ" }} <i class="fa fa-check-circle {{ $applicant->transcript != '' ? 'text-orange' : 'text-muted' }}"></i></p></p>
+          <p>
+            <strong>เอกสารยืนยันการชำระเงิน:</strong>
+            @if($applicant->proof_check[1] == 1)
+              <i class="fa fa-check-circle text-success no-margin"></i> ผ่าน
+            @elseif($applicant->proof_check[1] == 2)
+              <i class="fa fa-check-circle text-danger no-margin"></i> ไม่ผ่าน
+            @elseif($applicant->transfer_slip == "")
+              <i class="fa fa-check-circle text-muted no-margin"></i> ยังไม่ได้รับ
+            @else
+              <i class="fa fa-check-circle text-orange no-margin"></i> รอการตรวจสอบ
+            @endif
+          </p>
+          <p>
+            <strong>ปพ.1 :</strong>
+            @if($applicant->proof_check[0])
+              <i class="fa fa-check-circle text-success no-margin"></i> ผ่าน
+            @elseif($applicant->proof_check[0] == 2)
+              <i class="fa fa-check-circle text-danger no-margin"></i> ไม่ผ่าน
+            @elseif($applicant->transcript == "")
+              <i class="fa fa-check-circle text-muted no-margin"></i> ยังไม่ได้รับ
+            @else
+              <i class="fa fa-check-circle text-orange no-margin"></i> รอการตรวจสอบ
+            @endif
+          </p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title"><i class="fa fa-user"></i>สละสิทธิ์ / สำรอง</h3>
+        </div>
+        <div class="box-body">
+          @if($user->active)
+            <form method="POST">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <input type="hidden" name="_method" value="PATCH">
+              <input type="hidden" name="active" value="0">
+              <button class="btn btn-sm btn-danger btn-block">บังคับสละสิทธิ์</button>
+            </form>
+          @else
+            <form method="POST">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <input type="hidden" name="_method" value="PATCH">
+              <input type="hidden" name="active" value="1">
+              <button class="btn btn-sm btn-success btn-block">เรียกสำรอง (เปิดใช้งานบัญชี)</button>
+            </form>
+          @endif
         </div>
       </div>
     </div>

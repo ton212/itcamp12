@@ -29,10 +29,27 @@ class ConfirmationController extends Controller {
 	public function show($id)
 	{
 		$data = [
-			'applicant' => Applicant::findOrFail($id)
+			'applicant' => Applicant::findOrFail($id),
+			'user'      => User::where('applicant_id', $id)->first()
 		];
 
 		return view('backend.confirmation.show', $data);
+	}
+
+	public function update($id, Request $request)
+	{
+		$applicant = Applicant::findOrFail($id);
+		$proof_check = $applicant->proof_check;
+		$proof_check[0] = $request->get('proof_check0', $applicant->proof_check[0]);
+		$proof_check[1] = $request->get('proof_check1', $applicant->proof_check[1]);
+		$applicant->proof_check = $proof_check;
+		$applicant->save();
+
+		$user = User::where('applicant_id', $id)->first();
+		$user->active = $request->get('active', $user->active);
+		$user->save();
+
+		return redirect(route('backend.confirmation.show', $id));
 	}
 
 
