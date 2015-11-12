@@ -17,7 +17,9 @@
 					<li @if(Request::is('backend/applicant*')) class="active bg-green-active" @endif><a href="{{ route('backend.applicant.index') }}"></i><i class="fa fa-file-text"></i>จัดการใบสมัคร</a></li>
 					<li @if(Request::is('backend/question*')) class="active bg-green-active" @endif><a href="{{ route('backend.question.index') }}"></i><i class="fa fa-question-circle"></i>จัดการคำถาม</a></li>
 					@endif
+					@if(Auth::user()->judge_group == 5)
 					<li @if(Request::is('backend/scoring*')) class="active bg-green-active" @endif><a href="{{ route('backend.scoring.index') }}"><i class="fa fa-check-circle"></i>การคัดเลือก (ตรวจคำตอบ)</a></li>
+					@endif
 					@if(Auth::user()->judge_group == 5 || Auth::user()->judge_group == 10)
 					<li @if(Request::is('backend/confirmation*')) class="active bg-green-active" @endif><a href="{{ route('backend.confirmation.index') }}"><i class="fa fa-check-circle"></i>การยืนยันสิทธิ์</a></li>
 					@endif

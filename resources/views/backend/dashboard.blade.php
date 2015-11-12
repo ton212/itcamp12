@@ -9,19 +9,19 @@
 				<div class="bs-wizard">
 					<div class="col-xs-3 bs-wizard-step">
 						<div class="text-center bs-wizard-stepnum">เปิดรับสมัคร</div>
-						<div class="progress"><div class="progress-bar"></div></div>
+						<div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
 						<span href="#" class="bs-wizard-dot"></span>
 						<div class="bs-wizard-info text-center">สิ้นสุดวันที่ 31 ตุลาคม 2558</div>
 					</div>
-					<div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+					<div class="col-xs-3 bs-wizard-step"><!-- complete -->
 						<div class="text-center bs-wizard-stepnum">ตรวจใบสมัคร</div>
-						<div class="progress"><div class="progress-bar"></div></div>
+						<div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
 						<span href="#" class="bs-wizard-dot"></span>
 						<div class="bs-wizard-info text-center">วันที่ 1 - 5 พฤศจิกายน 2558</div>
 					</div>
-					<div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
+					<div class="col-xs-3 bs-wizard-step"><!-- complete -->
 						<div class="text-center bs-wizard-stepnum">ประกาศผล & ยืนยันสิทธิ์</div>
-						<div class="progress"><div class="progress-bar"></div></div>
+						<div class="progress"><div class="progress-bar" style="width: 50%;"></div></div>
 						<span href="#" class="bs-wizard-dot"></span>
 						<div class="bs-wizard-info text-center">วันที่ 6 พฤศจิกายน 2558</div>
 					</div>
@@ -153,16 +153,18 @@
 		<div class="box box-primary">
                 <div class="box-header with-border">
                   <i class="fa fa-bar-chart-o"></i>
-                  <h3 class="box-title">สรุปยอดตามระดับชั้น</h3>
+                  <h3 class="box-title">สรุปยอดจำแนกตามเพศสำหรับผู้ที่ผ่านการคัดเลือก</h3>
                    <div class="box-body no-padding">
                   <table class="table table-condensed">
                     <tbody><tr>
-                      <th>ระดับชั้น</th>
-                      <th>จำนวนทั้งหมด</th>
+                      <th>ค่าย</th>
+                      <th>ชาย</th>
+                      <th>หญิง</th>
+                      <th>รวม</th>
                     </tr>
                     <tr>
                     	<td>ชั้นมัธยมศึกษาปีที่ 4</td>
-                    	<td>{{ $grade4 }} คน</td>
+                    	<td>{{ $app_male }} คน</td>
                     </tr>
                     <tr>
                     	<td>ชั้นมัธยมศึกษาปีที่ 5</td>

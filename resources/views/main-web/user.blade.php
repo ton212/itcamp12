@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<link rel="icon" href="{{ asset('main_assets/img/favicon.ico') }}">
-	<title>ระบบยืนยันสิทธิ์ ไอทีแคมป์ครั้งที่ 12 | ITCAMP12</title>
+	<title>ระบบยืนยันสิทธิ์ น้อง{{ $applicant->firstname." ".$applicant->lastname }} | ไอทีแคมป์ครั้งที่ 12 - ITCAMP12</title>
     <style>
       body {
       background: url("{{ asset('login_assets/img/soon_bg.png') }}") no-repeat center center fixed;
@@ -70,15 +70,23 @@
         <p>สลิปการโอนเงิน
           @if($applicant->transfer_slip == null)
             <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
-          @else
+          @elseif($applicant->proof_check[1] == 1)
+            <span class="label label-success"><i class="fa fa-check"></i> ผ่าน</span>
+          @elseif($applicant->proof_check[1] == 0 && $applicant->transfer_slip != null )
             <span class="label label-warning"><i class="fa fa-clock-o"></i> รอการตรวจสอบ</span>
+          @elseif($applicant->proof_check[1] == 2 && $applicant->transfer_slip != null )
+            <span class="label label-danger"><i class="fa fa-times"></i> ไม่ผ่าน</span>
           @endif
         </p>
         <p>ปพ. 1
           @if($applicant->transcript == null)
             <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
-          @else
+          @elseif($applicant->proof_check[0] == 1)
+            <span class="label label-success"><i class="fa fa-check"></i> ผ่าน</span>  
+          @elseif($applicant->proof_check[0] == 0 && $applicant->transcript != null )
             <span class="label label-warning"><i class="fa fa-clock-o"></i> รอการตรวจสอบ</span>
+          @elseif($applicant->proof_check[0] == 2 && $applicant->transcript != null )
+            <span class="label label-danger"><i class="fa fa-times"></i> ไม่ผ่าน</span>
           @endif
         </p>
       </div>
@@ -154,11 +162,12 @@
                 </form>
               </div>
               <div class="tab-pane fade" id="tab3default">
-                <h3>รอตรวจเอกสาร</h3>
+                <h2>รอตรวจเอกสาร</h2>
                 <p>หลังจากที่น้องแนบเอกสารมาเรียบร้อยแล้ว ให้น้องรอประมาณ 3 - 5 วัน เพื่อให้พี่ๆ ทีมงานได้ทำการตรวจสอบเอกสารนะครับ ในระหว่างนี้น้องสามารถเข้ามาร่วมพูดคุยกับเพื่อนๆ ที่สมัครไอทีแคมป์ 12 และเพื่อนๆ ที่เคยมาค่ายไอทีแคมป์ปีก่อนๆ ได้ในกรุ๊ป <a href="https://www.facebook.com/itcampKMITL?fref=photo" target="_blank" style="text-decoration:none"><i class="fa fa-facebook-official"></i> IT CAMP | KMITL</a></p>  
               </div>
               <div class="tab-pane fade" id="tab4default">
-              ให้น้องดาวน์โหลด ใบตอบรับ <a href="{{ asset('file/ใบตอบรับโครงการ.pdf') }}">สามารถดาวโหลดได้ที่นี่</a>  กรอกข้อมูลให้เรียบร้อยแล้วนำมาส่งวันค่ายที่โต๊ะลงทะเบียนจ้า
+              <p>ดาวน์โหลดใบตอบรับผู้ปกครอง กรอกข้อมูลให้เรียบร้อยแล้วนำมาส่งวันค่ายที่โต๊ะลงทะเบียนจ้า<a href="{{ asset('file/ใบตอบรับโครงการ.pdf') }}">สามารถดาวน์โหลดได้ที่นี่</a>  </p>
+              <p>และสำหรับน้องๆ ที่ต้องการขออนุญาตลากิจกับทางโรงเรียน <a href="{{ asset('file/ใบขออนุญาตลาโรงเรียน.pdf') }}">สามารถดาวน์โหลดเอกสารเพื่อไปยื่นให้กับทางโรงเรียนได้ที่นี่</a></p>
               </div>
               <div class="tab-pane fade" id="tab5default">
                   <h2>เตรียมตัวผจญภัย</h2>
