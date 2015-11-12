@@ -163,20 +163,34 @@
                       <th>รวม</th>
                     </tr>
                     <tr>
-                    	<td>ชั้นมัธยมศึกษาปีที่ 4</td>
-                    	<td>{{ $app_male }} คน</td>
+                    	<td>Applicationsaurus</td>
+                    	<td>{{ $app_male->count() }} คน</td>
+                    	<td>{{ $app_female->count() }} คน</td>
+                    	<td>{{ $app_male->count()+$app_female->count() }} คน</td>
                     </tr>
                     <tr>
-                    	<td>ชั้นมัธยมศึกษาปีที่ 5</td>
-                    	<td>{{ $grade5 }} คน</td>
+                    	<td>GameMakernodon</td>
+                    	<td>{{ $game_male->count() }} คน</td>
+                    	<td>{{ $game_female->count() }} คน</td>
+                    	<td>{{ $game_male->count()+$game_female->count() }} คน</td>
                     </tr>
                     <tr>
-                    	<td>ชั้นมัธยมศึกษาปีที่ 6</td>
-                    	<td>{{ $grade6 }} คน</td>
+                    	<td>T-Rex Network</td>
+                    	<td>{{ $net_male->count() }} คน</td>
+                    	<td>{{ $net_female->count() }} คน</td>
+                    	<td>{{ $net_male->count()+$net_female->count() }} คน</td>
                     </tr>
                     <tr>
-                    	<td>ประกาศนียบัตรวิชาชีพ (ปวช.)</td>
-                    	<td>{{ $gradesp }} คน</td>
+                    	<td>Iot-Ceramus</td>
+                    	<td>{{ $iot_male->count() }} คน</td>
+                    	<td>{{ $iot_female->count() }} คน</td>
+                    	<td>{{ $iot_male->count()+$iot_female->count() }} คน</td>
+                    </tr>
+                    <tr>
+                    	<td></td>
+                    	<td>{{ $camp_male->count() }} คน</td>
+                    	<td>{{ $camp_female->count() }} คน</td>
+                    	<td>{{ $camp_all->count() }} คน</td>
                     </tr>
                   </tbody></table>
                 </div><!-- /.box-body -->
