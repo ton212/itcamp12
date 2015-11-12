@@ -68,15 +68,23 @@
       <div class="well">
         <h2>สถานะหลักฐาน</h2>
         <p>สลิปการโอนเงิน
-          @if($applicant->transfer_slip == null)
-            <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
+          @if($applicant->proof_check[1] == 1)
+            <span class="label label-success"><i class="fa fa-check-circle"></i> ผ่าน</span>
+          @elseif($applicant->proof_check[1] == 2)
+            <span class="label label-danger"><i class="fa fa-times-circle"></i> ไม่ผ่าน</span>
+          @elseif($applicant->transfer_slip == "")
+            <span class="label label-default"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
           @else
             <span class="label label-warning"><i class="fa fa-clock-o"></i> รอการตรวจสอบ</span>
           @endif
         </p>
         <p>ปพ. 1
-          @if($applicant->transcript == null)
-            <span class="label label-danger"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
+          @if($applicant->proof_check[0])
+            <span class="label label-success"><i class="fa fa-check-circle"></i> ผ่าน</span>
+          @elseif($applicant->proof_check[0] == 2)
+            <span class="label label-danger"><i class="fa fa-times-circle"></i> ไม่ผ่าน</span>
+          @elseif($applicant->transcript == "")
+            <span class="label label-default"><i class="fa fa-times"></i> ยังไม่ได้รับ</span>
           @else
             <span class="label label-warning"><i class="fa fa-clock-o"></i> รอการตรวจสอบ</span>
           @endif

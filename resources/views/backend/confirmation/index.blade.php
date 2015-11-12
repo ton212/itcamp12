@@ -27,9 +27,26 @@
 					<td class="text-center">{{ $i++ }}</td>
 					<td class="text-center">{{ str_pad($profile->id, 4, 0, STR_PAD_LEFT) }}</td>
 					<td>
-						<i class="fa fa-check-circle no-margin {{ $profile->transfer_slip != '' ? 'text-orange' : 'text-muted' }}"></i>
-						<i class="fa fa-check-circle {{ $profile->transcript != '' ? 'text-orange' : 'text-muted' }}"></i>
-						{{ $profile->prefix }}{{ $profile->firstname }} {{ $profile->lastname }}</td>
+						@if($profile->proof_check[1] == 1)
+              <i class="fa fa-check-circle text-success no-margin"></i>
+            @elseif($profile->proof_check[1] == 2)
+              <i class="fa fa-check-circle text-danger no-margin"></i>
+            @elseif($profile->transfer_slip == "")
+              <i class="fa fa-check-circle text-muted no-margin"></i>
+            @else
+              <i class="fa fa-check-circle text-orange no-margin"></i>
+            @endif
+            @if($profile->proof_check[0] == 1)
+              <i class="fa fa-check-circle text-success no-margin"></i>
+            @elseif($profile->proof_check[0] == 2)
+              <i class="fa fa-check-circle text-danger no-margin"></i>
+            @elseif($profile->transcript == "")
+              <i class="fa fa-check-circle text-muted no-margin"></i>
+            @else
+              <i class="fa fa-check-circle text-orange no-margin"></i>
+            @endif
+          	{{ $profile->prefix }}{{ $profile->firstname }} {{ $profile->lastname }}
+          </td>
 					<td class="text-center" >{{ $profile->nickname }}</td>
 					<td class="text-center">{{ $profile->getCampName() }}</td>
 					<td class="text-center">
